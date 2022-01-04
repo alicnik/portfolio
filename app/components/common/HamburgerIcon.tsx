@@ -21,6 +21,8 @@ export function HamburgerIcon() {
 		setOpen(!open);
 	};
 
+	// TODO: Click outside sets open to false (avoids middle line disappearing trick (hopefully))
+
 	return (
 		<div
 			className="h-16 w-16 flex flex-col justify-center items-center gap-2 rounded-full cursor-pointer md:hidden"

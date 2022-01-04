@@ -19,13 +19,19 @@ const ThemePreferenceContext =
 export function ThemePreferenceProvider({
 	children,
 }: React.PropsWithChildren<{}>) {
+	// All props to Kent C. Dodds for inspiration for much of this code
+	// https://github.com/kentcdodds/kentcdodds.com/blob/main/app/utils/theme-provider.tsx
+
 	const [isThemeResolved, setIsThemeResolved] = React.useState(false);
 	const [themePreference, setThemePreference] = React.useState<
 		ThemePreference | undefined
 	>(() => {
 		if (typeof window === 'undefined') {
-			console.log('no WINDOW');
+			// Avoid className inconsistency upon hydration ("prop className did not match" error)
 			return undefined;
+		}
+		if (document.documentElement.classList.contains('dark')) {
+			return 'dark';
 		}
 		return getThemePreference();
 	});
@@ -54,28 +60,6 @@ export function ThemePreferenceProvider({
 		}
 		setIsThemeResolved(true);
 	}
-
-	// // Set a default on initial page load
-	// React.useEffect(() => {
-	// 	// Check to see if user has already visited site and has a previous preference
-	// 	const userSetting = localStorage.getItem(THEME_PREFERENCE_KEY);
-	// 	if (isThemePreference(userSetting)) {
-	// 		setThemePreference(userSetting === 'dark' ? 'dark' : 'light');
-	// 		setIsThemeResolved(true);
-	// 		return;
-	// 	}
-
-	// 	// If no preference in local storage, check system preferences and apply dark mode if appropriate.
-	// 	const themeMediaQuery = window.matchMedia(PREFERS_DARK_MEDIA_QUERY);
-	// 	const isSystemDarkMode = themeMediaQuery.matches;
-	// 	if (isSystemDarkMode) {
-	// 		const preference = isSystemDarkMode ? 'dark' : 'light';
-	// 		localStorage.setItem(THEME_PREFERENCE_KEY, 'system');
-	// 		themeMediaQuery.addEventListener('change', watchSystemThemePreference);
-	// 		setThemePreference(preference);
-	// 	}
-	// 	setIsThemeResolved(true);
-	// }, []);
 
 	function updateThemePreference(newPreference: ThemePreference) {
 		switch (newPreference) {
@@ -138,9 +122,6 @@ export function isThemePreference(
 }
 
 const clientThemeCode = `
-  // All props to Kent C. Dodds for inspiration for this pattern
-  // https://github.com/kentcdodds/kentcdodds.com/blob/main/app/utils/theme-provider.tsx
-
   const userSetting = localStorage.getItem(${JSON.stringify(
 		THEME_PREFERENCE_KEY,
 	)})
