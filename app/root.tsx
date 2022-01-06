@@ -11,10 +11,7 @@ import type { MetaFunction, LinksFunction } from 'remix';
 import styles from './tailwind.css';
 import {
 	AvoidFlashOfWrongTheme,
-	PREFERS_DARK_MEDIA_QUERY,
-	ThemePreference,
 	ThemePreferenceProvider,
-	THEME_PREFERENCE_KEY,
 	useThemePreference,
 } from '~/context';
 import { Navbar } from '~/components/common';
@@ -51,7 +48,7 @@ function App() {
 				<AvoidFlashOfWrongTheme />
 				<Links />
 			</head>
-			<body className="font-sans leading-relaxed bg-gray-50 text-gray-900 dark:text-gray-50 dark:bg-gray-900">
+			<body className="font-sans leading-relaxed bg-gray-50 text-gray-900 dark:text-gray-100 dark:bg-gray-800">
 				<Navbar />
 				<Outlet />
 				<ScrollRestoration />

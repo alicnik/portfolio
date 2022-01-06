@@ -1,11 +1,11 @@
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 
-export const PopoverRoot = PopoverPrimitive.Root;
-export const PopoverTrigger = PopoverPrimitive.Trigger;
-export const PopoverAnchor = PopoverPrimitive.Anchor;
-export const PopoverClose = PopoverPrimitive.Close;
+export const Root = PopoverPrimitive.Root;
+export const Trigger = PopoverPrimitive.Trigger;
+export const Anchor = PopoverPrimitive.Anchor;
+export const Close = PopoverPrimitive.Close;
 
-export const PopoverContent = ({
+export const Content = ({
 	children,
 	...props
 }: React.PropsWithChildren<PopoverPrimitive.PopoverContentProps>) => (
