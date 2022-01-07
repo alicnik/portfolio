@@ -1,10 +1,13 @@
+import * as React from 'react';
 import { Link } from 'remix';
-import { HamburgerIcon } from '.';
 import { ThemePicker } from './components';
+import { MobileMenu } from './MobileMenu';
+
 export function Navbar() {
+	const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 	return (
-		<header className="flex justify-between">
-			<HamburgerIcon />
+		<header className="flex justify-between items-center px-1 pt-2 pb-7">
+			<MobileMenu open={mobileMenuOpen} setOpen={setMobileMenuOpen} />
 			<nav>
 				<ul className="hidden md:flex">
 					<li>
@@ -21,7 +24,7 @@ export function Navbar() {
 					</li>
 				</ul>
 			</nav>
-			<ThemePicker />
+			{mobileMenuOpen ? null : <ThemePicker />}
 		</header>
 	);
 }

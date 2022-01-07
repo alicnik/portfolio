@@ -48,7 +48,7 @@ function App() {
 				<AvoidFlashOfWrongTheme />
 				<Links />
 			</head>
-			<body className="font-sans leading-relaxed bg-gray-50 text-gray-900 dark:text-gray-100 dark:bg-gray-800">
+			<body className="p-6 font-sans leading-relaxed bg-gray-50 text-gray-900 dark:text-gray-100 dark:bg-gray-800">
 				<Navbar />
 				<Outlet />
 				<ScrollRestoration />
