@@ -6,6 +6,7 @@ import {
 	PersonIcon,
 	ReaderIcon,
 	EnvelopeClosedIcon,
+	LightningBoltIcon,
 } from '@radix-ui/react-icons';
 import { Link } from 'remix';
 
@@ -36,25 +37,23 @@ export function MobileMenu({ open, setOpen }: MobileMenuProps) {
 				>
 					<Dialog.Title className="pb-8 uppercase">Menu</Dialog.Title>
 					<nav>
-						<ul className="flex flex-col gap-6 text-2xl">
+						<ul className="flex flex-col gap-6 text-xl">
 							{['home', 'blog', 'projects', 'about', 'contact'].map((page) => (
-								<>
-									<li>
-										<Link
-											to={page === 'home' ? '/' : `/${page}`}
-											className="capitalize"
-										>
-											{menuIcons[page]}
-											{page}
-										</Link>
-									</li>
-								</>
+								<li key={page}>
+									<Link
+										to={page === 'home' ? '/' : `/${page}`}
+										className="capitalize flex items-center gap-4"
+									>
+										{menuIcons[page]}
+										<span>{page}</span>
+									</Link>
+								</li>
 							))}
 						</ul>
 					</nav>
 				</Dialog.Content>
 				<Dialog.Close asChild>
-					<Cross1Icon className="absolute top-8 right-6 cursor-pointer data-state-open:animate-fade-in text-gray-50" />
+					<Cross1Icon className="absolute top-10 right-7 cursor-pointer data-state-open:animate-fade-in text-gray-50" />
 				</Dialog.Close>
 			</Dialog.Overlay>
 		</Dialog.Root>
@@ -62,8 +61,9 @@ export function MobileMenu({ open, setOpen }: MobileMenuProps) {
 }
 
 const menuIcons: { [index: string]: React.ReactNode } = {
-	home: <HomeIcon />,
-	blog: <ReaderIcon />,
-	about: <PersonIcon />,
-	contact: <EnvelopeClosedIcon />,
+	home: <HomeIcon className="scale-125" />,
+	blog: <ReaderIcon className="scale-125" />,
+	about: <PersonIcon className="scale-125" />,
+	contact: <EnvelopeClosedIcon className="scale-125" />,
+	projects: <LightningBoltIcon className="scale-125" />,
 };

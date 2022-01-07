@@ -6,10 +6,10 @@ import { MobileMenu } from './MobileMenu';
 export function Navbar() {
 	const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 	return (
-		<header className="flex justify-between items-center px-1 pt-2 pb-7">
+		<header className="flex justify-between items-center px-1 pt-2 pb-7 h-16">
 			<MobileMenu open={mobileMenuOpen} setOpen={setMobileMenuOpen} />
-			<nav>
-				<ul className="hidden md:flex">
+			<nav className="hidden md:block">
+				<ul className="flex">
 					<li>
 						<Link to="/">AN</Link>
 					</li>
@@ -24,7 +24,14 @@ export function Navbar() {
 					</li>
 				</ul>
 			</nav>
-			{mobileMenuOpen ? null : <ThemePicker />}
+			{mobileMenuOpen ? null : (
+				<>
+					<Link to="/" className="font-logo text-xl md:hidden">
+						AN
+					</Link>
+					<ThemePicker />
+				</>
+			)}
 		</header>
 	);
 }

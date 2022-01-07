@@ -1,12 +1,14 @@
 import * as React from 'react';
 import { ThemePreference, useThemePreference } from '~/context';
 import { Dropdown } from '~/components/radix';
-import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
+import { MoonIcon, SunIcon, UpdateIcon } from '@radix-ui/react-icons';
 
 const themeOptions: ThemePreference[] = ['dark', 'light', 'system'];
 
 export function ThemePicker() {
-	const [themeIcon, setThemeIcon] = React.useState<React.ReactNode>();
+	const [themeIcon, setThemeIcon] = React.useState<React.ReactNode>(
+		<UpdateIcon className="animate-spin" />,
+	);
 	const { themePreference, updateThemePreference } = useThemePreference();
 
 	React.useEffect(() => {
@@ -21,7 +23,7 @@ export function ThemePicker() {
 
 	return (
 		<Dropdown.Root>
-			<Dropdown.Trigger>{themeIcon}</Dropdown.Trigger>
+			<Dropdown.Trigger asChild>{themeIcon}</Dropdown.Trigger>
 			<Dropdown.Content className="py-2" sideOffset={10}>
 				{themeOptions.map((option) => (
 					<Dropdown.CheckItem

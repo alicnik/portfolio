@@ -10,7 +10,7 @@ module.exports = {
 			fontFamily: {
 				sans: ['"Source Sans Pro"', ...defaultTheme.fontFamily.sans],
 				display: ['"Playfair Display"', ...defaultTheme.fontFamily.serif],
-				accent: ['"IM Fell Great Primer"', '"Playfair Display"'],
+				logo: ['"IM Fell Great Primer"', '"Playfair Display"'],
 			},
 			keyframes: {
 				hamburgerTopOpen: {
