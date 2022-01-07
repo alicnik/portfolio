@@ -35,7 +35,7 @@ export function MobileMenu({ open, setOpen }: MobileMenuProps) {
           animate-slide-out-left data-state-open:animate-slide-in-left
         `}
 				>
-					<Dialog.Title className="pb-8 uppercase">Menu</Dialog.Title>
+					<Dialog.Title className="pb-8 uppercase leading-8">Menu</Dialog.Title>
 					<nav>
 						<ul className="flex flex-col gap-6 text-xl">
 							{['home', 'blog', 'projects', 'about', 'contact'].map((page) => (

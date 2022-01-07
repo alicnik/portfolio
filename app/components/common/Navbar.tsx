@@ -1,10 +1,16 @@
 import * as React from 'react';
-import { Link } from 'remix';
+import { Link, useLocation } from 'remix';
 import { ThemePicker } from './components';
 import { MobileMenu } from './MobileMenu';
 
 export function Navbar() {
+	const location = useLocation();
 	const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+
+	React.useEffect(() => {
+		setMobileMenuOpen(false);
+	}, [location]);
+
 	return (
 		<header className="flex justify-between items-center px-1 pt-2 pb-7 h-16">
 			<MobileMenu open={mobileMenuOpen} setOpen={setMobileMenuOpen} />
