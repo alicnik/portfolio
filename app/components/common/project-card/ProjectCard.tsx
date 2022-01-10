@@ -2,18 +2,23 @@ import { GitHubLogoIcon } from '@radix-ui/react-icons';
 import clsx from 'clsx';
 import { Link } from 'remix';
 import { Project } from '~/types';
+import { kebabCase } from 'lodash';
 
 export function ProjectCard({
 	name,
-	description,
+	summary,
 	url,
 	githubPrimary,
 	thumbnail,
+	responsive,
 }: Project) {
 	return (
-		<div className="p-6 border rounded border-gray-300">
-			<Link to={`/projects/${name}`} className="flex flex-col gap-4 mb-3">
-				<h3 className="font-display text-lg underline underline-offset-4">
+		<div className="px-6 py-8 my-6 border rounded border-gray-300 dark:border-gray-600">
+			<Link
+				to={`/projects/${kebabCase(name)}`}
+				className="flex flex-col gap-4 mb-6"
+			>
+				<h3 className="font-display text-xl mb-2 underline underline-offset-4">
 					{name}
 				</h3>
 				<img
@@ -21,20 +26,33 @@ export function ProjectCard({
 					alt={name}
 					className={clsx('rounded shadow aspect-video w-full')}
 				/>
-				<p>{description}</p>
+				<p>{summary}</p>
 			</Link>
-			<div className="flex items-center pr-2">
+			{name === 'Portfolio Website' || !url ? (
 				<a
-					className="underline underline-offset-2 mr-auto"
-					href={url}
+					href={githubPrimary}
 					target="_blank"
+					className="flex items-center gap-2"
 				>
-					Deployment
-				</a>
-				<a href={githubPrimary} target="_blank">
 					<GitHubLogoIcon className="scale-125" />
+					<span className="underline underline-offset-2">
+						GitHub respository
+					</span>
 				</a>
-			</div>
+			) : (
+				<div className="flex items-center pr-2">
+					<a
+						className="underline underline-offset-2 mr-auto"
+						href={url}
+						target="_blank"
+					>
+						{responsive ? 'Deployment' : 'Deployment (desktop only)'}
+					</a>
+					<a href={githubPrimary} target="_blank">
+						<GitHubLogoIcon className="scale-125" />
+					</a>
+				</div>
+			)}
 		</div>
 	);
 }

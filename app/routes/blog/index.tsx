@@ -1,3 +1,3 @@
 export default function BlogRoute() {
-	return <h1>Blog route</h1>;
+	return <h1>Coming soon...</h1>;
 }

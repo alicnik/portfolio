@@ -23,7 +23,7 @@ export const links: LinksFunction = () => {
 		{ rel: 'stylesheet', href: tailwindStyles },
 		{
 			rel: 'stylesheet',
-			href: 'https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Merriweather&family=Raleway:ital,wght@0,300;1,300&display=swap',
+			href: 'https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Merriweather&family=Raleway:ital,wght@0,400;1,300&display=swap',
 		},
 		{ rel: 'preconnect', href: 'https://fonts.googleapis.com' },
 		{
@@ -52,7 +52,7 @@ function App() {
 			</head>
 			<body className="font-sans leading-relaxed bg-gray-50 text-gray-900 dark:text-gray-100 dark:bg-gray-800">
 				<Navbar />
-				<main className="px-6 pt-24 pb-8">
+				<main className="px-6 pt-32 pb-8">
 					<Outlet />
 				</main>
 				<ScrollRestoration />

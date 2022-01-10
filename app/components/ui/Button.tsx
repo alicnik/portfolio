@@ -14,15 +14,19 @@ export function Button({
 }: ButtonProps) {
 	// Ensure that Tailwind classes provided in `className`
 	// successfully override the base Tailwind classes
-	const resolvedBaseClasses = baseStyles
-		.split(' ')
-		.filter((cls) => {
-			return !className
+	// Naive implementation given some TW classes are one word
+	// and a number of others start with the same prefix e.g. text-white and text-lg
+	const resolvedBaseClasses = className
+		? baseStyles
 				.split(' ')
-				.some((c) => cls.startsWith(c.substring(0, c.indexOf('-'))));
-		})
-		.concat(className)
-		.join(' ');
+				.filter((cls) => {
+					return !className
+						.split(' ')
+						.some((c) => cls.startsWith(c.substring(0, c.indexOf('-') + 1)));
+				})
+				.concat(className)
+				.join(' ')
+		: baseStyles;
 
 	return (
 		<button
@@ -31,7 +35,7 @@ export function Button({
 				variant === 'filled' &&
 					'bg-gray-800 dark:bg-gray-200 text-gray-50 dark:text-gray-800',
 				variant === 'outlined' &&
-					'border border-gray-800 dark:border-gray-200 text-gray-800 dark:text-gray-50',
+					'border border-gray-800 dark:border-gray-300 text-gray-800 dark:text-gray-50',
 				className,
 			)}
 			{...props}
