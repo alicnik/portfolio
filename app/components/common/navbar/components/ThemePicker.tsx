@@ -45,7 +45,7 @@ export function ThemePicker() {
 						}}
 					>
 						{themeIcons[option]}
-						<span>{option}</span>
+						<span className="leading-[1.6]">{option}</span>
 					</Dropdown.CheckItem>
 				))}
 			</Dropdown.Content>
