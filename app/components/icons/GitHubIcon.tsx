@@ -1,11 +1,11 @@
 import { GitHubLogoIcon } from '@radix-ui/react-icons';
 import { AccessibleIcon } from '~/components/radix';
-import { IconProps } from '.';
+import { AccessibleIconProps } from '.';
 
 export function GitHubIcon({
 	label = 'GitHub icon',
 	className = 'scale-125',
-}: IconProps) {
+}: AccessibleIconProps) {
 	return (
 		<AccessibleIcon label={label}>
 			<GitHubLogoIcon className={className} />

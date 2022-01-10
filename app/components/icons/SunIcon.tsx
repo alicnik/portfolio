@@ -1,8 +1,11 @@
 import { AccessibleIcon } from '~/components/radix';
-import { IconProps } from '.';
+import { AccessibleIconProps } from '.';
 import { SunIcon as RadixSunIcon } from '@radix-ui/react-icons';
 
-export function SunIcon({ label = 'Light mode icon', className }: IconProps) {
+export function SunIcon({
+	label = 'Light mode icon',
+	className,
+}: AccessibleIconProps) {
 	return (
 		<AccessibleIcon label={label}>
 			<RadixSunIcon className={className} />

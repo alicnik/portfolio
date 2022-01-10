@@ -1,14 +1,14 @@
 import { AccessibleIcon } from '~/components/radix';
 import { AccessibleIconProps } from '.';
-import { MoonIcon as RadixMoonIcon } from '@radix-ui/react-icons';
+import { PersonIcon } from '@radix-ui/react-icons';
 
-export function MoonIcon({
-	label = 'Dark mode icon',
-	className,
+export function AboutIcon({
+	label = 'About icon',
+	className = 'scale-125',
 }: AccessibleIconProps) {
 	return (
 		<AccessibleIcon label={label}>
-			<RadixMoonIcon className={className} />
+			<PersonIcon className={className} />
 		</AccessibleIcon>
 	);
 }

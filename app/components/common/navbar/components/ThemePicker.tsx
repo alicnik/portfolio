@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ThemePreference, useThemePreference } from '~/context';
-import { Dropdown, VisuallyHidden } from '~/components/radix';
+import { Dropdown } from '~/components/radix';
 import { GlobeIcon, MoonIcon, SunIcon, LoadingIcon } from '~/components/icons';
 
 const themeOptions: ThemePreference[] = ['dark', 'light', 'system'];

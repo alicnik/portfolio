@@ -1,14 +1,14 @@
 import { Dialog } from '~/components/radix';
-import {
-	HamburgerMenuIcon,
-	Cross1Icon,
-	HomeIcon,
-	PersonIcon,
-	ReaderIcon,
-	EnvelopeClosedIcon,
-	LightningBoltIcon,
-} from '@radix-ui/react-icons';
 import { Link } from 'remix';
+import {
+	CloseIcon,
+	HomeIcon,
+	AboutIcon,
+	ProjectsIcon,
+	BlogIcon,
+	ContactIcon,
+	HamburgerMenuIcon,
+} from '~/components/icons';
 
 interface MobileMenuProps {
 	open: boolean;
@@ -19,7 +19,7 @@ export function MobileMenu({ open, setOpen }: MobileMenuProps) {
 	return (
 		<Dialog.Root open={open} onOpenChange={setOpen}>
 			<Dialog.Trigger asChild>
-				<HamburgerMenuIcon className="scale-150 cursor-pointer" />
+				<HamburgerMenuIcon />
 			</Dialog.Trigger>
 			<Dialog.Overlay
 				className={`
@@ -55,7 +55,7 @@ export function MobileMenu({ open, setOpen }: MobileMenuProps) {
 					</nav>
 				</Dialog.Content>
 				<Dialog.Close asChild>
-					<Cross1Icon className="absolute top-9 right-7 cursor-pointer data-state-open:animate-fade-in text-gray-50" />
+					<CloseIcon className="absolute top-9 right-7 cursor-pointer data-state-open:animate-fade-in text-gray-50" />
 				</Dialog.Close>
 			</Dialog.Overlay>
 		</Dialog.Root>
@@ -63,9 +63,9 @@ export function MobileMenu({ open, setOpen }: MobileMenuProps) {
 }
 
 const menuIcons: { [index: string]: React.ReactNode } = {
-	home: <HomeIcon className="scale-125" />,
-	blog: <ReaderIcon className="scale-125" />,
-	about: <PersonIcon className="scale-125" />,
-	contact: <EnvelopeClosedIcon className="scale-125" />,
-	projects: <LightningBoltIcon className="scale-125" />,
+	home: <HomeIcon />,
+	blog: <BlogIcon />,
+	projects: <ProjectsIcon />,
+	about: <AboutIcon />,
+	contact: <ContactIcon />,
 };

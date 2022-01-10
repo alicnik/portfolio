@@ -1,12 +1,15 @@
 import { AccessibleIcon } from '~/components/radix';
-import { IconProps } from '.';
 import { UpdateIcon } from '@radix-ui/react-icons';
-import clsx from 'clsx';
 
-export function LoadingIcon({ label = 'Loading', className }: IconProps) {
+// Classname disabled here as TW scale class conflicts with animation
+interface IconProps {
+	label?: string;
+}
+
+export function LoadingIcon({ label = 'Loading' }: IconProps) {
 	return (
 		<AccessibleIcon label={label}>
-			<UpdateIcon className={clsx('animate-spin', className)} />
+			<UpdateIcon className="animate-spin" />
 		</AccessibleIcon>
 	);
 }
