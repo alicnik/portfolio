@@ -1,22 +1,22 @@
 import * as React from 'react';
 
-interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface TextareaProps
+	extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
 	label: string;
 	isError: boolean;
 	errorMessage: string;
 }
 
-export function TextInput({
+export function Textarea({
 	label,
-	type = 'text',
 	isError,
 	errorMessage,
 	...props
-}: TextInputProps) {
+}: TextareaProps) {
 	return (
 		<div>
 			<label htmlFor={label}>{label}</label>
-			<input type={type} id={label} {...props} />
+			<textarea id={label} {...props} />
 			{isError && <p>{errorMessage}</p>}
 		</div>
 	);
