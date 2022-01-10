@@ -13,7 +13,13 @@ export function ThemePicker() {
 
 	React.useEffect(() => {
 		if (!themePreference) return;
-		setThemeIcon(themeIcons[themePreference]);
+		setThemeIcon(
+			themePreference === 'light' ? (
+				<SunIcon className="scale-125" />
+			) : (
+				<MoonIcon className="scale-125" />
+			),
+		);
 	}, [themePreference]);
 
 	return (
