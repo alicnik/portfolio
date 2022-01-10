@@ -1,2 +1,2 @@
-export * from './Navbar';
-export * from './HamburgerIcon';
+export * from './navbar';
+export * from './project-card';

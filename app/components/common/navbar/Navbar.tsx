@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Link, useLocation } from 'remix';
-import { ThemePicker } from './components';
-import { MobileMenu } from './MobileMenu';
+import { ThemePicker, MobileMenu } from './components';
 
 export function Navbar() {
 	const location = useLocation();
@@ -12,7 +11,7 @@ export function Navbar() {
 	}, [location]);
 
 	return (
-		<header className="flex justify-between items-center px-1 pt-2 pb-7 h-16">
+		<header className="fixed top-0 pt-9 px-7 w-full flex justify-between items-center bg-gray-50 dark:bg-gray-800">
 			<MobileMenu open={mobileMenuOpen} setOpen={setMobileMenuOpen} />
 			<nav className="hidden md:block">
 				<ul className="flex">
@@ -32,9 +31,11 @@ export function Navbar() {
 			</nav>
 			{mobileMenuOpen ? null : (
 				<>
-					<Link to="/" className="font-logo text-xl md:hidden">
-						AN
-					</Link>
+					{location.pathname !== '/' && (
+						<Link to="/" className="font-graphic text-xl md:hidden">
+							AN
+						</Link>
+					)}
 					<ThemePicker />
 				</>
 			)}

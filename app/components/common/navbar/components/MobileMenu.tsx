@@ -35,7 +35,9 @@ export function MobileMenu({ open, setOpen }: MobileMenuProps) {
           animate-slide-out-left data-state-open:animate-slide-in-left
         `}
 				>
-					<Dialog.Title className="pb-8 uppercase leading-8">Menu</Dialog.Title>
+					<Dialog.Title className="pb-8 leading-8 font-graphic text-xl">
+						AN
+					</Dialog.Title>
 					<nav>
 						<ul className="flex flex-col gap-6 text-xl">
 							{['home', 'blog', 'projects', 'about', 'contact'].map((page) => (
@@ -53,7 +55,7 @@ export function MobileMenu({ open, setOpen }: MobileMenuProps) {
 					</nav>
 				</Dialog.Content>
 				<Dialog.Close asChild>
-					<Cross1Icon className="absolute top-10 right-7 cursor-pointer data-state-open:animate-fade-in text-gray-50" />
+					<Cross1Icon className="absolute top-9 right-7 cursor-pointer data-state-open:animate-fade-in text-gray-50" />
 				</Dialog.Close>
 			</Dialog.Overlay>
 		</Dialog.Root>

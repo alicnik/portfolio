@@ -1,33 +1,22 @@
-import { HamburgerIcon } from '~/components/common';
+import { LinksFunction } from 'remix';
+import projects from '~/projects/manifest';
+import { Button, HomepageIllustration } from '~/components/ui';
+import { ProjectCard } from '~/components/common';
+
+export const links: LinksFunction = () => [
+	{ rel: 'preload', as: 'image', href: projects[0].thumbnail },
+];
 
 export default function Index() {
 	return (
-		<div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.4' }}>
-			<ul>
-				<li>
-					<a
-						target="_blank"
-						href="https://remix.run/tutorials/blog"
-						rel="noreferrer"
-					>
-						15m Quickstart Blog Tutorial
-					</a>
-				</li>
-				<li>
-					<a
-						target="_blank"
-						href="https://remix.run/tutorials/jokes"
-						rel="noreferrer"
-					>
-						Deep Dive Jokes App Tutorial
-					</a>
-				</li>
-				<li>
-					<a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-						Remix Docs
-					</a>
-				</li>
-			</ul>
+		<div className="container">
+			<h1 className="text-5xl font-graphic mt-4">Alex Nicholas</h1>
+			<h2 className="text-xl font-sans">Front-End Web Developer</h2>
+			<HomepageIllustration />
+			<h2 className="my-8 font-display text-4xl">Recent projects</h2>
+			{projects.map((project) => (
+				<ProjectCard key={project.name} {...project} />
+			))}
 		</div>
 	);
 }

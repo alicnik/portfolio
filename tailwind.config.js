@@ -8,9 +8,9 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['"Source Sans Pro"', ...defaultTheme.fontFamily.sans],
-				display: ['"Playfair Display"', ...defaultTheme.fontFamily.serif],
-				logo: ['"IM Fell Great Primer"', '"Playfair Display"'],
+				sans: ['Raleway', ...defaultTheme.fontFamily.sans],
+				graphic: ['"IM Fell English"', ...defaultTheme.fontFamily.serif],
+				display: ['"Merriweather"', ...defaultTheme.fontFamily.serif],
 			},
 			keyframes: {
 				hamburgerTopOpen: {

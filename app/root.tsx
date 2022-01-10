@@ -8,7 +8,8 @@ import {
 	ScrollRestoration,
 } from 'remix';
 import type { MetaFunction, LinksFunction } from 'remix';
-import styles from './tailwind.css';
+import customStyles from './styles/custom.css';
+import tailwindStyles from './styles/tailwind.css';
 import {
 	AvoidFlashOfWrongTheme,
 	ThemePreferenceProvider,
@@ -18,10 +19,11 @@ import { Navbar } from '~/components/common';
 
 export const links: LinksFunction = () => {
 	return [
-		{ rel: 'stylesheet', href: styles },
+		{ rel: 'stylesheet', href: customStyles },
+		{ rel: 'stylesheet', href: tailwindStyles },
 		{
 			rel: 'stylesheet',
-			href: 'https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap',
+			href: 'https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Merriweather&family=Raleway:ital,wght@0,300;1,300&display=swap',
 		},
 		{ rel: 'preconnect', href: 'https://fonts.googleapis.com' },
 		{
@@ -48,9 +50,11 @@ function App() {
 				<AvoidFlashOfWrongTheme />
 				<Links />
 			</head>
-			<body className="p-6 font-sans leading-relaxed bg-gray-50 text-gray-900 dark:text-gray-100 dark:bg-gray-800">
+			<body className="font-sans leading-relaxed bg-gray-50 text-gray-900 dark:text-gray-100 dark:bg-gray-800">
 				<Navbar />
-				<Outlet />
+				<main className="px-6 pt-24 pb-8">
+					<Outlet />
+				</main>
 				<ScrollRestoration />
 
 				<Scripts />
