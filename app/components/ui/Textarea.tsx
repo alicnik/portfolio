@@ -14,9 +14,13 @@ export function Textarea({
 	...props
 }: TextareaProps) {
 	return (
-		<div>
+		<div className="flex flex-col gap-2 mb-6">
 			<label htmlFor={label}>{label}</label>
-			<textarea id={label} {...props} />
+			<textarea
+				id={label}
+				className="rounded py-2 px-3 bg-transparent border border-gray-700 dark:border-gray-300"
+				{...props}
+			/>
 			{isError && <p>{errorMessage}</p>}
 		</div>
 	);

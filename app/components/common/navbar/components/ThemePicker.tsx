@@ -1,38 +1,25 @@
 import * as React from 'react';
 import { ThemePreference, useThemePreference } from '~/context';
 import { Dropdown, VisuallyHidden } from '~/components/radix';
-import {
-	GlobeIcon,
-	MoonIcon,
-	SunIcon,
-	UpdateIcon,
-} from '@radix-ui/react-icons';
+import { GlobeIcon, MoonIcon, SunIcon, LoadingIcon } from '~/components/icons';
 
 const themeOptions: ThemePreference[] = ['dark', 'light', 'system'];
 
 export function ThemePicker() {
 	const [themeIcon, setThemeIcon] = React.useState<React.ReactNode>(
-		<UpdateIcon className="animate-spin" />,
+		<LoadingIcon />,
 	);
 	const { themePreference, updateThemePreference } = useThemePreference();
 
 	React.useEffect(() => {
-		setThemeIcon(
-			themePreference === 'light' ? (
-				<SunIcon className="scale-125" />
-			) : (
-				<MoonIcon className="scale-125" />
-			),
-		);
+		if (!themePreference) return;
+		setThemeIcon(themeIcons[themePreference]);
 	}, [themePreference]);
 
 	return (
 		<Dropdown.Root>
 			<Dropdown.Trigger asChild>
-				<span>
-					{themeIcon}
-					<VisuallyHidden>Dark mode</VisuallyHidden>
-				</span>
+				<span>{themeIcon}</span>
 			</Dropdown.Trigger>
 			<Dropdown.Content className="py-2 flex flex-col gap-1" sideOffset={10}>
 				{themeOptions.map((option) => (
@@ -45,7 +32,7 @@ export function ThemePicker() {
 						}}
 					>
 						{themeIcons[option]}
-						<span>{option}</span>
+						<span className="leading-snug">{option}</span>
 					</Dropdown.CheckItem>
 				))}
 			</Dropdown.Content>

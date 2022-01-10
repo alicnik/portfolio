@@ -3,6 +3,7 @@ import type { Project } from '~/types';
 const manifest: Project[] = [
 	{
 		name: 'Trello Clone',
+		slug: 'trello-clone',
 		summary:
 			'What started as a way of learning Java & Spring Boot turned into a quest for pixel-perfect front-end imitation. React/TypeScript and Next.js deployed to Vercel with a Heroku back end.',
 		description: '',
@@ -24,6 +25,7 @@ const manifest: Project[] = [
 	},
 	{
 		name: 'Portfolio Website',
+		slug: 'portfolio-website',
 		summary:
 			'An update was overdue, Remix had recently gone open source and Tailwind v.3 had been released with a just-in-time compiler and arbitrary values. In other words, the stars aligned.',
 		description: '',
@@ -36,6 +38,7 @@ const manifest: Project[] = [
 	},
 	{
 		name: 'Installfest CLI',
+		slug: 'installfest-cli',
 		summary:
 			'While working as a Teaching Assistant, I wrote a CLI to automate the installation of the tools and packages required for students on the course.',
 		description: '',
@@ -47,6 +50,7 @@ const manifest: Project[] = [
 	},
 	{
 		name: 'SentiRed',
+		slug: 'sentired',
 		summary:
 			"SentiRed is a Reddit wrapper that uses the Google Natural Language API to measure the positive/negative sentiment you're exposed to as your browse Reddit posts and updates the styling to achieve emotional UI.",
 		description: '',
@@ -68,6 +72,7 @@ const manifest: Project[] = [
 	},
 	{
 		name: 'Wilderness',
+		slug: 'wilderness',
 		summary:
 			"For happy campers, this camping app helps you find campsites and attractions around America using the US government's Recreational Information Database.",
 		description: '',
@@ -91,6 +96,7 @@ const manifest: Project[] = [
 	},
 	{
 		name: 'Pokeapi',
+		slug: 'pokeapi',
 		summary:
 			'A 48-hour pair-programming hackathon creating a Pokemon battle game. In hindsight, a touch ambitious given the time constraints, but goodness was it fun.',
 		description: '',
@@ -103,6 +109,7 @@ const manifest: Project[] = [
 	},
 	{
 		name: 'Minesweeper',
+		slug: 'minesweeper',
 		summary:
 			'For that 90s feel. A tribute to the classic game. As close as possible to a carbon copy of a Windows environment, with drag and drop, minimising, and a working clock.',
 		description: '',

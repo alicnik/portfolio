@@ -14,14 +14,14 @@ export default function Index() {
 			<h2 className="text-xl font-sans">Front-End Web Developer</h2>
 			<HomepageIllustration />
 			<a href="/assets/cv.pdf" target="_blank">
-				<Button variant="outlined" className="mx-auto mb-12 py-3 px-6">
+				<Button variant="outlined" className="mx-auto mb-12">
 					View CV
 				</Button>
 			</a>
 			<h2 className="mt-6 mb-8 font-display text-4xl">Recent projects</h2>
 			<ProjectCard {...projects[0]} />
 			<Link to="/projects">
-				<Button variant="outlined" className="mx-auto my-6 py-3 px-6">
+				<Button variant="outlined" className="mx-auto my-6">
 					See more projects
 				</Button>
 			</Link>
