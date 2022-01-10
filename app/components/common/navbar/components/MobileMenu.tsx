@@ -18,7 +18,7 @@ interface MobileMenuProps {
 export function MobileMenu({ open, setOpen }: MobileMenuProps) {
 	return (
 		<Dialog.Root open={open} onOpenChange={setOpen}>
-			<Dialog.Trigger asChild>
+			<Dialog.Trigger className="md:hidden scale-150" asChild>
 				<HamburgerMenuIcon />
 			</Dialog.Trigger>
 			<Dialog.Overlay

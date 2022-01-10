@@ -1,8 +1,7 @@
-import { GitHubLogoIcon } from '@radix-ui/react-icons';
 import clsx from 'clsx';
 import { Link } from 'remix';
 import { GitHubIcon } from '~/components/icons';
-import { VisuallyHidden } from '~/components/radix';
+import { ExternalLink } from '~/components/ui';
 import { Project } from '~/types';
 
 export function ProjectCard({
@@ -28,28 +27,23 @@ export function ProjectCard({
 				<p>{summary}</p>
 			</Link>
 			{name === 'Portfolio Website' || !url ? (
-				<a
-					href={githubPrimary}
-					target="_blank"
-					className="flex items-center gap-2"
-				>
+				<ExternalLink to={githubPrimary} className="flex items-center gap-2">
 					<GitHubIcon label="GitHub repository link" />
 					<span className="underline underline-offset-2">
 						GitHub respository
 					</span>
-				</a>
+				</ExternalLink>
 			) : (
 				<div className="flex items-center pr-2">
-					<a
+					<ExternalLink
+						to={url}
 						className="underline underline-offset-2 mr-auto"
-						href={url}
-						target="_blank"
 					>
 						{responsive ? 'Deployment' : 'Deployment (desktop only)'}
-					</a>
-					<a href={githubPrimary} target="_blank">
+					</ExternalLink>
+					<ExternalLink to={githubPrimary}>
 						<GitHubIcon label="GitHub repository link" />
-					</a>
+					</ExternalLink>
 				</div>
 			)}
 		</div>

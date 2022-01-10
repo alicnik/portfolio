@@ -1,6 +1,6 @@
 import { Link, LinksFunction } from 'remix';
 import projects from '~/projects/manifest';
-import { Button, HomepageIllustration } from '~/components/ui';
+import { Button, ExternalLink, HomepageIllustration } from '~/components/ui';
 import { ProjectCard } from '~/components/common';
 
 export const links: LinksFunction = () => [
@@ -13,11 +13,11 @@ export default function Index() {
 			<h1 className="text-5xl font-graphic">Alex Nicholas</h1>
 			<h2 className="text-xl font-sans">Front-End Web Developer</h2>
 			<HomepageIllustration />
-			<a href="/assets/cv.pdf" target="_blank">
+			<ExternalLink to="/assets/cv.pdf">
 				<Button variant="outlined" className="mx-auto mb-12">
 					View CV
 				</Button>
-			</a>
+			</ExternalLink>
 			<h2 className="mt-6 mb-8 font-display text-4xl">Recent projects</h2>
 			<ProjectCard {...projects[0]} />
 			<Link to="/projects">

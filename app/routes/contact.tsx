@@ -1,5 +1,5 @@
 import { Form } from 'remix';
-import { Button, Textarea, TextInput } from '~/components/ui';
+import { Button, ExternalLink, Textarea, TextInput } from '~/components/ui';
 
 export default function ContactRoute() {
 	return (
@@ -26,12 +26,9 @@ export default function ContactRoute() {
 				</Button>
 				<p>
 					Alternatively, you can email me directly at{' '}
-					<a
-						href="mailto:me@alexnicholas.dev"
-						className="underline underline-offset-2"
-					>
+					<ExternalLink to="mailto:me@alexnicholas.dev">
 						me@alexnicholas.dev
-					</a>
+					</ExternalLink>
 					.
 				</p>
 			</Form>
