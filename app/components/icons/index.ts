@@ -16,3 +16,5 @@ export * from './ProjectsIcon';
 export * from './HomeIcon';
 export * from './HamburgerMenuIcon';
 export * from './CloseIcon';
+export * from './TestimonialsIcon';
+export * from './DoubleQuotes';

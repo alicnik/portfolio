@@ -11,7 +11,7 @@ export function Navbar() {
 	}, [location]);
 
 	return (
-		<header className="fixed top-0 pt-9 pb-20 px-7 w-full bg-gradient-to-b from-gray-50 via-gray-50 dark:from-gray-800 dark:via-gray-800">
+		<header className="fixed top-0 pt-9 z-10 pb-20 px-7 w-full bg-gradient-to-b from-gray-50 via-gray-50 dark:from-gray-800 dark:via-gray-800">
 			<div className="container mx-auto flex justify-between items-center h-7">
 				<MobileMenu open={mobileMenuOpen} setOpen={setMobileMenuOpen} />
 				<nav className="hidden md:block">

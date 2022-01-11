@@ -8,6 +8,7 @@ import {
 	BlogIcon,
 	ContactIcon,
 	HamburgerMenuIcon,
+	TestimonialsIcon,
 } from '~/components/icons';
 
 interface MobileMenuProps {
@@ -18,8 +19,8 @@ interface MobileMenuProps {
 export function MobileMenu({ open, setOpen }: MobileMenuProps) {
 	return (
 		<Dialog.Root open={open} onOpenChange={setOpen}>
-			<Dialog.Trigger className="md:hidden scale-150" asChild>
-				<HamburgerMenuIcon />
+			<Dialog.Trigger asChild>
+				<HamburgerMenuIcon className="md:hidden scale-150 cursor-pointer" />
 			</Dialog.Trigger>
 			<Dialog.Overlay
 				className={`
@@ -40,17 +41,19 @@ export function MobileMenu({ open, setOpen }: MobileMenuProps) {
 					</Dialog.Title>
 					<nav>
 						<ul className="flex flex-col gap-6 text-xl">
-							{['home', 'blog', 'projects', 'about', 'contact'].map((page) => (
-								<li key={page}>
-									<Link
-										to={page === 'home' ? '/' : `/${page}`}
-										className="capitalize flex items-center gap-4"
-									>
-										{menuIcons[page]}
-										<span>{page}</span>
-									</Link>
-								</li>
-							))}
+							{['home', 'projects', 'about', 'testimonials', 'contact'].map(
+								(page) => (
+									<li key={page}>
+										<Link
+											to={page === 'home' ? '/' : `/${page}`}
+											className="capitalize flex items-center gap-4"
+										>
+											{menuIcons[page]}
+											<span>{page}</span>
+										</Link>
+									</li>
+								),
+							)}
 						</ul>
 					</nav>
 				</Dialog.Content>
@@ -67,5 +70,6 @@ const menuIcons: { [index: string]: React.ReactNode } = {
 	blog: <BlogIcon />,
 	projects: <ProjectsIcon />,
 	about: <AboutIcon />,
+	testimonials: <TestimonialsIcon />,
 	contact: <ContactIcon />,
 };

@@ -1,5 +1,5 @@
 import { ProjectCard } from '~/components/common';
-import projects from '~/projects/manifest';
+import projects from '~/data/projects';
 
 export default function ProjectsRoute() {
 	return (

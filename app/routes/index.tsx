@@ -1,5 +1,5 @@
 import { Link, LinksFunction } from 'remix';
-import projects from '~/projects/manifest';
+import projects from '~/data/projects';
 import { Button, ExternalLink, HomepageIllustration } from '~/components/ui';
 import { ProjectCard } from '~/components/common';
 

@@ -3,7 +3,7 @@ import { LoaderFunction, useLoaderData } from 'remix';
 import invariant from 'tiny-invariant';
 import { GitHubIcon, GlobeIcon } from '~/components/icons';
 import { ExternalLink, ExternalLinkProps } from '~/components/ui';
-import projects from '~/projects/manifest';
+import projects from '~/data/projects';
 import { Project } from '~/types';
 
 export const loader: LoaderFunction = ({ params }): Project => {
