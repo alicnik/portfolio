@@ -13,7 +13,10 @@ export default function Testimonials() {
 			</p>
 			<div className="flex flex-col gap-6">
 				{feedback.map((testimonial) => (
-					<article className="p-4 relative shadow dark:shadow-lg border rounded border-gray-300 dark:border-gray-600">
+					<article
+						key={testimonial}
+						className="p-4 relative shadow dark:shadow-lg border rounded border-gray-300 dark:border-gray-600"
+					>
 						<DoubleQuotes className="absolute rotate-180 scale-[5] top-6 left-7 text-gray-300 dark:text-gray-600 text-opacity-30 z-[-1]" />
 						<p className="dark:bg-gray-900 bg-opacity-10 rounded">
 							{testimonial}

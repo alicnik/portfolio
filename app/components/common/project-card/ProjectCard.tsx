@@ -39,7 +39,9 @@ export function ProjectCard({
 						to={url}
 						className="underline underline-offset-2 mr-auto"
 					>
-						{responsive ? 'Deployment' : 'Deployment (desktop only)'}
+						{responsive
+							? 'Deployment (responsive)'
+							: 'Deployment (desktop only)'}
 					</ExternalLink>
 					<ExternalLink to={githubPrimary}>
 						<GitHubIcon label="GitHub repository link" />

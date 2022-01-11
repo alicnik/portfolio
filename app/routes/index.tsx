@@ -13,7 +13,7 @@ export default function Index() {
 			<h1 className="text-5xl font-graphic">Alex Nicholas</h1>
 			<h2 className="text-xl font-sans">Front-End Web Developer</h2>
 			<HomepageIllustration />
-			<ExternalLink to="/assets/cv.pdf">
+			<ExternalLink to="/assets/cv.pdf" underlined={false}>
 				<Button variant="outlined" className="mx-auto mb-12">
 					View CV
 				</Button>

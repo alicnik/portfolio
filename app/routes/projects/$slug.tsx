@@ -50,7 +50,11 @@ export default function SingleProject() {
 					to={project.url}
 					icon={<GlobeIcon />}
 					label="Deployment link"
-					text={project.responsive ? 'Deployment' : 'Deployment (desktop only)'}
+					text={
+						project.responsive
+							? 'Deployment (responsive)'
+							: 'Deployment (desktop only)'
+					}
 				/>
 			)}
 			<div>
