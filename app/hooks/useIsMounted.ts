@@ -1,6 +1,11 @@
 import * as React from 'react';
 import { useThemePreference } from '~/context';
 
+/**
+ * Hook to determine whether a component is mounted. Useful for
+ * avoiding flashes of animations, etc.
+ * @returns Current mounted state of the component
+ */
 export function useIsMounted() {
 	const { themePreference } = useThemePreference();
 	const isMounted = React.useRef(false);

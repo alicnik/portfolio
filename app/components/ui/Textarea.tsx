@@ -22,7 +22,7 @@ export function Textarea({
 				className="rounded py-2 px-3 bg-transparent border border-gray-700 dark:border-gray-300"
 				{...props}
 			/>
-			{isError && <p>{errorMessage}</p>}
+			{isError && <p className="text-fuchsia-400">{errorMessage}</p>}
 		</div>
 	);
 }

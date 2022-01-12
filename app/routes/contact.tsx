@@ -10,6 +10,13 @@ import invariant from 'tiny-invariant';
 import { LoadingIcon } from '~/components/icons';
 import { sendEmails } from '~/lib/sendgrid.server';
 
+interface ActionDataValue {
+	error: string;
+	name: string;
+	email: string;
+	message: string;
+}
+
 export const action: ActionFunction = async ({ request }) => {
 	const formData = await request.formData();
 	const name = formData.get('name');
@@ -22,32 +29,49 @@ export const action: ActionFunction = async ({ request }) => {
 
 	try {
 		sendEmails({ name, email, message });
-	} catch (err) {
-		console.error(err);
-		return 'There was an error';
+	} catch (error) {
+		return {
+			error,
+			name,
+			email,
+			message,
+		};
 	}
 
 	return redirect('/thank-you');
 };
 
 export default function ContactRoute() {
-	const actionData = useActionData();
+	const actionData = useActionData<ActionDataValue>();
 	const transition = useTransition();
-	console.log(transition);
+
+	console.log(actionData);
 
 	return (
 		<div className="container">
 			<h1 className="text-3xl font-display mb-8">Contact me</h1>
 			<Form method="post">
-				<TextInput label="Name" name="name" autoComplete="name" required />
+				<TextInput
+					label="Name"
+					name="name"
+					autoComplete="name"
+					defaultValue={actionData?.name}
+					required
+				/>
 				<TextInput
 					label="Email"
 					name="email"
 					autoComplete="email"
+					defaultValue={actionData?.email}
 					pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
 					required
 				/>
-				<Textarea label="Message" name="message" required />
+				<Textarea
+					label="Message"
+					name="message"
+					defaultValue={actionData?.message}
+					required
+				/>
 				<Button variant="outlined" type="submit" className="my-10 w-28 h-12">
 					{transition.submission ? (
 						<LoadingIcon className="mx-auto" />
@@ -55,13 +79,23 @@ export default function ContactRoute() {
 						'Submit'
 					)}
 				</Button>
-				<p>
-					Alternatively, you can email me directly at{' '}
-					<ExternalLink to="mailto:me@alexnicholas.dev">
-						me@alexnicholas.dev
-					</ExternalLink>
-					.
-				</p>
+				{actionData?.error ? (
+					<p className="text-fuchsia-400">
+						Sorry, there was an error, please try again or email me directly at{' '}
+						<ExternalLink to="mailto:me@alexnicholas.dev">
+							me@alexnicholas.dev
+						</ExternalLink>
+						.
+					</p>
+				) : (
+					<p>
+						Alternatively, you can email me directly at{' '}
+						<ExternalLink to="mailto:me@alexnicholas.dev">
+							me@alexnicholas.dev
+						</ExternalLink>
+						.
+					</p>
+				)}
 			</Form>
 		</div>
 	);

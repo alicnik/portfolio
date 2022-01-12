@@ -6,18 +6,39 @@ const baseConfig = {
 	},
 };
 
-export async function sendEmails({ name, email, message }: AlertEmailArgs) {
-	await sendAlertEmail({ name, email, message });
+interface SendEmailsArgs {
+	name: string;
+	/** The email address of the person who submitted the form */
+	email: string;
+	message: string;
+	/** The email address of the recipient of the alert, defaults to me! */
+	alertRecipient?: string;
+}
+
+/**
+ *
+ * @param
+ */
+export async function sendEmails({
+	name,
+	email,
+	message,
+	alertRecipient = 'al.nicholas@gmail.com',
+}: SendEmailsArgs) {
+	await sendAlertEmail({ name, email, message, alertRecipient });
 	await sendConfirmationEmail({ name, email });
 }
 
-interface AlertEmailArgs {
-	name: string;
-	email: string;
-	message: string;
-}
-
-async function sendAlertEmail({ name, email, message }: AlertEmailArgs) {
+/**
+ * Send an alert email to myself to let me know that someone has been in touch
+ * @param Object The name, email address, and message submitted via the form
+ */
+async function sendAlertEmail({
+	name,
+	email,
+	message,
+	alertRecipient,
+}: SendEmailsArgs) {
 	await fetch('https://api.sendgrid.com/v3/mail/send', {
 		...baseConfig,
 		body: JSON.stringify({
@@ -27,7 +48,7 @@ async function sendAlertEmail({ name, email, message }: AlertEmailArgs) {
 			},
 			personalizations: [
 				{
-					to: [{ email: 'al.nicholas@gmail.com' }],
+					to: [{ email: alertRecipient }],
 					dynamic_template_data: { name, email, message },
 				},
 			],
@@ -41,6 +62,10 @@ interface ConfirmationEmailArgs {
 	email: string;
 }
 
+/**
+ * Sends a confirmation email to the person who submitted the form.
+ * @param Object The name and email address of the person who submitted the form
+ */
 async function sendConfirmationEmail({ name, email }: ConfirmationEmailArgs) {
 	await fetch('https://api.sendgrid.com/v3/mail/send', {
 		...baseConfig,

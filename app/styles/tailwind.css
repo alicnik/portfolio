@@ -614,6 +614,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   aspect-ratio: 16 / 9;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
 .h-7 {
   height: 1.75rem;
 }
@@ -626,12 +630,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 100%;
 }
 
-.h-12 {
-  height: 3rem;
-}
-
 .w-full {
   width: 100%;
+}
+
+.w-28 {
+  width: 7rem;
 }
 
 .w-max {
@@ -646,14 +650,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-72 {
   width: 18rem;
-}
-
-.w-7 {
-  width: 1.75rem;
-}
-
-.w-28 {
-  width: 7rem;
 }
 
 .rotate-180 {
@@ -909,10 +905,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 2rem;
 }
 
-.p-0 {
-  padding: 0px;
-}
-
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -1062,6 +1054,26 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-gray-800 {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
+.text-fuchsia-400 {
+  --tw-text-opacity: 1;
+  color: rgb(232 121 249 / var(--tw-text-opacity));
+}
+
+.text-fuchsia-300 {
+  --tw-text-opacity: 1;
+  color: rgb(240 171 252 / var(--tw-text-opacity));
+}
+
+.text-fuchsia-500 {
+  --tw-text-opacity: 1;
+  color: rgb(217 70 239 / var(--tw-text-opacity));
+}
+
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
 .text-opacity-30 {
