@@ -19,6 +19,8 @@ export const loader: LoaderFunction = ({ params }): Project => {
 export default function SingleProject() {
 	const project = useLoaderData<Project>();
 
+	console.log();
+
 	return (
 		<article className="container mx-auto">
 			<h1 className="text-4xl mb-6 md:text-5xl font-graphic md:mb-8">
@@ -41,14 +43,13 @@ export default function SingleProject() {
 					</span>
 				))}
 			</div>
-			<p className="my-6">
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet
-				distinctio, fugit nemo aut voluptatum laborum. Aspernatur nemo explicabo
-				quisquam iste suscipit esse, culpa voluptates quos ipsam corporis, amet
-				ipsa? Vero alias facilis saepe quis beatae rerum quasi nesciunt
-				voluptatem corrupti labore magni nisi iure, iste pariatur, eligendi
-				cupiditate.
-			</p>
+			<div className="my-6">
+				{project.description.split('\n').map((paragraph) => (
+					<p key={paragraph} className="pb-4">
+						{paragraph}
+					</p>
+				))}
+			</div>
 			{project.url && (
 				<StyledExternalLink
 					to={project.url}
