@@ -19,11 +19,17 @@ export function ProjectCard({
 				<h3 className="font-display text-xl mb-2 underline underline-offset-4">
 					{name}
 				</h3>
-				<img
-					src={thumbnail}
-					alt={name}
-					className={clsx('rounded shadow aspect-video w-full')}
-				/>
+				{thumbnail ? (
+					<img
+						src={thumbnail}
+						alt={name}
+						className={clsx('rounded shadow aspect-video w-full')}
+					/>
+				) : (
+					<div className="rounded border shadow border-gray-200 dark:border-gray-600 bg-gray-200 dark:bg-gray-900 bg-opacity-20 flex justify-center items-center w-full aspect-video font-graphic text-3xl">
+						{name}
+					</div>
+				)}
 				<p>{summary}</p>
 			</Link>
 			{name === 'Portfolio Website' || !url ? (

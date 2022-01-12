@@ -3,8 +3,8 @@ export interface Project {
 	slug: string;
 	summary: string;
 	description: string;
-	image: string;
-	thumbnail: string;
+	image: string | null;
+	thumbnail: string | null;
 	url?: string;
 	githubPrimary: string;
 	githubSecondary?: string;
