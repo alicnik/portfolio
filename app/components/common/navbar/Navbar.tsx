@@ -18,7 +18,10 @@ export function Navbar() {
 				<nav className="hidden md:block">
 					<ul className="flex gap-8">
 						<li>
-							<Link to="/" className="font-graphic text-xl lg:text-2xl">
+							<Link
+								to="/"
+								className="font-graphic text-xl lg:text-2xl md:mr-4 lg:mr-8"
+							>
 								AN
 							</Link>
 						</li>

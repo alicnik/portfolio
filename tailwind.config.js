@@ -8,7 +8,7 @@ module.exports = {
 	theme: {
 		extend: {
 			screens: {
-				mobile: { max: '768px' },
+				mobile: { max: '767px' },
 			},
 			fontFamily: {
 				sans: ['Raleway', ...defaultTheme.fontFamily.sans],
