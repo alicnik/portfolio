@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { Dialog } from '~/components/radix';
 import { Link } from 'remix';
 import {
@@ -17,6 +18,34 @@ interface MobileMenuProps {
 }
 
 export function MobileMenu({ open, setOpen }: MobileMenuProps) {
+	const navLinkRefs = React.useRef<HTMLElement[]>([]);
+
+	const navigateWithArrowKeys = (e: KeyboardEvent) => {
+		const activeElement = document.activeElement as HTMLElement;
+		const activeIndex = activeElement.dataset['index'];
+		const lastIndex = navLinkRefs.current.length - 1;
+
+		if (e.key === 'ArrowDown') {
+			const nextIndex =
+				activeIndex && Number(activeIndex) !== lastIndex
+					? Number(activeIndex) + 1
+					: 0;
+			navLinkRefs.current[nextIndex].focus();
+		}
+		if (e.key === 'ArrowUp') {
+			const previousIndex =
+				activeIndex && Number(activeIndex) !== 0
+					? Number(activeIndex) - 1
+					: lastIndex;
+			navLinkRefs.current[previousIndex].focus();
+		}
+	};
+
+	React.useEffect(() => {
+		document.addEventListener('keydown', navigateWithArrowKeys);
+		return () => document.removeEventListener('keydown', navigateWithArrowKeys);
+	}, []);
+
 	return (
 		<Dialog.Root open={open} onOpenChange={setOpen}>
 			<Dialog.Trigger asChild>
@@ -42,10 +71,12 @@ export function MobileMenu({ open, setOpen }: MobileMenuProps) {
 					<nav>
 						<ul className="flex flex-col gap-6 text-xl">
 							{['home', 'projects', 'about', 'testimonials', 'contact'].map(
-								(page) => (
+								(page, index) => (
 									<li key={page}>
 										<Link
 											to={page === 'home' ? '/' : `/${page}`}
+											ref={(el) => el && (navLinkRefs.current[index] = el)}
+											data-index={index}
 											className="capitalize flex items-center gap-4"
 										>
 											{menuIcons[page]}

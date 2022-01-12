@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { useThemePreference } from '~/context';
 
+// TODO Remove if HamburgerIcon goes completely unused?
+
 /**
  * Hook to determine whether a component is mounted. Useful for
  * avoiding flashes of animations, etc.
@@ -13,7 +15,7 @@ export function useIsMounted() {
 	React.useEffect(() => {
 		// Wait for light/dark preference to be resolved before
 		// asserting that component is mounted to avoid
-		// unwanted animation flash (specifically in)
+		// unwanted animation flash
 		if (!themePreference) {
 			return;
 		}
