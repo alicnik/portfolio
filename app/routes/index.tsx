@@ -22,7 +22,7 @@ export const links: LinksFunction = () => {
 
 export default function Index() {
 	return (
-		<div className="container">
+		<div className="w-full">
 			<section className="md:grid grid-cols-5 gap-12 items-center md:my-16 lg:my-24">
 				<div className="col-span-2">
 					<h1 className="text-5xl font-graphic md:text-6xl">Alex Nicholas</h1>
@@ -41,9 +41,9 @@ export default function Index() {
 				</div>
 				<HomepageIllustration className="mobile:hidden md:block col-span-3" />
 			</section>
-			<section>
+			<section className="w-full">
 				<h2 className="mt-6 mb-8 font-display text-4xl">Recent projects</h2>
-				<div className="grid gap-6 items-stretch md:grid-cols-2 lg:grid-cols-3">
+				<div className="grid gap-6 mx-auto md:grid-cols-2 lg:grid-cols-3 place-items-center items-stretch">
 					{projects.slice(0, 3).map((project, index) => (
 						<ProjectCard
 							key={project.name}

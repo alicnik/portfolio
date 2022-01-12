@@ -21,7 +21,7 @@ export function ProjectCard({
 	return (
 		<div
 			className={clsx(
-				'px-6 py-8 my-6 border rounded border-gray-300 dark:border-gray-600',
+				'px-6 py-8 my-6 border rounded border-gray-300 dark:border-gray-600 max-w-[350px]',
 				className,
 			)}
 		>

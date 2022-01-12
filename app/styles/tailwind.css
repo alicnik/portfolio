@@ -668,6 +668,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   max-width: 24rem;
 }
 
+.max-w-\[350px\] {
+  max-width: 350px;
+}
+
 .translate-y-\[0\.5px\] {
   --tw-translate-y: 0.5px;
   transform: var(--tw-transform);
@@ -815,6 +819,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.place-content-center {
+  place-content: center;
+}
+
+.place-items-center {
+  place-items: center;
 }
 
 .items-center {
