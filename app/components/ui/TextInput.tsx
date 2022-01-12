@@ -28,8 +28,8 @@ export function TextInput({
 				pattern={pattern}
 				required={required}
 				onBlur={(e) => {
-					if (required && !e.target.value) {
-						setIsError(true);
+					if (required && !pattern) {
+						setIsError(!e.target.value);
 						return;
 					}
 					if (pattern) {

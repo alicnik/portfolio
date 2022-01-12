@@ -49,7 +49,7 @@ export function MobileMenu({ open, setOpen }: MobileMenuProps) {
 	return (
 		<Dialog.Root open={open} onOpenChange={setOpen}>
 			<Dialog.Trigger asChild>
-				<HamburgerMenuIcon className="md:hidden scale-150 cursor-pointer" />
+				<HamburgerMenuIcon className="md:hidden scale-[1.75] cursor-pointer appearance-none" />
 			</Dialog.Trigger>
 			<Dialog.Overlay
 				className={`
@@ -89,7 +89,7 @@ export function MobileMenu({ open, setOpen }: MobileMenuProps) {
 					</nav>
 				</Dialog.Content>
 				<Dialog.Close asChild>
-					<CloseIcon className="absolute top-9 right-7 cursor-pointer data-state-open:animate-fade-in text-gray-50" />
+					<CloseIcon className="appearance-none absolute top-9 right-7 cursor-pointer data-state-open:animate-fade-in text-gray-50 scale-125" />
 				</Dialog.Close>
 			</Dialog.Overlay>
 		</Dialog.Root>

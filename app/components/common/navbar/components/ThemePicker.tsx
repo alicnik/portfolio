@@ -15,9 +15,9 @@ export function ThemePicker() {
 		if (!themePreference) return;
 		setThemeIcon(
 			themePreference === 'light' ? (
-				<SunIcon className="scale-125" />
+				<SunIcon className="scale-150" />
 			) : (
-				<MoonIcon className="scale-125" />
+				<MoonIcon className="scale-150" />
 			),
 		);
 	}, [themePreference]);
@@ -25,13 +25,16 @@ export function ThemePicker() {
 	return (
 		<Dropdown.Root>
 			<Dropdown.Trigger asChild>
-				<span>{themeIcon}</span>
+				<span className="appearance-none">{themeIcon}</span>
 			</Dropdown.Trigger>
-			<Dropdown.Content className="py-2 flex flex-col gap-1" sideOffset={10}>
+			<Dropdown.Content
+				className="pt-4 pr-6 pl-4 pb-3 flex flex-col gap-2"
+				sideOffset={10}
+			>
 				{themeOptions.map((option) => (
 					<Dropdown.CheckItem
 						key={option}
-						className="capitalize cursor-pointer flex gap-2 items-center"
+						className="capitalize cursor-pointer flex gap-3 items-center text-lg"
 						checked={themePreference === option}
 						onCheckedChange={(checked) => {
 							if (checked) updateThemePreference(option);
@@ -47,7 +50,7 @@ export function ThemePicker() {
 }
 
 const themeIcons: { [index: string]: React.ReactNode } = {
-	light: <SunIcon />,
-	dark: <MoonIcon />,
-	system: <GlobeIcon />,
+	light: <SunIcon className="scale-125" />,
+	dark: <MoonIcon className="scale-125" />,
+	system: <GlobeIcon className="scale-125" />,
 };

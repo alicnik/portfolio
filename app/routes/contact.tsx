@@ -72,7 +72,12 @@ export default function ContactRoute() {
 					defaultValue={actionData?.message}
 					required
 				/>
-				<Button variant="outlined" type="submit" className="my-10 w-28 h-12">
+				<Button
+					variant="outlined"
+					type="submit"
+					className="my-10 w-28 h-12"
+					defaultPadding={false}
+				>
 					{transition.submission ? (
 						<LoadingIcon className="mx-auto" />
 					) : (

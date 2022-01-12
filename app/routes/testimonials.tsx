@@ -17,11 +17,9 @@ export default function Testimonials() {
 						key={testimonial}
 						className="p-4 relative shadow dark:shadow-lg border rounded border-gray-300 dark:border-gray-600"
 					>
-						<DoubleQuotes className="absolute rotate-180 scale-[5] top-6 left-7 text-gray-300 dark:text-gray-600 text-opacity-30 z-[-1]" />
-						<p className="dark:bg-gray-900 bg-opacity-10 rounded">
-							{testimonial}
-						</p>
-						<DoubleQuotes className="absolute scale-[4] bottom-6 right-8 text-gray-300 dark:text-gray-600 text-opacity-30 z-[-1]" />
+						<DoubleQuotes className="absolute rotate-180 scale-[5] top-6 left-7 text-gray-300 dark:text-gray-600 text-opacity-30 dark:text-opacity-20 z-[-1]" />
+						<p>{testimonial}</p>
+						<DoubleQuotes className="absolute scale-[4] bottom-6 right-8 text-gray-300 dark:text-gray-600 text-opacity-30 dark:text-opacity-20 z-[-1]" />
 					</article>
 				))}
 			</div>

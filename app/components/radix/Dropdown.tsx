@@ -13,7 +13,7 @@ export const Content = ({
 }: React.PropsWithChildren<DropdownPrimitive.DropdownMenuContentProps>) => (
 	<DropdownPrimitive.Content
 		className={clsx(
-			'p-3 pr-4 rounded bg-gray-50 shadow-md dark:bg-gray-800 dark:shadow-gray-900',
+			'p-3 pr-4 rounded border border-gray-50 border-opacity-20 bg-gray-50 shadow-lg dark:bg-gray-800 dark:shadow-gray-900',
 			className,
 		)}
 		{...props}
