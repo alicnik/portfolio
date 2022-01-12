@@ -21,12 +21,16 @@ export default function SingleProject() {
 
 	return (
 		<article className="container mx-auto">
-			<h1 className="text-3xl font-display mb-6">{project.name}</h1>
-			<img
-				src={project.image}
-				alt={project.name}
-				className="w-full aspect-video"
-			/>
+			<h1 className="text-4xl mb-6 md:text-5xl font-graphic md:mb-8">
+				{project.name}
+			</h1>
+			{project.image ? (
+				<img
+					src={project.image}
+					alt={project.name}
+					className="w-full aspect-video"
+				/>
+			) : null}
 			<div className="flex flex-wrap gap-x-3 gap-y-2 my-4">
 				{project.stack.map((technology) => (
 					<span

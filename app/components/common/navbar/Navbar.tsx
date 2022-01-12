@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Link, useLocation } from 'remix';
 import { ThemePicker, MobileMenu } from './components';
+import { NavLinks } from './components';
 
 export function Navbar() {
 	const location = useLocation();
@@ -12,22 +13,16 @@ export function Navbar() {
 
 	return (
 		<header className="fixed top-0 pt-9 z-10 pb-20 px-7 w-full bg-gradient-to-b from-gray-50 via-gray-50 dark:from-gray-800 dark:via-gray-800">
-			<div className="container mx-auto flex justify-between items-center min-h-8">
+			<div className="mx-auto max-w-6xl flex justify-between items-center min-h-8">
 				<MobileMenu open={mobileMenuOpen} setOpen={setMobileMenuOpen} />
 				<nav className="hidden md:block">
-					<ul className="flex">
+					<ul className="flex gap-8">
 						<li>
-							<Link to="/">AN</Link>
+							<Link to="/" className="font-graphic text-xl lg:text-2xl">
+								AN
+							</Link>
 						</li>
-						<li>
-							<Link to="/blog">Blog</Link>
-						</li>
-						<li>
-							<Link to="/projects">Projects</Link>
-						</li>
-						<li>
-							<Link to="/about">About</Link>
-						</li>
+						<NavLinks />
 					</ul>
 				</nav>
 				{mobileMenuOpen ? null : (

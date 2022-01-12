@@ -4,6 +4,10 @@ import { GitHubIcon } from '~/components/icons';
 import { ExternalLink } from '~/components/ui';
 import { Project } from '~/types';
 
+interface ProjectCardProps extends Project {
+	className?: string;
+}
+
 export function ProjectCard({
 	name,
 	slug,
@@ -12,9 +16,15 @@ export function ProjectCard({
 	githubPrimary,
 	thumbnail,
 	responsive,
-}: Project) {
+	className,
+}: ProjectCardProps) {
 	return (
-		<div className="px-6 py-8 my-6 border rounded border-gray-300 dark:border-gray-600">
+		<div
+			className={clsx(
+				'px-6 py-8 my-6 border rounded border-gray-300 dark:border-gray-600',
+				className,
+			)}
+		>
 			<Link to={`/projects/${slug}`} className="flex flex-col gap-4 mb-6">
 				<h3 className="font-display text-xl mb-2 underline underline-offset-4">
 					{name}

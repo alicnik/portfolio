@@ -25,7 +25,12 @@ export function ThemePicker() {
 	return (
 		<Dropdown.Root>
 			<Dropdown.Trigger asChild>
-				<span className="appearance-none">{themeIcon}</span>
+				<span
+					className="appearance-none cursor-pointer lg:scale-125"
+					tabIndex={0}
+				>
+					{themeIcon}
+				</span>
 			</Dropdown.Trigger>
 			<Dropdown.Content
 				className="pt-4 pr-6 pl-4 pb-3 flex flex-col gap-2"

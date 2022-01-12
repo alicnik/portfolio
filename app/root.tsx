@@ -52,7 +52,7 @@ function App() {
 			</head>
 			<body className="font-sans leading-relaxed bg-gray-50 text-gray-900 dark:text-gray-100 dark:bg-gray-800">
 				<Navbar />
-				<main className="px-6 pt-32 pb-8 container mx-auto">
+				<main className="px-6 pt-32 max-w-6xl pb-8 container mx-auto">
 					<Outlet />
 				</main>
 				<ScrollRestoration />

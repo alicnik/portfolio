@@ -7,32 +7,15 @@ module.exports = {
 	darkMode: 'class',
 	theme: {
 		extend: {
+			screens: {
+				mobile: { max: '768px' },
+			},
 			fontFamily: {
 				sans: ['Raleway', ...defaultTheme.fontFamily.sans],
 				graphic: ['"IM Fell English"', ...defaultTheme.fontFamily.serif],
 				display: ['"Merriweather"', ...defaultTheme.fontFamily.serif],
 			},
 			keyframes: {
-				hamburgerTopOpen: {
-					'0%': { transform: 'none' },
-					'50%': { transform: 'translateY(12px)' },
-					'100%': { transform: 'translateY(12px) rotate(45deg) scaleX(1.2)' },
-				},
-				hamburgerTopClose: {
-					'0%': { transform: 'translateY(12px) rotate(-45deg) scaleX(1.2)' },
-					'50%': { transform: 'translateY(12px)' },
-					'100%': { transform: 'none' },
-				},
-				hamburgerBottomOpen: {
-					'0%': { transform: 'none' },
-					'50%': { transform: 'translateY(-12px)' },
-					'100%': { transform: 'translateY(-12px) rotate(-45deg) scaleX(1.2)' },
-				},
-				hamburgerBottomClose: {
-					'0%': { transform: 'translateY(-12px) rotate(45deg) scaleX(1.2)' },
-					'50%': { transform: 'translateY(-12px)' },
-					'100%': { transform: 'none' },
-				},
 				fadeIn: {
 					'0%': { opacity: 0 },
 					'100%': { opacity: 1 },
@@ -51,10 +34,6 @@ module.exports = {
 				},
 			},
 			animation: {
-				'hamburger-top-open': 'hamburgerTopOpen 0.4s ease forwards',
-				'hamburger-top-close': 'hamburgerTopClose 0.4s ease forwards',
-				'hamburger-bottom-open': 'hamburgerBottomOpen 0.4s ease forwards',
-				'hamburger-bottom-close': 'hamburgerBottomClose 0.4s ease forwards',
 				'fade-in': 'fadeIn 200ms ease-out',
 				'fade-out': 'fadeOut 200ms ease-out',
 				'slide-in-left': 'slideInLeft 200ms ease-out',

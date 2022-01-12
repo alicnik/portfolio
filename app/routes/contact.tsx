@@ -48,42 +48,46 @@ export default function ContactRoute() {
 	console.log(actionData);
 
 	return (
-		<div className="container">
-			<h1 className="text-3xl font-display mb-8">Contact me</h1>
-			<Form method="post">
-				<TextInput
-					label="Name"
-					name="name"
-					autoComplete="name"
-					defaultValue={actionData?.name}
-					required
-				/>
-				<TextInput
-					label="Email"
-					name="email"
-					autoComplete="email"
-					defaultValue={actionData?.email}
-					pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
-					required
-				/>
-				<Textarea
-					label="Message"
-					name="message"
-					defaultValue={actionData?.message}
-					required
-				/>
-				<Button
-					variant="outlined"
-					type="submit"
-					className="my-10 w-28 h-12"
-					defaultPadding={false}
-				>
-					{transition.submission ? (
-						<LoadingIcon className="mx-auto" />
-					) : (
-						'Submit'
-					)}
-				</Button>
+		<section className="mx-auto md:grid md:grid-cols-2 gap-8 lg:gap-20">
+			<div>
+				<h1 className="text-3xl font-display mb-8">Contact me</h1>
+				<Form method="post">
+					<TextInput
+						label="Name"
+						name="name"
+						autoComplete="name"
+						defaultValue={actionData?.name}
+						required
+					/>
+					<TextInput
+						label="Email"
+						name="email"
+						autoComplete="email"
+						defaultValue={actionData?.email}
+						pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+						required
+					/>
+					<Textarea
+						label="Message"
+						name="message"
+						defaultValue={actionData?.message}
+						required
+					/>
+					<Button
+						variant="outlined"
+						type="submit"
+						className="my-10 w-28 h-12"
+						defaultPadding={false}
+					>
+						{transition.submission ? (
+							<LoadingIcon className="mx-auto" />
+						) : (
+							'Submit'
+						)}
+					</Button>
+				</Form>
+			</div>
+			<div className="md:mt-20">
 				{actionData?.error ? (
 					<p className="text-fuchsia-400">
 						Sorry, there was an error, please try again or email me directly at{' '}
@@ -101,7 +105,7 @@ export default function ContactRoute() {
 						.
 					</p>
 				)}
-			</Form>
-		</div>
+			</div>
+		</section>
 	);
 }

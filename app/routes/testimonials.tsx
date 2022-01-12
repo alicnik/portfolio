@@ -11,11 +11,11 @@ export default function Testimonials() {
 				both courses on which I was a TA, the students were invited to provide
 				feedback on the TAs. Below are some of the comments I received.
 			</p>
-			<div className="flex flex-col gap-6">
+			<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 				{feedback.map((testimonial) => (
 					<article
 						key={testimonial}
-						className="p-4 relative shadow dark:shadow-lg border rounded border-gray-300 dark:border-gray-600"
+						className="p-4 relative shadow dark:shadow-lg border rounded border-gray-300 dark:border-gray-600 flex justify-center items-center"
 					>
 						<DoubleQuotes className="absolute rotate-180 scale-[5] top-6 left-7 text-gray-300 dark:text-gray-600 text-opacity-30 dark:text-opacity-20 z-[-1]" />
 						<p>{testimonial}</p>
