@@ -57,7 +57,9 @@ async function sendAlertEmail({
 			],
 			template_id: 'd-8776a89b59ee480e9d14a6d7449a140e',
 		}),
-	}).then((res) => console.log('alert response:', res));
+	})
+		.then((res) => console.log('alert response:', res))
+		.catch((err) => console.error(err));
 }
 
 interface ConfirmationEmailArgs {
@@ -86,5 +88,7 @@ async function sendConfirmationEmail({ name, email }: ConfirmationEmailArgs) {
 			],
 			template_id: 'd-5d971a987fd04d4cb4f84fc62f78f11d',
 		}),
-	}).then((res) => console.log('confirmation response:', res));
+	})
+		.then((res) => console.log('confirmation response:', res))
+		.catch((err) => console.error(err));
 }

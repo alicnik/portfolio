@@ -28,7 +28,7 @@ export const action: ActionFunction = async ({ request }) => {
 	invariant(typeof message === 'string');
 
 	try {
-		sendEmails({ name, email, message });
+		await sendEmails({ name, email, message });
 	} catch (error) {
 		console.error(error);
 		return {
