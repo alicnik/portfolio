@@ -39,6 +39,7 @@ async function sendAlertEmail({
 	message,
 	alertRecipient,
 }: SendEmailsArgs) {
+	console.log('sending alert email');
 	await fetch('https://api.sendgrid.com/v3/mail/send', {
 		...baseConfig,
 		body: JSON.stringify({
@@ -67,6 +68,7 @@ interface ConfirmationEmailArgs {
  * @param Object The name and email address of the person who submitted the form
  */
 async function sendConfirmationEmail({ name, email }: ConfirmationEmailArgs) {
+	console.log('sending confirmation email to', email);
 	await fetch('https://api.sendgrid.com/v3/mail/send', {
 		...baseConfig,
 		body: JSON.stringify({
