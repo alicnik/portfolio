@@ -79,16 +79,36 @@ export default function App() {
 
 export function CatchBoundary() {
 	const caught = useCatch();
-	console.log(caught);
 
 	return (
 		<ThemePreferenceProvider>
 			<Document>
-				<div className="error-container">
+				<div>
 					<h1 className="text-2xl">This is not the page you're looking for</h1>
 					<Link to="/">
 						<Button variant="outlined" className="my-6">
 							Move along
+						</Button>
+					</Link>
+				</div>
+			</Document>
+		</ThemePreferenceProvider>
+	);
+}
+
+export function ErrorBoundary() {
+	return (
+		<ThemePreferenceProvider>
+			<Document>
+				<div>
+					<h1 className="text-2xl mb-6">Something went wrong.</h1>
+					<p className="text-lg">
+						If this issue persists, please let me know via the{' '}
+						<Link to="/contact">contact page</Link>.
+					</p>
+					<Link to="/">
+						<Button variant="outlined" className="my-6">
+							Back to safety
 						</Button>
 					</Link>
 				</div>
