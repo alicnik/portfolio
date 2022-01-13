@@ -32,7 +32,7 @@ const manifest: Project[] = [
 			'An update was overdue, Remix had recently gone open source and Tailwind v.3 had been released with a just-in-time compiler and arbitrary values. In other words, the stars aligned.',
 		description:
 			"I wrote my original portfolio in Svelte. There were some elements I liked, but I was 3 months out of bootcamp and knew much less than I now do about web development. I also wanted to update the stack as I was leaning more heavily into the React ecosystem. Remix had always interested me for its focus on the request/response cycle and the power of forms so when it went open source I delved straight in. I had worked with Tailwind in v.2 and had a slight love/hate relationship with it, but so many of my gripes were resolved in v.3, especially with the introduction of arbitrary values for one-off values that don't justify a config update.\nRemix was a delight to work with and felt like it drew on the best bits of PHP, React, and Web APIs in general. Tailwind felt a little gimmicky at first but it really came into its own when making the site responsive. The biggest challenges were working with SSR and hydration. While I'd already worked with SSR in Next.js on my Trello Clone, I had a lot of trouble implementing a dark mode setting that would load without a flash of the wrong theme and avoid errors in hydration.",
-		image: null,
+		image: '/images/portfolio.webp',
 		thumbnail: '/images/portfolio-sm.webp',
 		url: 'https://alexnicholas.dev',
 		githubPrimary: 'https://github.com/alicnik/portfolio',
