@@ -25,7 +25,9 @@ export async function sendEmails({
 	message,
 	alertRecipient = 'al.nicholas@gmail.com',
 }: SendEmailsArgs) {
+	console.log('calling sendAlert');
 	await sendAlertEmail({ name, email, message, alertRecipient });
+	console.log('calling sendConfirmation');
 	await sendConfirmationEmail({ name, email });
 }
 
@@ -55,7 +57,7 @@ async function sendAlertEmail({
 			],
 			template_id: 'd-8776a89b59ee480e9d14a6d7449a140e',
 		}),
-	});
+	}).then((res) => console.log('alert response:', res));
 }
 
 interface ConfirmationEmailArgs {
@@ -84,5 +86,5 @@ async function sendConfirmationEmail({ name, email }: ConfirmationEmailArgs) {
 			],
 			template_id: 'd-5d971a987fd04d4cb4f84fc62f78f11d',
 		}),
-	});
+	}).then((res) => console.log('confirmation response:', res));
 }
