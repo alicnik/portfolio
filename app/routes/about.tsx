@@ -65,18 +65,18 @@ export default function AboutRoute() {
 			<section>
 				<h2 className="text-3xl font-display mb-6">Where am I going?</h2>
 				<p className="mb-4">
-					This sounds artificial, but I wan't to be the best coder I can be.
+					This sounds artificial, but I want to be the best coder I can be.
 					Someone another developer would be glad to work with. Someone who
 					writes clean, well-documented, maintainable code that a newcomer could
 					navigate with relative ease.
 				</p>
 				<p className="mb-4">
-					At the moment, I'm looking for work having just completed some
+					At the moment, I'm looking for work, having just completed some
 					contract work with General Assembly as a Teaching Assistant. I loved
 					it but it wasn't pushing me.
 				</p>
 				<p className="mb-4">
-					There's a cogent argument to be had that's I'm slightly eccentric. I
+					There's a cogent argument to be had that I'm slightly eccentric. I
 					like to think it's endearing. The dream is to work somewhere similarly
 					offbeat. The sort of place with an office dog (this is negotiable).
 				</p>
