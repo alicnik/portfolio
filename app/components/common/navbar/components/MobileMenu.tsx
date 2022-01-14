@@ -33,7 +33,7 @@ export function MobileMenu({ open, setOpen }: MobileMenuProps) {
 					</Dialog.Title>
 					<nav>
 						<ul className="flex flex-col gap-6 text-xl">
-							<NavLinks />
+							<NavLinks isMobile />
 						</ul>
 					</nav>
 				</Dialog.Content>

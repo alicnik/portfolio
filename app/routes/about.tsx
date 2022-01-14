@@ -13,7 +13,9 @@ export default function AboutRoute() {
 					<p className="mb-4">
 						Hi, I'm <span className="font-graphic text-lg">Alex</span>. I came
 						to coding later in life than I would have liked, but I'm making up
-						for lost time. This is me in a garden:
+						for lost time. This is me in a garden
+						<span className="md:hidden">:</span>
+						<span className="mobile:hidden"> &#8594;</span>
 					</p>
 					<img
 						src="/images/profile-photo.webp"
