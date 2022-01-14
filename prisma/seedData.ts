@@ -1,6 +1,51 @@
-import type { Project } from '~/types';
+export const packages = {
+	react: { name: 'React', url: 'https://github.com/facebook/react' },
+	typeScript: {
+		name: 'TypeScript',
+		url: 'https://github.com/microsoft/typescript',
+	},
+	next: { name: 'Next.js', url: 'https://github.com/vercel/next.js' },
+	reactQuery: {
+		name: 'React Query',
+		url: 'https://github.com/tannerlinsley/react-query',
+	},
+	java: { name: 'Java', url: 'https://www.java.com/en/' },
+	springBoot: { name: 'Spring Boot', url: 'https://spring.io/' },
+	radixUI: { name: 'Radix-UI', url: 'https://github.com/radix-ui' },
+	vanillaExtract: {
+		name: 'Vanilla Extract CSS',
+		url: 'https://github.com/seek-oss/vanilla-extract',
+	},
+	node: { name: 'Node.js', url: 'https://github.com/nodejs/node' },
+	oclif: { name: 'oclif', url: 'https://github.com/oclif/oclif' },
+	styledComponents: { name: 'Styled Components' },
+	python: { name: 'Python' },
+	flask: { name: 'Flask' },
+	postgres: { name: 'PostgreSQL' },
+	materialUI: { name: 'Material-UI' },
+	yup: { name: 'Yup' },
+	reactHookForm: { name: 'React Hook Form' },
+	remix: { name: 'Remix', url: 'https://github.com/remix-run/remix' },
+	tailwind: {
+		name: 'Tailwind',
+		url: 'https://github.com/tailwindlabs/tailwindcss',
+	},
+	sass: { name: 'Sass' },
+	express: { name: 'Express' },
+	mongoose: { name: 'Mongoose' },
+	mongoDB: { name: 'MongoDB' },
+	cloudinary: { name: 'Cloudinary' },
+	mapbox: { name: 'Mapbox' },
+	mocha: { name: 'Mocha' },
+	chai: { name: 'Chai' },
+	reactDnd: { name: 'react-dnd' },
+	bulma: { name: 'Bulma' },
+	html: { name: 'HTML' },
+	css: { name: 'CSS' },
+	javascript: { name: 'JavaScript' },
+};
 
-const manifest: Project[] = [
+export const projects = [
 	{
 		name: 'Trello Clone',
 		slug: 'trello-clone',
@@ -14,15 +59,17 @@ const manifest: Project[] = [
 		githubPrimary: 'https://github.com/alicnik/trello-clone-client',
 		githubSecondary: 'https://github.com/alicnik/trello-clone',
 		responsive: false,
+		published: true,
+		projectDate: new Date(2022, 0),
 		stack: [
-			'React',
-			'TypeScript',
-			'Next.js',
-			'React Query',
-			'Java',
-			'Spring Boot',
-			'Radix-UI',
-			'Vanilla Extract CSS',
+			packages.react,
+			packages.typeScript,
+			packages.next,
+			packages.reactQuery,
+			packages.java,
+			packages.springBoot,
+			packages.radixUI,
+			packages.vanillaExtract,
 		],
 	},
 	{
@@ -32,12 +79,20 @@ const manifest: Project[] = [
 			'An update was overdue, Remix had recently gone open source and Tailwind v.3 had been released with a just-in-time compiler and arbitrary values. In other words, the stars aligned.',
 		description:
 			"I wrote my original portfolio in Svelte. There were some elements I liked, but I was 3 months out of bootcamp and knew much less than I now do about web development. I also wanted to update the stack as I was leaning more heavily into the React ecosystem. Remix had always interested me for its focus on the request/response cycle and the power of forms so when it went open source I delved straight in. I had worked with Tailwind in v.2 and had a slight love/hate relationship with it, but so many of my gripes were resolved in v.3, especially with the introduction of arbitrary values for one-off values that don't justify a config update.\nRemix was a delight to work with and felt like it drew on the best bits of PHP, React, and Web APIs in general. Tailwind felt a little gimmicky at first but it really came into its own when making the site responsive. The biggest challenges were working with SSR and hydration. While I'd already worked with SSR in Next.js on my Trello Clone, I had a lot of trouble implementing a dark mode setting that would load without a flash of the wrong theme and avoid errors in hydration.",
+		published: true,
 		image: '/images/portfolio.webp',
 		thumbnail: '/images/portfolio-sm.webp',
 		url: 'https://alexnicholas.dev',
 		githubPrimary: 'https://github.com/alicnik/portfolio',
 		responsive: true,
-		stack: ['React', 'TypeScript', 'Remix', 'Tailwind', 'Radix-UI'],
+		projectDate: new Date(2021, 11),
+		stack: [
+			packages.react,
+			packages.typeScript,
+			packages.remix,
+			packages.tailwind,
+			packages.radixUI,
+		],
 	},
 	{
 		name: 'Installfest CLI',
@@ -48,9 +103,12 @@ const manifest: Project[] = [
 			"Most of the first day of bootcamp is taken up by Installfest. During that process, everything is so new that the students don't learn a great deal, they just follow instructions until something goes wrong. This seemed inefficient so I built a CLI to automate the process. It installs Command Line Tools, Homebrew, zsh, git, VSCode, sets up SSH with the user's GitHub account, and sets up a global ESLint configuration.\nIt was eventually decided that my CLI took too much out of the student's hands and that the limited learning they got from Installfest was better than the total abstraction of my own implementation. Having completed two courses since building this CLI, I completely agree as all exposure is good exposure. This was an excellent learning experience nonetheless, particularly in the workings of the command line and spawned processes.",
 		image: null,
 		thumbnail: null,
+		url: null,
 		githubPrimary: 'https://github.com/alicnik/installfest',
 		responsive: false,
-		stack: ['TypeScript', 'Node.js', 'oclif'],
+		published: true,
+		projectDate: new Date(2021, 5),
+		stack: [packages.typeScript, packages.node, packages.oclif],
 	},
 	{
 		name: 'SentiRed',
@@ -64,15 +122,17 @@ const manifest: Project[] = [
 		url: 'https://sentired.herokuapp.com/',
 		githubPrimary: 'https://github.com/alicnik/sentired',
 		responsive: true,
+		published: true,
+		projectDate: new Date(2020, 6),
 		stack: [
-			'React',
-			'Styled Components',
-			'Python',
-			'Flask',
-			'PostgreSQL',
-			'Material-UI',
-			'Yup',
-			'React Hook Form',
+			packages.react,
+			packages.styledComponents,
+			packages.python,
+			packages.flask,
+			packages.postgres,
+			packages.materialUI,
+			packages.yup,
+			packages.reactHookForm,
 		],
 	},
 	{
@@ -87,17 +147,19 @@ const manifest: Project[] = [
 		url: 'https://wilderapp.herokuapp.com/#/',
 		githubPrimary: 'https://github.com/alicnik/wilderapp',
 		responsive: true,
+		published: true,
+		projectDate: new Date(2020, 7),
 		stack: [
-			'React',
-			'Sass',
-			'Node.js',
-			'Express',
-			'Mongoose',
-			'MongoDB',
-			'Cloudinary',
-			'Mapbox',
-			'Mocha',
-			'Chai',
+			packages.react,
+			packages.node,
+			packages.sass,
+			packages.express,
+			packages.mongoose,
+			packages.mongoDB,
+			packages.cloudinary,
+			packages.mapbox,
+			packages.mocha,
+			packages.chai,
 		],
 	},
 	{
@@ -111,8 +173,10 @@ const manifest: Project[] = [
 		thumbnail: '/images/pokemon.webp',
 		url: 'https://alicnik.github.io/pokeapi/#/',
 		githubPrimary: 'https://github.com/alicnik/pokeapi',
+		projectDate: new Date(2020, 6),
 		responsive: false,
-		stack: ['React', 'Sass', 'react-dnd', 'Bulma'],
+		published: true,
+		stack: [packages.react, packages.sass, packages.reactDnd, packages.bulma],
 	},
 	{
 		name: 'Minesweeper',
@@ -125,9 +189,60 @@ const manifest: Project[] = [
 		thumbnail: '/images/minesweeper-sm.webp',
 		url: 'https://alicnik.github.io/minesweeper/',
 		githubPrimary: 'https://github.com/alicnik/minesweeper',
+		projectDate: new Date(2020, 5),
 		responsive: true,
-		stack: ['HTML', 'CSS', 'JavaScript'],
+		published: true,
+		stack: [packages.html, packages.css, packages.javascript],
 	},
 ];
 
-export default manifest;
+export const feedback = [
+	{
+		value:
+			"Alex's knowledge and industry experience was really helpful and his positive attitude too",
+	},
+	{
+		value:
+			'Alex helps further explain points in a digestible manner, always learn something from him.',
+	},
+	{
+		value:
+			'Really great TA- amazing at bug fixes, clearly has worked in industry and knows A LOT. Nothing to improve!',
+	},
+	{
+		value:
+			'Very confident and knowledgable. Can quickly catch onto a problem and offer help or guidance. Really easy going and encouraging',
+	},
+	{
+		value:
+			'Really clever, enthusiastic and motivated. Always tries to solve even the weirdest problem with engagement. Also can be quite entertaining.',
+	},
+	{
+		value:
+			'For one homework I really struggled with, Alex provided extraordinarily good feedback and information I could tell put a lot of effort to put together.',
+	},
+	{
+		value:
+			'Alex is so easy to approach with questions and problems and is great at working through, love the level of detail in the homework feedback which is really useful.',
+	},
+	{
+		value:
+			'Alex was an amazing TA who helped me and my team more than I could keep count of. His genuine enthusiasm is infectious, and he was so friendly I never hesitated messaging him for advice or technical help',
+	},
+	{
+		value:
+			"Alex was amazing. Great feedback on homework's. Was always there when needed. He explained complex problems in an understandable way and when he taught lessons they were really engaging and easy to understand.",
+	},
+	{
+		value:
+			"Oh where to begin! Alex is always always always there to help and thanks to him now I get excited by error messages as well. Debugging is fun!? He's never shy of suggestions and in hindsight it was great to not have him just give us the answers and guide us through so we'd discover them on our own.",
+	},
+	{
+		value:
+			"What I really enjoyed with Alex is that he made himself available to help, understood the problems I had, and always articulated solutions to accommodate my objectives. He's knowledgeable, generous with his time and his help. I think he went above and beyond what I expected from a TA and his assistance has definitely helped me progress and learn new things.",
+	},
+	{
+		value:
+			"Honestly, words can't describe how grateful I am to have Alex as a TA on this cohort. He's helped me get to the level of understanding I am at due to the way he helps me to figure out the answer and really understand. He makes sure it's in a way that I can work out it out for myself and I have had many penny-drop moments where things have made sense thanks to his prompts. He always makes the time to help and will go out of his way to find the answer for you if he's not 100% sure. It was a bit of a battle at times with other students to get his help! Amazing TA!",
+	},
+];
