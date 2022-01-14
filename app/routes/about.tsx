@@ -13,7 +13,9 @@ export default function AboutRoute() {
 					<p className="mb-4">
 						Hi, I'm <span className="font-graphic text-lg">Alex</span>. I came
 						to coding later in life than I would have liked, but I'm making up
-						for lost time. This is me in a garden:
+						for lost time. This is me in a garden
+						<span className="md:hidden">:</span>
+						<span className="mobile:hidden"> &#8594;</span>
 					</p>
 					<img
 						src="/images/profile-photo.webp"
@@ -23,7 +25,7 @@ export default function AboutRoute() {
 					<p className="mb-2">I have two core beliefs:</p>
 					<ol className="list-decimal list-inside mb-4">
 						<li>
-							That anything you want to do is possible in software engineering;
+							That anything you want to do in software engineering is possible;
 						</li>
 						<li>
 							That a computer won't beat me if I work hard enough at a problem.
@@ -65,18 +67,18 @@ export default function AboutRoute() {
 			<section>
 				<h2 className="text-3xl font-display mb-6">Where am I going?</h2>
 				<p className="mb-4">
-					This sounds artificial, but I wan't to be the best coder I can be.
+					This sounds artificial, but I want to be the best coder I can be.
 					Someone another developer would be glad to work with. Someone who
 					writes clean, well-documented, maintainable code that a newcomer could
 					navigate with relative ease.
 				</p>
 				<p className="mb-4">
-					At the moment, I'm looking for work having just completed some
+					At the moment, I'm looking for work, having just completed some
 					contract work with General Assembly as a Teaching Assistant. I loved
 					it but it wasn't pushing me.
 				</p>
 				<p className="mb-4">
-					There's a cogent argument to be had that's I'm slightly eccentric. I
+					There's a cogent argument to be had that I'm slightly eccentric. I
 					like to think it's endearing. The dream is to work somewhere similarly
 					offbeat. The sort of place with an office dog (this is negotiable).
 				</p>
@@ -87,7 +89,7 @@ export default function AboutRoute() {
 					positive.
 				</p>
 				<p>
-					That's a lot of wants, but if it sounds like your company then{' '}
+					That's a lot of wants, but if it sounds like your company then please{' '}
 					<Link to="/contact" className="underline underline-offset-2">
 						contact me
 					</Link>
