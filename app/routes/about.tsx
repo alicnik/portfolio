@@ -87,7 +87,7 @@ export default function AboutRoute() {
 					positive.
 				</p>
 				<p>
-					That's a lot of wants, but if it sounds like your company then{' '}
+					That's a lot of wants, but if it sounds like your company then please{' '}
 					<Link to="/contact" className="underline underline-offset-2">
 						contact me
 					</Link>
