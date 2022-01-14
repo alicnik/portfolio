@@ -23,7 +23,7 @@ export default function AboutRoute() {
 					<p className="mb-2">I have two core beliefs:</p>
 					<ol className="list-decimal list-inside mb-4">
 						<li>
-							That anything you want to do is possible in software engineering;
+							That anything you want to do in software engineering is possible;
 						</li>
 						<li>
 							That a computer won't beat me if I work hard enough at a problem.
