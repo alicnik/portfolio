@@ -26,16 +26,14 @@ async function seed() {
 	}
 
 	// Seed database with testimonials
-	await Promise.all(
-		feedback.map((f) =>
-			db.feedback.create({
-				data: {
-					...f,
-					length: f.value.length,
-				},
-			}),
-		),
-	);
+	for (const f of feedback) {
+		await db.feedback.create({
+			data: {
+				...f,
+				length: f.value.length,
+			},
+		});
+	}
 }
 
 seed()

@@ -7,7 +7,7 @@ type LoaderType = Feedback[];
 
 export const loader: LoaderFunction = async () => {
 	const feedback = await db.feedback.findMany({
-		orderBy: { length: 'asc' },
+		orderBy: { length: 'desc' },
 	});
 	return feedback;
 };
@@ -25,9 +25,9 @@ export default function Testimonials() {
 				feedback on the TAs. Below are some of the comments I received.
 			</p>
 			<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-				{feedback.reverse().map((testimonial) => (
+				{feedback.map((testimonial, i) => (
 					<article
-						key={testimonial.value}
+						key={i}
 						className="p-4 relative shadow dark:shadow-lg border rounded border-gray-300 dark:border-gray-600 flex justify-center items-center"
 					>
 						<DoubleQuotes className="absolute rotate-180 scale-[5] top-6 left-7 text-gray-300 dark:text-gray-600 text-opacity-30 dark:text-opacity-20 z-[-1]" />
