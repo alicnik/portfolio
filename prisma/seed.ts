@@ -11,21 +11,19 @@ async function seed() {
 
 	// Seed database with projects, simultaneously creating packages
 	// (or connecting to them if they are already present in db)
-	await Promise.all(
-		projects.map((project) => {
-			return db.project.create({
-				data: {
-					...project,
-					stack: {
-						connectOrCreate: project.stack.map((pkg) => ({
-							where: { name: pkg.name },
-							create: pkg,
-						})),
-					},
+	for (const project of projects) {
+		await db.project.create({
+			data: {
+				...project,
+				stack: {
+					connectOrCreate: project.stack.map((pkg) => ({
+						where: { name: pkg.name },
+						create: pkg,
+					})),
 				},
-			});
-		}),
-	);
+			},
+		});
+	}
 
 	// Seed database with testimonials
 	await Promise.all(
