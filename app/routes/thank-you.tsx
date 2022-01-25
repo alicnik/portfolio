@@ -9,12 +9,12 @@ export const meta: MetaFunction = () => ({
 export default function ThankYou() {
 	return (
 		<div className="container mx-auto">
-			<p className="mb-6">
+			<p className="mb-6 text-center md:text-left">
 				Thank you for your message. You should receive a confirmation email
 				shortly.
 			</p>
 			<Link to="/">
-				<Button variant="outlined" className="mx-auto">
+				<Button variant="outlined" className="mx-auto md:mx-0">
 					Back to the homepage
 				</Button>
 			</Link>
