@@ -22,10 +22,20 @@ export const action: ActionFunction = async ({ request }) => {
 	const name = formData.get('name');
 	const email = formData.get('email');
 	const message = formData.get('message');
+	const honeypot = formData.get('phone-number');
 
 	invariant(typeof name === 'string');
 	invariant(typeof email === 'string');
 	invariant(typeof message === 'string');
+
+	if (honeypot) {
+		return {
+			name,
+			email,
+			message,
+			error: honeypot,
+		};
+	}
 
 	try {
 		await sendEmails({ name, email, message });
@@ -45,6 +55,7 @@ export const action: ActionFunction = async ({ request }) => {
 export default function ContactRoute() {
 	const actionData = useActionData<ActionDataValue>();
 	const transition = useTransition();
+	console.log(actionData);
 
 	return (
 		<section className="mx-auto md:grid md:grid-cols-2 gap-8 lg:gap-20">
@@ -71,6 +82,16 @@ export default function ContactRoute() {
 						name="message"
 						defaultValue={actionData?.message}
 						required
+					/>
+					{/* Honeypot for spam prevention. autoComplete="false" originally used
+          but, amazingly enough, "nope" seemed to work where "false" didn't. This is why I code. */}
+					<input
+						type="tel"
+						style={{ position: 'absolute', left: -9999, top: -9999 }}
+						name="phone-number"
+						id="phone-number"
+						tabIndex={-1}
+						autoComplete="nope"
 					/>
 					<Button
 						variant="outlined"
