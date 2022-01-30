@@ -72,7 +72,7 @@ export const projects = [
 		description:
 			"I learned Java for a contract with General Assembly and built a back end for Trello with Spring Boot, mainly for learning purposes. It felt a shame to let it go to waste, though, so I decided to build the front end as accurately as possible, mainly to see how well I could work to a given design. As I built it out, I was keen to make the UX identical, too, which led to some interesting learning opportunities and was perhaps the part I found the most fun. As a project, it confirmed that while I am happy building full-stack apps, it's the front end that sparks the most joy.\nThe back end is hosted on Heroku and is consumed by a Next.js front end deployed to Vercel. It was highly educational working with Next.js and I was struck by how full-featured the framework is. It was also the first time I had used React Query, which was a game-changer for my approach to data fetching and mutation.\nNB If the app registration/login doesn't work at first, that may be because Heroku is still waking up. 10 seconds and a refresh should solve all ills.",
 		image: '/images/trello.webp',
-		thumbnail: '/images/trello-sm.webp',
+		thumbnail: '/images/trello-sm.png',
 		url: 'https://trello-clone-client-mauve.vercel.app/',
 		githubPrimary: 'https://github.com/alicnik/trello-clone-client',
 		githubSecondary: 'https://github.com/alicnik/trello-clone',
