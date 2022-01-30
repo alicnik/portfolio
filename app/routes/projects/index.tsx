@@ -6,18 +6,18 @@ import { Project } from '@prisma/client';
 type LoaderType = Project[];
 
 export const loader: LoaderFunction = async () => {
-	const projects = await db.project.findMany();
-	return projects;
-};
-
-export default function ProjectsRoute() {
-	const data = useLoaderData<LoaderType>();
-
+	const data = await db.project.findMany();
 	const projects = data.sort((a, b) => {
 		if (a.projectDate < b.projectDate) return 1;
 		if (a.projectDate > b.projectDate) return -1;
 		return 0;
 	});
+
+	return projects;
+};
+
+export default function ProjectsRoute() {
+	const projects = useLoaderData<LoaderType>();
 
 	return (
 		<div className="container">

@@ -7,7 +7,7 @@ async function seed() {
 	// Clear database
 	console.log('\n🗑 Clearing database');
 	await db.project.deleteMany();
-	await db.package.deleteMany();
+	await db.technology.deleteMany();
 
 	// Seed database with projects, simultaneously creating packages
 	// (or connecting to them if they are already present in db)
@@ -15,10 +15,10 @@ async function seed() {
 		await db.project.create({
 			data: {
 				...project,
-				stack: {
-					connectOrCreate: project.stack.map((pkg) => ({
-						where: { name: pkg.name },
-						create: pkg,
+				technologies: {
+					connectOrCreate: project.technologies.map((tech) => ({
+						where: { name: tech.name },
+						create: tech,
 					})),
 				},
 			},
@@ -27,7 +27,7 @@ async function seed() {
 
 	// Seed database with testimonials
 	for (const f of feedback) {
-		await db.feedback.create({
+		await db.testimonial.create({
 			data: {
 				...f,
 				length: f.value.length,

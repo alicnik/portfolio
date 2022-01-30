@@ -1,12 +1,12 @@
-import { Feedback } from '@prisma/client';
+import { Testimonial } from '@prisma/client';
 import { LoaderFunction, useLoaderData } from 'remix';
 import { DoubleQuotes } from '~/components/icons';
 import { db } from '~/lib/db.server';
 
-type LoaderType = Feedback[];
+type LoaderType = Testimonial[];
 
 export const loader: LoaderFunction = async () => {
-	const feedback = await db.feedback.findMany({
+	const feedback = await db.testimonial.findMany({
 		orderBy: { length: 'desc' },
 	});
 	return feedback;

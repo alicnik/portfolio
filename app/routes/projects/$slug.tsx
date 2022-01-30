@@ -3,10 +3,10 @@ import { LoaderFunction, useLoaderData } from 'remix';
 import invariant from 'tiny-invariant';
 import { GitHubIcon, GlobeIcon } from '~/components/icons';
 import { ExternalLink, ExternalLinkProps } from '~/components/ui';
-import { Package, Project } from '@prisma/client';
+import { Technology, Project } from '@prisma/client';
 import { db } from '~/lib/db.server';
 
-type LoaderType = Project & { stack: Package[] };
+type LoaderType = Project & { technologies: Technology[] };
 
 export const loader: LoaderFunction = async ({ params }) => {
 	const projectSlug = params.slug;
@@ -14,8 +14,9 @@ export const loader: LoaderFunction = async ({ params }) => {
 
 	const project = await db.project.findUnique({
 		where: { slug: projectSlug },
-		include: { stack: true },
+		include: { technologies: true },
 	});
+
 	if (!project) throw new Error('Could not find that project');
 
 	return project;
@@ -36,14 +37,16 @@ export default function SingleProject() {
 					className="w-full aspect-video rounded"
 				/>
 			) : null}
-			<div className="flex flex-wrap gap-x-3 gap-y-2 my-4">
-				{project.stack.map((technology) => (
-					<span
-						key={technology.name}
-						className="w-max inline-block px-2 text-sm border rounded"
+			<div className="flex flex-wrap gap-x-3 gap-y-2 my-6">
+				{project.technologies.map((technology) => (
+					<ExternalLink
+						key={technology.id}
+						to={technology.url}
+						underlined={false}
+						className="w-max inline-block px-2 py-[2px] text-sm border rounded"
 					>
 						{technology.name}
-					</span>
+					</ExternalLink>
 				))}
 			</div>
 			<div className="my-6">

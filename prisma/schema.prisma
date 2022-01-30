@@ -11,9 +11,9 @@ datasource db {
 }
 
 model Project {
-  id              String    @id @default(uuid())
-  name            String    @unique
-  slug            String    @unique
+  id              String       @id @default(uuid())
+  name            String       @unique
+  slug            String       @unique
   summary         String
   description     String
   image           String?
@@ -23,20 +23,20 @@ model Project {
   githubSecondary String?
   responsive      Boolean
   published       Boolean
-  stack           Package[]
-  createdAt       DateTime  @default(now())
-  updatedAt       DateTime  @updatedAt
+  technologies    Technology[]
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
   projectDate     DateTime
 }
 
-model Package {
+model Technology {
   id       String    @id @default(uuid())
   name     String    @unique
-  url      String?
+  url      String
   projects Project[]
 }
 
-model Feedback {
+model Testimonial {
   id     String @id @default(uuid())
   value  String
   length Int

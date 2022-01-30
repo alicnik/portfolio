@@ -18,31 +18,49 @@ export const packages = {
 	},
 	node: { name: 'Node.js', url: 'https://github.com/nodejs/node' },
 	oclif: { name: 'oclif', url: 'https://github.com/oclif/oclif' },
-	styledComponents: { name: 'Styled Components' },
-	python: { name: 'Python' },
-	flask: { name: 'Flask' },
-	postgres: { name: 'PostgreSQL' },
-	materialUI: { name: 'Material-UI' },
-	yup: { name: 'Yup' },
-	reactHookForm: { name: 'React Hook Form' },
+	styledComponents: {
+		name: 'Styled Components',
+		url: 'https://github.com/styled-components/styled-components',
+	},
+	python: { name: 'Python', url: 'https://www.python.org/' },
+	flask: { name: 'Flask', url: 'https://flask.palletsprojects.com/en/2.0.x/' },
+	postgres: { name: 'PostgreSQL', url: 'https://www.postgresql.org/' },
+	materialUI: {
+		name: 'Material-UI',
+		url: 'https://github.com/mui-org/material-ui',
+	},
+	yup: { name: 'Yup', url: 'https://github.com/jquense/yup' },
+	reactHookForm: {
+		name: 'React Hook Form',
+		url: 'https://github.com/react-hook-form/react-hook-form',
+	},
 	remix: { name: 'Remix', url: 'https://github.com/remix-run/remix' },
 	tailwind: {
 		name: 'Tailwind',
 		url: 'https://github.com/tailwindlabs/tailwindcss',
 	},
-	sass: { name: 'Sass' },
-	express: { name: 'Express' },
-	mongoose: { name: 'Mongoose' },
-	mongoDB: { name: 'MongoDB' },
-	cloudinary: { name: 'Cloudinary' },
-	mapbox: { name: 'Mapbox' },
-	mocha: { name: 'Mocha' },
-	chai: { name: 'Chai' },
-	reactDnd: { name: 'react-dnd' },
-	bulma: { name: 'Bulma' },
-	html: { name: 'HTML' },
-	css: { name: 'CSS' },
-	javascript: { name: 'JavaScript' },
+	sass: { name: 'Sass', url: 'https://github.com/sass/sass' },
+	express: { name: 'Express', url: 'https://github.com/expressjs/express' },
+	mongoose: { name: 'Mongoose', url: 'https://github.com/Automattic/mongoose' },
+	mongoDB: { name: 'MongoDB', url: 'https://github.com/mongodb/mongo' },
+	cloudinary: { name: 'Cloudinary', url: 'https://cloudinary.com/' },
+	mapbox: { name: 'Mapbox', url: 'https://www.mapbox.com/' },
+	mocha: { name: 'Mocha', url: 'https://github.com/mochajs/mocha' },
+	chai: { name: 'Chai', url: 'https://github.com/chaijs/chai' },
+	reactDnd: {
+		name: 'react-dnd',
+		url: 'https://react-dnd.github.io/react-dnd/about',
+	},
+	bulma: { name: 'Bulma', url: 'https://bulma.io/' },
+	html: {
+		name: 'HTML',
+		url: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
+	},
+	css: { name: 'CSS', url: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
+	javascript: {
+		name: 'JavaScript',
+		url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+	},
 };
 
 export const projects = [
@@ -61,7 +79,7 @@ export const projects = [
 		responsive: false,
 		published: true,
 		projectDate: new Date(2022, 0),
-		stack: [
+		technologies: [
 			packages.react,
 			packages.typeScript,
 			packages.next,
@@ -86,7 +104,7 @@ export const projects = [
 		githubPrimary: 'https://github.com/alicnik/portfolio',
 		responsive: true,
 		projectDate: new Date(2021, 11),
-		stack: [
+		technologies: [
 			packages.react,
 			packages.typeScript,
 			packages.remix,
@@ -108,7 +126,7 @@ export const projects = [
 		responsive: false,
 		published: true,
 		projectDate: new Date(2021, 5),
-		stack: [packages.typeScript, packages.node, packages.oclif],
+		technologies: [packages.typeScript, packages.node, packages.oclif],
 	},
 	{
 		name: 'SentiRed',
@@ -124,7 +142,7 @@ export const projects = [
 		responsive: true,
 		published: true,
 		projectDate: new Date(2020, 6),
-		stack: [
+		technologies: [
 			packages.react,
 			packages.styledComponents,
 			packages.python,
@@ -149,7 +167,7 @@ export const projects = [
 		responsive: true,
 		published: true,
 		projectDate: new Date(2020, 7),
-		stack: [
+		technologies: [
 			packages.react,
 			packages.node,
 			packages.sass,
@@ -176,7 +194,12 @@ export const projects = [
 		projectDate: new Date(2020, 6),
 		responsive: false,
 		published: true,
-		stack: [packages.react, packages.sass, packages.reactDnd, packages.bulma],
+		technologies: [
+			packages.react,
+			packages.sass,
+			packages.reactDnd,
+			packages.bulma,
+		],
 	},
 	{
 		name: 'Minesweeper',
@@ -192,7 +215,7 @@ export const projects = [
 		projectDate: new Date(2020, 5),
 		responsive: true,
 		published: true,
-		stack: [packages.html, packages.css, packages.javascript],
+		technologies: [packages.html, packages.css, packages.javascript],
 	},
 ];
 
@@ -231,7 +254,7 @@ export const feedback = [
 	},
 	{
 		value:
-			"Alex was amazing. Great feedback on homework's. Was always there when needed. He explained complex problems in an understandable way and when he taught lessons they were really engaging and easy to understand.",
+			'Alex was amazing. Great feedback on homeworks. Was always there when needed. He explained complex problems in an understandable way and when he taught lessons they were really engaging and easy to understand.',
 	},
 	{
 		value:
