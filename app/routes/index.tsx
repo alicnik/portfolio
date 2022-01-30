@@ -5,18 +5,18 @@ import { ProjectCard } from '~/components/common';
 import { Project } from '@prisma/client';
 import { db } from '~/lib/db.server';
 
-type LoaderType = Project[];
+type RecentProjects = Project[];
 
 export const loader: LoaderFunction = async () => {
-	const projects = await db.project.findMany({
+	const recentProjects = await db.project.findMany({
 		take: 3,
 		orderBy: { projectDate: 'desc' },
 	});
-	return projects;
+	return recentProjects;
 };
 
 export default function Index() {
-	const projects = useLoaderData<LoaderType>();
+	const recentProjects = useLoaderData<RecentProjects>();
 
 	return (
 		<div className="w-full">
@@ -41,7 +41,7 @@ export default function Index() {
 			<section className="w-full">
 				<h2 className="mt-6 mb-8 font-display text-4xl">Recent projects</h2>
 				<div className="grid gap-6 mx-auto md:grid-cols-2 lg:grid-cols-3 place-items-center items-stretch">
-					{projects.map((project, index) => (
+					{recentProjects.map((project, index) => (
 						<ProjectCard
 							key={project.name}
 							className={

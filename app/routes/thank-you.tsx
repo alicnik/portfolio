@@ -6,7 +6,7 @@ export const meta: MetaFunction = () => ({
 	title: 'AN | Thank you!',
 });
 
-export default function ThankYou() {
+export default function ThankYouRoute() {
 	return (
 		<div className="container mx-auto">
 			<p className="mb-6 text-center md:text-left">

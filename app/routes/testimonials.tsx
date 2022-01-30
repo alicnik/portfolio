@@ -3,7 +3,7 @@ import { LoaderFunction, useLoaderData } from 'remix';
 import { DoubleQuotes } from '~/components/icons';
 import { db } from '~/lib/db.server';
 
-type LoaderType = Testimonial[];
+type Testimonials = Testimonial[];
 
 export const loader: LoaderFunction = async () => {
 	const feedback = await db.testimonial.findMany({
@@ -12,8 +12,8 @@ export const loader: LoaderFunction = async () => {
 	return feedback;
 };
 
-export default function Testimonials() {
-	const feedback = useLoaderData<LoaderType>();
+export default function TestimonialsRoute() {
+	const feedback = useLoaderData<Testimonials>();
 
 	return (
 		<div className="container mx-auto">

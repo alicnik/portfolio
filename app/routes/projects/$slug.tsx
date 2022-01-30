@@ -22,7 +22,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 	return project;
 };
 
-export default function SingleProject() {
+export default function SingleProjectRoute() {
 	const project = useLoaderData<LoaderType>();
 
 	return (
