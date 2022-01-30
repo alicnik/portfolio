@@ -22,11 +22,14 @@ export function ProjectCard({
 	return (
 		<div
 			className={clsx(
-				'px-6 py-8 my-6 border rounded border-gray-300 dark:border-gray-600 max-w-[350px]',
+				'flex flex-col px-6 py-8 my-6 border rounded border-gray-300 dark:border-gray-600 max-w-[350px]',
 				className,
 			)}
 		>
-			<Link to={`/projects/${slug}`} className="flex flex-col gap-4 mb-6">
+			<Link
+				to={`/projects/${slug}`}
+				className="flex flex-col flex-1 gap-4 mb-6"
+			>
 				<h3 className="font-display text-xl mb-2 underline underline-offset-4">
 					{name}
 				</h3>

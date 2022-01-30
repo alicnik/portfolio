@@ -27,7 +27,7 @@ export const links: LinksFunction = () => {
 };
 
 export const loader: LoaderFunction = (): RecentProjects => {
-	const recentProjects = projectsData;
+	const recentProjects = projectsData.slice(0, 3);
 	return recentProjects;
 };
 
@@ -64,7 +64,7 @@ export default function Index() {
 								index === 1
 									? 'mobile:hidden md:block'
 									: index === 2
-									? 'mobile:hidden md:hidden lg:block'
+									? 'mobile:hidden md:hidden lg:flex'
 									: ''
 							}
 							{...project}
