@@ -3,7 +3,7 @@ import projects from '~/data/projects';
 
 export default function ProjectsRoute() {
 	return (
-		<div className="container">
+		<div className="container mx-auto">
 			<h1 className="text-3xl font-display mb-6">Projects</h1>
 			<p>
 				Here are some of my side projects. Like most devs, I love tinkering and
