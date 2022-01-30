@@ -19,8 +19,6 @@ export const loader: LoaderFunction = ({ params }): Project => {
 export default function SingleProject() {
 	const project = useLoaderData<Project>();
 
-	console.log();
-
 	return (
 		<article className="container mx-auto">
 			<h1 className="text-4xl mb-6 md:text-5xl font-graphic md:mb-8">
@@ -30,7 +28,7 @@ export default function SingleProject() {
 				<img
 					src={project.image}
 					alt={project.name}
-					className="w-full aspect-video"
+					className="w-full aspect-video rounded"
 				/>
 			) : null}
 			<div className="flex flex-wrap gap-x-3 gap-y-2 my-4">

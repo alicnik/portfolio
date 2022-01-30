@@ -55,7 +55,6 @@ export const action: ActionFunction = async ({ request }) => {
 export default function ContactRoute() {
 	const actionData = useActionData<ActionDataValue>();
 	const transition = useTransition();
-	console.log(actionData);
 
 	return (
 		<section className="mx-auto md:grid md:grid-cols-2 gap-8 lg:gap-20">

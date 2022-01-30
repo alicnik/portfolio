@@ -25,9 +25,7 @@ export async function sendEmails({
 	message,
 	alertRecipient = 'al.nicholas@gmail.com',
 }: SendEmailsArgs) {
-	console.log('calling sendAlert');
 	await sendAlertEmail({ name, email, message, alertRecipient });
-	console.log('calling sendConfirmation');
 	await sendConfirmationEmail({ name, email });
 }
 
@@ -41,7 +39,6 @@ async function sendAlertEmail({
 	message,
 	alertRecipient,
 }: SendEmailsArgs) {
-	console.log('sending alert email');
 	await fetch('https://api.sendgrid.com/v3/mail/send', {
 		...baseConfig,
 		body: JSON.stringify({

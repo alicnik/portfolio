@@ -2,6 +2,8 @@ import { DoubleQuotes } from '~/components/icons';
 import { feedback } from '../data/feedback';
 
 export default function Testimonials() {
+	const testimonials = feedback.sort((a, b) => b.length - a.length);
+
 	return (
 		<div className="container mx-auto">
 			<h1 className="text-3xl font-display mb-6">Testimonials</h1>
@@ -12,7 +14,7 @@ export default function Testimonials() {
 				feedback on the TAs. Below are some of the comments I received.
 			</p>
 			<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-				{feedback.reverse().map((testimonial) => (
+				{testimonials.map((testimonial) => (
 					<article
 						key={testimonial}
 						className="p-4 relative shadow dark:shadow-lg border rounded border-gray-300 dark:border-gray-600 flex justify-center items-center"
