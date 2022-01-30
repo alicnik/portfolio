@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { Link } from 'remix';
 import { GitHubIcon } from '~/components/icons';
 import { ExternalLink } from '~/components/ui';
-import { Project } from '~/types';
+import { Project } from '@prisma/client';
 
 interface ProjectCardProps extends Project {
 	className?: string;
@@ -10,8 +10,8 @@ interface ProjectCardProps extends Project {
 
 export function ProjectCard({
 	name,
-	slug,
 	summary,
+	slug,
 	url,
 	githubPrimary,
 	thumbnail,

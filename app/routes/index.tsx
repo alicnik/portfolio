@@ -1,26 +1,23 @@
-import { Link, LinksFunction } from 'remix';
-import projects from '~/data/projects';
+// import { Link, LinksFunction } from 'remix';
+import { Link, LoaderFunction, useLoaderData } from 'remix';
 import { Button, ExternalLink, HomepageIllustration } from '~/components/ui';
 import { ProjectCard } from '~/components/common';
+import { Project } from '@prisma/client';
+import { db } from '~/lib/db.server';
 
-export const links: LinksFunction = () => {
-	// Preload images for projects that appear above the fold to minimise loading time
-	const preloadLinks = [];
-	const projectImages = projects.slice(0, 3).map((p) => p.thumbnail);
+type LoaderType = Project[];
 
-	for (const image of projectImages) {
-		if (!image) continue;
-		preloadLinks.push({
-			rel: 'preload',
-			as: 'image',
-			href: image,
-		});
-	}
-
-	return preloadLinks;
+export const loader: LoaderFunction = async () => {
+	const projects = await db.project.findMany({
+		take: 3,
+		orderBy: { projectDate: 'desc' },
+	});
+	return projects;
 };
 
 export default function Index() {
+	const projects = useLoaderData<LoaderType>();
+
 	return (
 		<div className="w-full">
 			<section className="md:grid grid-cols-5 gap-12 items-center md:my-16 lg:my-24">
@@ -44,7 +41,7 @@ export default function Index() {
 			<section className="w-full">
 				<h2 className="mt-6 mb-8 font-display text-4xl">Recent projects</h2>
 				<div className="grid gap-6 mx-auto md:grid-cols-2 lg:grid-cols-3 place-items-center items-stretch">
-					{projects.slice(0, 3).map((project, index) => (
+					{projects.map((project, index) => (
 						<ProjectCard
 							key={project.name}
 							className={
