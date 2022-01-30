@@ -1,13 +1,14 @@
-import { LoaderFunction, useLoaderData } from 'remix';
+import { useLoaderData } from 'remix';
 import { ProjectCard } from '~/components/common';
-import { db } from '~/lib/db.server';
-import { Project } from '@prisma/client';
+import { projects as projectsData } from '~/data/projects';
 
-type LoaderType = Project[];
+import type { LoaderFunction } from 'remix';
+import type { Project } from '~/types';
 
-export const loader: LoaderFunction = async () => {
-	const data = await db.project.findMany();
-	const projects = data.sort((a, b) => {
+type AllProjects = Project[];
+
+export const loader: LoaderFunction = (): AllProjects => {
+	const projects = projectsData.sort((a, b) => {
 		if (a.projectDate < b.projectDate) return 1;
 		if (a.projectDate > b.projectDate) return -1;
 		return 0;
@@ -17,7 +18,7 @@ export const loader: LoaderFunction = async () => {
 };
 
 export default function ProjectIndexRoute() {
-	const projects = useLoaderData<LoaderType>();
+	const projects = useLoaderData<AllProjects>();
 
 	return (
 		<div className="container mx-auto">

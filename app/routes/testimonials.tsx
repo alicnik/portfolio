@@ -1,19 +1,21 @@
-import { Testimonial } from '@prisma/client';
-import { LoaderFunction, useLoaderData } from 'remix';
+import { useLoaderData } from 'remix';
 import { DoubleQuotes } from '~/components/icons';
-import { db } from '~/lib/db.server';
+import { testimonials as testimonialsData } from '~/data/testimonials';
 
-type Testimonials = Testimonial[];
+import type { LoaderFunction } from 'remix';
+import type { Testimonial } from '~/types';
 
-export const loader: LoaderFunction = async () => {
-	const feedback = await db.testimonial.findMany({
-		orderBy: { length: 'desc' },
-	});
-	return feedback;
+type AllTestimonials = Testimonial[];
+
+export const loader: LoaderFunction = (): Testimonial[] => {
+	const testimonials = testimonialsData.sort(
+		(a, b) => b.value.length - a.value.length,
+	);
+	return testimonials;
 };
 
 export default function TestimonialsRoute() {
-	const feedback = useLoaderData<Testimonials>();
+	const testimonials = useLoaderData<AllTestimonials>();
 
 	return (
 		<div className="container mx-auto">
@@ -25,7 +27,7 @@ export default function TestimonialsRoute() {
 				feedback on the TAs. Below are some of the comments I received.
 			</p>
 			<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-				{feedback.map((testimonial, i) => (
+				{testimonials.map((testimonial, i) => (
 					<article
 						key={i}
 						className="p-4 relative shadow dark:shadow-lg border rounded border-gray-300 dark:border-gray-600 flex justify-center items-center"

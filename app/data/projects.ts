@@ -1,63 +1,135 @@
-export const packages = {
-	react: { name: 'React', url: 'https://github.com/facebook/react' },
+import { uniqueId } from 'lodash';
+
+export const technologies = {
+	react: {
+		id: uniqueId(),
+		name: 'React',
+		url: 'https://github.com/facebook/react',
+	},
 	typeScript: {
+		id: uniqueId(),
 		name: 'TypeScript',
 		url: 'https://github.com/microsoft/typescript',
 	},
-	next: { name: 'Next.js', url: 'https://github.com/vercel/next.js' },
+	next: {
+		id: uniqueId(),
+		name: 'Next.js',
+		url: 'https://github.com/vercel/next.js',
+	},
 	reactQuery: {
+		id: uniqueId(),
 		name: 'React Query',
 		url: 'https://github.com/tannerlinsley/react-query',
 	},
-	java: { name: 'Java', url: 'https://www.java.com/en/' },
-	springBoot: { name: 'Spring Boot', url: 'https://spring.io/' },
-	radixUI: { name: 'Radix-UI', url: 'https://github.com/radix-ui' },
+	java: { id: uniqueId(), name: 'Java', url: 'https://www.java.com/en/' },
+	springBoot: {
+		id: uniqueId(),
+		name: 'Spring Boot',
+		url: 'https://spring.io/',
+	},
+	radixUI: {
+		id: uniqueId(),
+		name: 'Radix-UI',
+		url: 'https://github.com/radix-ui',
+	},
 	vanillaExtract: {
+		id: uniqueId(),
 		name: 'Vanilla Extract CSS',
 		url: 'https://github.com/seek-oss/vanilla-extract',
 	},
-	node: { name: 'Node.js', url: 'https://github.com/nodejs/node' },
-	oclif: { name: 'oclif', url: 'https://github.com/oclif/oclif' },
+	node: {
+		id: uniqueId(),
+		name: 'Node.js',
+		url: 'https://github.com/nodejs/node',
+	},
+	oclif: {
+		id: uniqueId(),
+		name: 'oclif',
+		url: 'https://github.com/oclif/oclif',
+	},
 	styledComponents: {
+		id: uniqueId(),
 		name: 'Styled Components',
 		url: 'https://github.com/styled-components/styled-components',
 	},
-	python: { name: 'Python', url: 'https://www.python.org/' },
-	flask: { name: 'Flask', url: 'https://flask.palletsprojects.com/en/2.0.x/' },
-	postgres: { name: 'PostgreSQL', url: 'https://www.postgresql.org/' },
+	python: { id: uniqueId(), name: 'Python', url: 'https://www.python.org/' },
+	flask: {
+		id: uniqueId(),
+		name: 'Flask',
+		url: 'https://flask.palletsprojects.com/en/2.0.x/',
+	},
+	postgres: {
+		id: uniqueId(),
+		name: 'PostgreSQL',
+		url: 'https://www.postgresql.org/',
+	},
 	materialUI: {
+		id: uniqueId(),
 		name: 'Material-UI',
 		url: 'https://github.com/mui-org/material-ui',
 	},
-	yup: { name: 'Yup', url: 'https://github.com/jquense/yup' },
+	yup: { id: uniqueId(), name: 'Yup', url: 'https://github.com/jquense/yup' },
 	reactHookForm: {
+		id: uniqueId(),
 		name: 'React Hook Form',
 		url: 'https://github.com/react-hook-form/react-hook-form',
 	},
-	remix: { name: 'Remix', url: 'https://github.com/remix-run/remix' },
+	remix: {
+		id: uniqueId(),
+		name: 'Remix',
+		url: 'https://github.com/remix-run/remix',
+	},
 	tailwind: {
+		id: uniqueId(),
 		name: 'Tailwind',
 		url: 'https://github.com/tailwindlabs/tailwindcss',
 	},
-	sass: { name: 'Sass', url: 'https://github.com/sass/sass' },
-	express: { name: 'Express', url: 'https://github.com/expressjs/express' },
-	mongoose: { name: 'Mongoose', url: 'https://github.com/Automattic/mongoose' },
-	mongoDB: { name: 'MongoDB', url: 'https://github.com/mongodb/mongo' },
-	cloudinary: { name: 'Cloudinary', url: 'https://cloudinary.com/' },
-	mapbox: { name: 'Mapbox', url: 'https://www.mapbox.com/' },
-	mocha: { name: 'Mocha', url: 'https://github.com/mochajs/mocha' },
-	chai: { name: 'Chai', url: 'https://github.com/chaijs/chai' },
+	sass: { id: uniqueId(), name: 'Sass', url: 'https://github.com/sass/sass' },
+	express: {
+		id: uniqueId(),
+		name: 'Express',
+		url: 'https://github.com/expressjs/express',
+	},
+	mongoose: {
+		id: uniqueId(),
+		name: 'Mongoose',
+		url: 'https://github.com/Automattic/mongoose',
+	},
+	mongoDB: {
+		id: uniqueId(),
+		name: 'MongoDB',
+		url: 'https://github.com/mongodb/mongo',
+	},
+	cloudinary: {
+		id: uniqueId(),
+		name: 'Cloudinary',
+		url: 'https://cloudinary.com/',
+	},
+	mapbox: { id: uniqueId(), name: 'Mapbox', url: 'https://www.mapbox.com/' },
+	mocha: {
+		id: uniqueId(),
+		name: 'Mocha',
+		url: 'https://github.com/mochajs/mocha',
+	},
+	chai: { id: uniqueId(), name: 'Chai', url: 'https://github.com/chaijs/chai' },
 	reactDnd: {
+		id: uniqueId(),
 		name: 'react-dnd',
 		url: 'https://react-dnd.github.io/react-dnd/about',
 	},
-	bulma: { name: 'Bulma', url: 'https://bulma.io/' },
+	bulma: { id: uniqueId(), name: 'Bulma', url: 'https://bulma.io/' },
 	html: {
+		id: uniqueId(),
 		name: 'HTML',
 		url: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
 	},
-	css: { name: 'CSS', url: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
+	css: {
+		id: uniqueId(),
+		name: 'CSS',
+		url: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+	},
 	javascript: {
+		id: uniqueId(),
 		name: 'JavaScript',
 		url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
 	},
@@ -65,6 +137,7 @@ export const packages = {
 
 export const projects = [
 	{
+		id: uniqueId(),
 		name: 'Trello Clone',
 		slug: 'trello-clone',
 		summary:
@@ -80,17 +153,18 @@ export const projects = [
 		published: true,
 		projectDate: new Date(2022, 0),
 		technologies: [
-			packages.react,
-			packages.typeScript,
-			packages.next,
-			packages.reactQuery,
-			packages.java,
-			packages.springBoot,
-			packages.radixUI,
-			packages.vanillaExtract,
+			technologies.react,
+			technologies.typeScript,
+			technologies.next,
+			technologies.reactQuery,
+			technologies.java,
+			technologies.springBoot,
+			technologies.radixUI,
+			technologies.vanillaExtract,
 		],
 	},
 	{
+		id: uniqueId(),
 		name: 'Portfolio Website',
 		slug: 'portfolio-website',
 		summary:
@@ -105,14 +179,15 @@ export const projects = [
 		responsive: true,
 		projectDate: new Date(2021, 11),
 		technologies: [
-			packages.react,
-			packages.typeScript,
-			packages.remix,
-			packages.tailwind,
-			packages.radixUI,
+			technologies.react,
+			technologies.typeScript,
+			technologies.remix,
+			technologies.tailwind,
+			technologies.radixUI,
 		],
 	},
 	{
+		id: uniqueId(),
 		name: 'Installfest CLI',
 		slug: 'installfest-cli',
 		summary:
@@ -126,9 +201,14 @@ export const projects = [
 		responsive: false,
 		published: true,
 		projectDate: new Date(2021, 5),
-		technologies: [packages.typeScript, packages.node, packages.oclif],
+		technologies: [
+			technologies.typeScript,
+			technologies.node,
+			technologies.oclif,
+		],
 	},
 	{
+		id: uniqueId(),
 		name: 'SentiRed',
 		slug: 'sentired',
 		summary:
@@ -143,17 +223,18 @@ export const projects = [
 		published: true,
 		projectDate: new Date(2020, 6),
 		technologies: [
-			packages.react,
-			packages.styledComponents,
-			packages.python,
-			packages.flask,
-			packages.postgres,
-			packages.materialUI,
-			packages.yup,
-			packages.reactHookForm,
+			technologies.react,
+			technologies.styledComponents,
+			technologies.python,
+			technologies.flask,
+			technologies.postgres,
+			technologies.materialUI,
+			technologies.yup,
+			technologies.reactHookForm,
 		],
 	},
 	{
+		id: uniqueId(),
 		name: 'Wilderness',
 		slug: 'wilderness',
 		summary:
@@ -168,19 +249,20 @@ export const projects = [
 		published: true,
 		projectDate: new Date(2020, 7),
 		technologies: [
-			packages.react,
-			packages.node,
-			packages.sass,
-			packages.express,
-			packages.mongoose,
-			packages.mongoDB,
-			packages.cloudinary,
-			packages.mapbox,
-			packages.mocha,
-			packages.chai,
+			technologies.react,
+			technologies.node,
+			technologies.sass,
+			technologies.express,
+			technologies.mongoose,
+			technologies.mongoDB,
+			technologies.cloudinary,
+			technologies.mapbox,
+			technologies.mocha,
+			technologies.chai,
 		],
 	},
 	{
+		id: uniqueId(),
 		name: 'Pokeapi',
 		slug: 'pokeapi',
 		summary:
@@ -195,13 +277,14 @@ export const projects = [
 		responsive: false,
 		published: true,
 		technologies: [
-			packages.react,
-			packages.sass,
-			packages.reactDnd,
-			packages.bulma,
+			technologies.react,
+			technologies.sass,
+			technologies.reactDnd,
+			technologies.bulma,
 		],
 	},
 	{
+		id: uniqueId(),
 		name: 'Minesweeper',
 		slug: 'minesweeper',
 		summary:
@@ -215,57 +298,10 @@ export const projects = [
 		projectDate: new Date(2020, 5),
 		responsive: true,
 		published: true,
-		technologies: [packages.html, packages.css, packages.javascript],
-	},
-];
-
-export const feedback = [
-	{
-		value:
-			"Alex's knowledge and industry experience was really helpful and his positive attitude too",
-	},
-	{
-		value:
-			'Alex helps further explain points in a digestible manner, always learn something from him.',
-	},
-	{
-		value:
-			'Really great TA- amazing at bug fixes, clearly has worked in industry and knows A LOT. Nothing to improve!',
-	},
-	{
-		value:
-			'Very confident and knowledgable. Can quickly catch onto a problem and offer help or guidance. Really easy going and encouraging',
-	},
-	{
-		value:
-			'Really clever, enthusiastic and motivated. Always tries to solve even the weirdest problem with engagement. Also can be quite entertaining.',
-	},
-	{
-		value:
-			'For one homework I really struggled with, Alex provided extraordinarily good feedback and information I could tell put a lot of effort to put together.',
-	},
-	{
-		value:
-			'Alex is so easy to approach with questions and problems and is great at working through, love the level of detail in the homework feedback which is really useful.',
-	},
-	{
-		value:
-			'Alex was an amazing TA who helped me and my team more than I could keep count of. His genuine enthusiasm is infectious, and he was so friendly I never hesitated messaging him for advice or technical help',
-	},
-	{
-		value:
-			'Alex was amazing. Great feedback on homeworks. Was always there when needed. He explained complex problems in an understandable way and when he taught lessons they were really engaging and easy to understand.',
-	},
-	{
-		value:
-			"Oh where to begin! Alex is always always always there to help and thanks to him now I get excited by error messages as well. Debugging is fun!? He's never shy of suggestions and in hindsight it was great to not have him just give us the answers and guide us through so we'd discover them on our own.",
-	},
-	{
-		value:
-			"What I really enjoyed with Alex is that he made himself available to help, understood the problems I had, and always articulated solutions to accommodate my objectives. He's knowledgeable, generous with his time and his help. I think he went above and beyond what I expected from a TA and his assistance has definitely helped me progress and learn new things.",
-	},
-	{
-		value:
-			"Honestly, words can't describe how grateful I am to have Alex as a TA on this cohort. He's helped me get to the level of understanding I am at due to the way he helps me to figure out the answer and really understand. He makes sure it's in a way that I can work out it out for myself and I have had many penny-drop moments where things have made sense thanks to his prompts. He always makes the time to help and will go out of his way to find the answer for you if he's not 100% sure. It was a bit of a battle at times with other students to get his help! Amazing TA!",
+		technologies: [
+			technologies.html,
+			technologies.css,
+			technologies.javascript,
+		],
 	},
 ];

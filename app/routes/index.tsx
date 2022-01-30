@@ -1,17 +1,33 @@
 // import { Link, LinksFunction } from 'remix';
-import { Link, LoaderFunction, useLoaderData } from 'remix';
+import { Link, useLoaderData } from 'remix';
 import { Button, ExternalLink, HomepageIllustration } from '~/components/ui';
 import { ProjectCard } from '~/components/common';
-import { Project } from '@prisma/client';
-import { db } from '~/lib/db.server';
+import { projects as projectsData } from '~/data/projects';
+
+import type { LinksFunction, LoaderFunction } from 'remix';
+import type { Project } from '~/types';
 
 type RecentProjects = Project[];
 
-export const loader: LoaderFunction = async () => {
-	const recentProjects = await db.project.findMany({
-		take: 3,
-		orderBy: { projectDate: 'desc' },
-	});
+export const links: LinksFunction = () => {
+	// Preload images for projects that appear above the fold to minimise loading time
+	const preloadLinks = [];
+	const projectImages = projectsData.slice(0, 3).map((p) => p.thumbnail);
+
+	for (const image of projectImages) {
+		if (!image) continue;
+		preloadLinks.push({
+			rel: 'preload',
+			as: 'image',
+			href: image,
+		});
+	}
+
+	return preloadLinks;
+};
+
+export const loader: LoaderFunction = (): RecentProjects => {
+	const recentProjects = projectsData;
 	return recentProjects;
 };
 

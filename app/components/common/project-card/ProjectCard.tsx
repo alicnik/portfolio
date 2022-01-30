@@ -2,7 +2,8 @@ import clsx from 'clsx';
 import { Link } from 'remix';
 import { GitHubIcon } from '~/components/icons';
 import { ExternalLink } from '~/components/ui';
-import { Project } from '@prisma/client';
+
+import type { Project } from '~/types';
 
 interface ProjectCardProps extends Project {
 	className?: string;

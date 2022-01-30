@@ -1,21 +1,20 @@
 import * as React from 'react';
-import { LoaderFunction, useLoaderData } from 'remix';
+import { useLoaderData } from 'remix';
 import invariant from 'tiny-invariant';
 import { GitHubIcon, GlobeIcon } from '~/components/icons';
 import { ExternalLink, ExternalLinkProps } from '~/components/ui';
-import { Technology, Project } from '@prisma/client';
-import { db } from '~/lib/db.server';
+import { projects } from '~/data/projects';
 
-type LoaderType = Project & { technologies: Technology[] };
+import type { LoaderFunction } from 'remix';
+import type { Project } from '~/types';
 
-export const loader: LoaderFunction = async ({ params }) => {
+type SingleProject = Project;
+
+export const loader: LoaderFunction = ({ params }): SingleProject => {
 	const projectSlug = params.slug;
 	invariant(projectSlug, 'Expeced params.slug');
 
-	const project = await db.project.findUnique({
-		where: { slug: projectSlug },
-		include: { technologies: true },
-	});
+	const project = projects.find((p) => p.slug === projectSlug);
 
 	if (!project) throw new Error('Could not find that project');
 
@@ -23,7 +22,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 export default function SingleProjectRoute() {
-	const project = useLoaderData<LoaderType>();
+	const project = useLoaderData<SingleProject>();
 
 	return (
 		<article className="container mx-auto">
