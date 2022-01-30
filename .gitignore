@@ -4,3 +4,5 @@ node_modules
 /public/build
 /.netlify
 /app/styles/tailwind.css
+.env
+/prisma/dev.db

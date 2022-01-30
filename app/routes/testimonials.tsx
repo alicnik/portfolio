@@ -1,8 +1,19 @@
+import { Testimonial } from '@prisma/client';
+import { LoaderFunction, useLoaderData } from 'remix';
 import { DoubleQuotes } from '~/components/icons';
-import { feedback } from '../data/feedback';
+import { db } from '~/lib/db.server';
+
+type LoaderType = Testimonial[];
+
+export const loader: LoaderFunction = async () => {
+	const feedback = await db.testimonial.findMany({
+		orderBy: { length: 'desc' },
+	});
+	return feedback;
+};
 
 export default function Testimonials() {
-	const testimonials = feedback.sort((a, b) => b.length - a.length);
+	const feedback = useLoaderData<LoaderType>();
 
 	return (
 		<div className="container mx-auto">
@@ -14,13 +25,13 @@ export default function Testimonials() {
 				feedback on the TAs. Below are some of the comments I received.
 			</p>
 			<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-				{testimonials.map((testimonial) => (
+				{feedback.map((testimonial, i) => (
 					<article
-						key={testimonial}
+						key={i}
 						className="p-4 relative shadow dark:shadow-lg border rounded border-gray-300 dark:border-gray-600 flex justify-center items-center"
 					>
 						<DoubleQuotes className="absolute rotate-180 scale-[5] top-6 left-7 text-gray-300 dark:text-gray-600 text-opacity-30 dark:text-opacity-20 z-[-1]" />
-						<p>{testimonial}</p>
+						<p>{testimonial.value}</p>
 						<DoubleQuotes className="absolute scale-[4] bottom-6 right-8 text-gray-300 dark:text-gray-600 text-opacity-30 dark:text-opacity-20 z-[-1]" />
 					</article>
 				))}
