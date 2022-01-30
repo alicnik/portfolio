@@ -16,7 +16,7 @@ export const loader: LoaderFunction = async () => {
 	return projects;
 };
 
-export default function ProjectsRoute() {
+export default function ProjectIndexRoute() {
 	const projects = useLoaderData<LoaderType>();
 
 	return (
