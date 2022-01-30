@@ -3,7 +3,7 @@ import * as React from 'react';
 export const THEME_PREFERENCE_KEY = 'theme-preference';
 export const PREFERS_DARK_MEDIA_QUERY = '(prefers-color-scheme: dark)';
 
-export type ThemePreference = 'dark' | 'light' | 'system';
+export type ThemePreference = 'dark' | 'light';
 
 interface ThemePreferenceContextValue {
 	themePreference: ThemePreference | undefined;
@@ -54,7 +54,6 @@ export function ThemePreferenceProvider({
 		const isSystemDarkMode = themeMediaQuery.matches;
 		if (isSystemDarkMode) {
 			const preference = isSystemDarkMode ? 'dark' : 'light';
-			localStorage.setItem(THEME_PREFERENCE_KEY, 'system');
 			themeMediaQuery.addEventListener('change', watchSystemThemePreference);
 			return preference;
 		}
@@ -62,27 +61,9 @@ export function ThemePreferenceProvider({
 	}
 
 	function updateThemePreference(newPreference: ThemePreference) {
-		switch (newPreference) {
-			case 'dark':
-				localStorage.setItem(THEME_PREFERENCE_KEY, 'dark');
-				setThemePreference('dark');
-				setHasPreferenceChanged(true);
-				return;
-			case 'light':
-				localStorage.setItem(THEME_PREFERENCE_KEY, 'light');
-				setThemePreference('light');
-				setHasPreferenceChanged(true);
-				return;
-			case 'system':
-				const themeMediaQuery = window.matchMedia(PREFERS_DARK_MEDIA_QUERY);
-				const isSystemDarkMode = themeMediaQuery.matches;
-				const preference = isSystemDarkMode ? 'dark' : 'light';
-				localStorage.setItem(THEME_PREFERENCE_KEY, 'system');
-				themeMediaQuery.addEventListener('change', watchSystemThemePreference);
-				setThemePreference(preference);
-				setHasPreferenceChanged(true);
-				return;
-		}
+		localStorage.setItem(THEME_PREFERENCE_KEY, newPreference);
+		setThemePreference(newPreference);
+		setHasPreferenceChanged(true);
 	}
 
 	function resetHasPreferenceChanged() {

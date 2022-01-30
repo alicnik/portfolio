@@ -3,7 +3,7 @@ import { ThemePreference, useThemePreference } from '~/context';
 import { Dropdown } from '~/components/radix';
 import { GlobeIcon, MoonIcon, SunIcon, LoadingIcon } from '~/components/icons';
 
-const themeOptions: ThemePreference[] = ['dark', 'light', 'system'];
+const themeOptions: ThemePreference[] = ['dark', 'light'];
 
 export function ThemePicker() {
 	const [themeIcon, setThemeIcon] = React.useState<React.ReactNode>(
@@ -57,5 +57,4 @@ export function ThemePicker() {
 const themeIcons: { [index: string]: React.ReactNode } = {
 	light: <SunIcon className="scale-125" />,
 	dark: <MoonIcon className="scale-125" />,
-	system: <GlobeIcon className="scale-125" />,
 };
