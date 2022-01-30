@@ -6,7 +6,7 @@ export const links: LinksFunction = () => [
 
 export default function AboutRoute() {
 	return (
-		<article className="container mt-4">
+		<article className="container mt-4 mx-auto">
 			<section className="md:grid md:grid-cols-2 gap-6">
 				<div>
 					<h1 className="text-3xl font-display mb-6 md:text-4xl">Who am I?</h1>
