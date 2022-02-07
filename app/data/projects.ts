@@ -1,4 +1,5 @@
 import { uniqueId } from 'lodash';
+import { Project } from '~/types';
 
 export const technologies = {
 	react: {
@@ -135,7 +136,7 @@ export const technologies = {
 	},
 };
 
-export const projects = [
+export const projects: Project[] = [
 	{
 		id: uniqueId(),
 		name: 'Trello Clone',
@@ -161,6 +162,27 @@ export const projects = [
 			technologies.springBoot,
 			technologies.radixUI,
 			technologies.vanillaExtract,
+		],
+	},
+	{
+		id: uniqueId(),
+		name: 'WhiskyBored',
+		slug: 'whiskybored',
+		summary:
+			'An eight-hour hackathon to build a RESTful API for educational purposes using Java and SpringBoot.',
+		description:
+			'On the General Assembly bootcamp, there are two APIs used for learning purposes; Cheesebored and Winebored. Since I was practising Spring Boot, I set myself the challenge of building a similar API using Java/Spring Boot during business hours. I was successful in building 95% of the product in eight hours but ran into a few bugs on deployment.',
+		published: true,
+		image: null,
+		thumbnail: null,
+		url: 'https://whiskybored.herokuapp.com',
+		githubPrimary: 'https://github.com/alicnik/whiskybored',
+		responsive: false,
+		projectDate: new Date(2021, 09),
+		technologies: [
+			technologies.java,
+			technologies.springBoot,
+			technologies.bulma,
 		],
 	},
 	{
