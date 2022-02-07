@@ -178,7 +178,7 @@ export const projects: Project[] = [
 		url: 'https://whiskybored.herokuapp.com',
 		githubPrimary: 'https://github.com/alicnik/whiskybored',
 		responsive: false,
-		projectDate: new Date(2021, 09),
+		projectDate: new Date(2021, 9),
 		technologies: [
 			technologies.java,
 			technologies.springBoot,
