@@ -25,6 +25,11 @@ export const meta: MetaFunction = ({ data }) => {
 	return {
 		title: `AN | ${data.name}`,
 		description: data.summary,
+		'og:title': `AN | Projects | ${data.name}`,
+		'og:type': 'website',
+		'og:url': `https://alexnicholas.dev/projects/${data.slug}/`,
+		'og:image': `https://alexnicholas.dev${data.thumbnail}`,
+		'twitter:card': 'summary',
 	};
 };
 

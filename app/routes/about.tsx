@@ -11,6 +11,11 @@ export const meta: MetaFunction = () => {
 		title: 'AN | About',
 		description:
 			"Hi, I'm Alex. I came to coding later in life than I would have liked, but I'm making up for lost time.",
+		'og:title': 'Alex Nicholas | About Me',
+		'og:type': 'profile',
+		'og:url': 'https://alexnicholas.dev/about/',
+		'og:image': 'https://alexnicholas.dev/images/profile-photo.webp',
+		'twitter:card': 'summary',
 	};
 };
 
