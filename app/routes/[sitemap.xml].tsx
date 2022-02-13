@@ -9,37 +9,37 @@ export const loader: LoaderFunction = () => {
 	// separating xml content from Response to keep clean code.
 	// const routes = fs.readdirSync('app/routes');
 	// console.log(routes);
-	const content = `
+	const content = `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
         <loc>https://alexnicholas.dev/</loc>
         <lastmod>${date}</lastmod>
         <priority>1.0</priority>
       </url>
-      ${['about', 'projects', 'testimonials', 'contact'].map((page) => {
-				return `<url>
+      ${['about', 'projects', 'testimonials', 'contact']
+				.map((page) => {
+					return `<url>
         <loc>https://alexnicholas.dev/${page}/</loc>
         <lastmod>${date}</lastmod>
         <priority>1.0</priority>
       </url>`;
-			})}
-      ${projects.map((project) => {
-				return `<url>
+				})
+				.join('')}
+      ${projects
+				.map((project) => {
+					return `<url>
         <loc>https://alexnicholas.dev/projects/${project.slug}/</loc>
         <lastmod>${date}</lastmod>
         <priority>1.0</priority>
       </url>`;
-			})}
+				})
+				.join('')}
     </urlset>
     `;
 
 	// Return the response with the content, a status 200 message, and the appropriate headers for an XML page
 	return new Response(content, {
 		status: 200,
-		headers: {
-			'Content-Type': 'application/xml',
-			'xml-version': '1.0',
-			encoding: 'UTF-8',
-		},
+		headers: { 'Content-Type': 'application/xml' },
 	});
 };
