@@ -31,11 +31,10 @@ export const meta: MetaFunction = () => {
 		title: 'Alex Nicholas | Front-End Developer',
 		description:
 			'Alex is a front-end developer working with React, TypeScript, Next.js, Remix, and any other tool he can get his hands on.',
-		'og:title': 'Alex Nicholas | Front-End Developer',
-		'og:type': 'website',
+		'og:description':
+			'Alex is a front-end developer working with React, TypeScript, Next.js, Remix, and any other tool he can get his hands on.',
 		'og:url': 'https://alexnicholas.dev/',
 		'og:image': 'https://alexnicholas.dev/images/portfolio-sm.webp',
-		'twitter:card': 'summary',
 	};
 };
 

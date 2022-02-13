@@ -38,7 +38,12 @@ export const links: LinksFunction = () => {
 };
 
 export const meta: MetaFunction = () => {
-	return { title: 'Alex Nicholas | Front-End Developer' };
+	return {
+		title: 'Alex Nicholas | Front-End Developer',
+		'og:site_name': 'Alex Nicholas Portfolio',
+		'og:type': 'website',
+		'twitter:card': 'summary',
+	};
 };
 
 function Document({ children }: { children: React.ReactNode }) {

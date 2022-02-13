@@ -19,11 +19,11 @@ export const meta: MetaFunction = () => {
 		title: 'AN | Testimonials',
 		description:
 			'Some of the nice things people have said about me from my time as a Teaching Assistant. No bribes were involved.',
+		'og:description':
+			'Some of the nice things people have said about me from my time as a Teaching Assistant. No bribes were involved.',
 		'og:title': 'Alex Nicholas | Testimonials',
-		'og:type': 'website',
 		'og:url': 'https://alexnicholas.dev/testimonials/',
 		'og:image': 'https://alexnicholas.dev/images/portfolio-sm.webp',
-		'twitter:card': 'summary',
 	};
 };
 

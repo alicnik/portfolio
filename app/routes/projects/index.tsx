@@ -22,11 +22,11 @@ export const meta: MetaFunction = () => {
 		title: 'AN | Projects',
 		description:
 			'Here are some of my side projects. Like most devs, I love tinkering and have a number of works in progress. But these are the ones that got the most love.',
+		'og:description':
+			'Here are some of my side projects. Like most devs, I love tinkering and have a number of works in progress. But these are the ones that got the most love.',
 		'og:title': 'Alex Nicholas | Projects',
-		'og:type': 'website',
 		'og:url': 'https://alexnicholas.dev/projects/',
 		'og:image': 'https://alexnicholas.dev/images/portfolio-sm.webp',
-		'twitter:card': 'summary',
 	};
 };
 
