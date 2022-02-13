@@ -18,7 +18,7 @@ export default function handleRequest(
 	);
 
 	const CSP =
-		baseCSP + process.env.NODE_ENV === 'production' ? prodCSP : devCSP;
+		baseCSP + (process.env.NODE_ENV === 'production' ? prodCSP : devCSP);
 
 	responseHeaders.set('Content-Type', 'text/html');
 	responseHeaders.set('Content-Security-Policy', CSP);
