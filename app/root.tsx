@@ -65,12 +65,7 @@ function Document({ children }: { children: React.ReactNode }) {
 					{children}
 				</main>
 
-				<ScrollRestoration />
-				{process.env.NODE_ENV === 'production' ? (
-					<Scripts nonce={nonce} />
-				) : (
-					<Scripts />
-				)}
+				<Scripts nonce={nonce} />
 				{process.env.NODE_ENV === 'development' && <LiveReload />}
 			</body>
 		</html>

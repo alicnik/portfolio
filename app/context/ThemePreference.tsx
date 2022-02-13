@@ -123,12 +123,10 @@ const clientThemeCode = `
 `;
 
 export function AvoidFlashOfWrongTheme() {
-	return process.env.NODE_ENV === 'production' ? (
+	return (
 		<script
 			nonce={nonce}
 			dangerouslySetInnerHTML={{ __html: clientThemeCode }}
 		/>
-	) : (
-		<script dangerouslySetInnerHTML={{ __html: clientThemeCode }} />
 	);
 }

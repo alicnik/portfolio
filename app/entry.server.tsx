@@ -17,18 +17,14 @@ export default function handleRequest(
 		<RemixServer context={remixContext} url={request.url} />,
 	);
 
-	const CSP =
-		baseCSP + (process.env.NODE_ENV === 'production' ? prodCSP : devCSP);
-
 	responseHeaders.set('Content-Type', 'text/html');
-	responseHeaders.set('Content-Security-Policy', CSP);
+	responseHeaders.set(
+		'Content-Security-Policy',
+		`default-src 'none'; script-src 'self' 'nonce-${nonce}'; img-src 'self'; style-src 'self' 'unsafe-inline' http://fonts.googleapis.com; font-src https://fonts.gstatic.com;base-uri 'self'; form-action 'self'; connect-src 'self' ws://localhost:8002;`,
+	);
 
 	return new Response('<!DOCTYPE html>' + markup, {
 		status: responseStatusCode,
 		headers: responseHeaders,
 	});
 }
-
-const baseCSP = `default-src 'none'; img-src 'self'; style-src 'self' 'unsafe-inline' http://fonts.googleapis.com; font-src https://fonts.gstatic.com;base-uri 'self'; form-action 'self';`;
-const devCSP = `script-src 'unsafe-inline' 'self'; connect-src ws://localhost:8002;`;
-const prodCSP = `script-src 'self' 'nonce-${nonce}'; connect-src 'self';`;
