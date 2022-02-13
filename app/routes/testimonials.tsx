@@ -23,7 +23,7 @@ export const meta: MetaFunction = () => {
 			'Some of the nice things people have said about me from my time as a Teaching Assistant. No bribes were involved.',
 		'og:title': 'Alex Nicholas | Testimonials',
 		'og:url': 'https://alexnicholas.dev/testimonials/',
-		'og:image': 'https://alexnicholas.dev/images/portfolio-sm.webp',
+		'og:image': 'https://alexnicholas.dev/images/illustration.webp',
 	};
 };
 

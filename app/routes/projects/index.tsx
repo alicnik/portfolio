@@ -26,7 +26,7 @@ export const meta: MetaFunction = () => {
 			'Here are some of my side projects. Like most devs, I love tinkering and have a number of works in progress. But these are the ones that got the most love.',
 		'og:title': 'Alex Nicholas | Projects',
 		'og:url': 'https://alexnicholas.dev/projects/',
-		'og:image': 'https://alexnicholas.dev/images/portfolio-sm.webp',
+		'og:image': 'https://alexnicholas.dev/images/illustration.webp',
 	};
 };
 

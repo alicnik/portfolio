@@ -57,7 +57,7 @@ export const meta: MetaFunction = () => {
 			'If you want to get in touch with me just send me a message using the form, or drop me an email.',
 		'og:title': 'Alex Nicholas | Contact me',
 		'og:url': 'https://alexnicholas.dev/contact/',
-		'og:image': 'https://alexnicholas.dev/images/portfolio-sm.webp',
+		'og:image': 'https://alexnicholas.dev/images/illustration.webp',
 	};
 };
 

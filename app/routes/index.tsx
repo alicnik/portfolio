@@ -35,7 +35,7 @@ export const meta: MetaFunction = () => {
 		'og:description':
 			'Alex is a front-end developer working with React, TypeScript, Next.js, Remix, and any other tool he can get his hands on.',
 		'og:url': 'https://alexnicholas.dev/',
-		'og:image': 'https://alexnicholas.dev/images/portfolio-sm.webp',
+		'og:image': 'https://alexnicholas.dev/images/illustration.webp',
 	};
 };
 
