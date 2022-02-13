@@ -30,5 +30,5 @@ export default function handleRequest(
 }
 
 const baseCSP = `default-src 'none'; img-src 'self'; style-src 'self' http://fonts.googleapis.com; font-src https://fonts.gstatic.com;base-uri 'self'; form-action 'self';`;
-const devCSP = `script-src 'unsafe-inline' http://localhost:3000;`;
+const devCSP = `script-src 'unsafe-inline' 'self';`;
 const prodCSP = `script-src 'self' 'nonce-${nonce}'; connect-src 'self';`;
