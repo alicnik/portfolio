@@ -100,6 +100,7 @@ export default function ContactRoute() {
 						id="phone-number"
 						tabIndex={-1}
 						autoComplete="nope"
+						aria-hidden="true"
 					/>
 					<Button
 						variant="outlined"
