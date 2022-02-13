@@ -75,7 +75,7 @@ export default function Index() {
 							key={project.name}
 							className={
 								index === 1
-									? 'mobile:hidden md:block'
+									? 'mobile:hidden md:flex'
 									: index === 2
 									? 'mobile:hidden md:hidden lg:flex'
 									: ''

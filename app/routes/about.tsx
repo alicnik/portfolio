@@ -87,7 +87,15 @@ export default function AboutRoute() {
 					writes clean, well-documented, maintainable code that a newcomer could
 					navigate with relative ease.
 				</p>
-				<p className="mb-4">
+				<p>
+					I recently accepted a role at Immediate Media, which was ranked #4 on
+					the Glassdoor Best Places to Work 2022 list. It was an interview
+					process where I came out of every round feeling better and better
+					about the company, so I was pleased as punch to receive an offer. I am
+					looking forward to growing and developing at Immediate Media for many
+					years to come.
+				</p>
+				{/* <p className="mb-4">
 					At the moment, I'm looking for work, having just completed some
 					contract work with General Assembly as a Teaching Assistant. I loved
 					it but it wasn't pushing me.
@@ -109,7 +117,7 @@ export default function AboutRoute() {
 						contact me
 					</Link>
 					!
-				</p>
+				</p> */}
 			</section>
 		</article>
 	);

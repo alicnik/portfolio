@@ -19,6 +19,7 @@ import {
 } from '~/context';
 import { Navbar } from '~/components/common';
 import { Button } from './components/ui';
+import { nonce } from './entry.server';
 
 export const links: LinksFunction = () => {
 	return [
@@ -63,9 +64,13 @@ function Document({ children }: { children: React.ReactNode }) {
 				<main className="px-6 pt-32 max-w-6xl pb-8 container mx-auto">
 					{children}
 				</main>
-				<ScrollRestoration />
 
-				<Scripts />
+				<ScrollRestoration />
+				{process.env.NODE_ENV === 'production' ? (
+					<Scripts nonce={nonce} />
+				) : (
+					<Scripts />
+				)}
 				{process.env.NODE_ENV === 'development' && <LiveReload />}
 			</body>
 		</html>

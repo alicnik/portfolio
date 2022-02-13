@@ -59,7 +59,7 @@ export const testimonials = [
 	{
 		id: uniqueId(),
 		value:
-			"Honestly, words can't describe how grateful I am to have Alex as a TA on this cohort. He's helped me get to the level of understanding I am at due to the way he helps me to figure out the answer and really understand. He makes sure it's in a way that I can work out it out for myself and I have had many penny-drop moments where things have made sense thanks to his prompts. He always makes the time to help and will go out of his way to find the answer for you if he's not 100% sure. It was a bit of a battle at times with other students to get his help! Amazing TA!",
+			"Honestly, words can't describe how grateful I am to have Alex as a TA on this cohort. He's helped me get to the level of understanding I am at due to the way he helps me to figure out the answer and really understand. He makes sure it's in a way that I can work it out for myself and I have had many penny-drop moments where things have made sense thanks to his prompts. He always makes the time to help and will go out of his way to find the answer for you if he's not 100% sure. It was a bit of a battle at times with other students to get his help! Amazing TA!",
 	},
 ];
 

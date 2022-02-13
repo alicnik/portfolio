@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { nonce } from '~/entry.server';
 
 export const THEME_PREFERENCE_KEY = 'theme-preference';
 export const PREFERS_DARK_MEDIA_QUERY = '(prefers-color-scheme: dark)';
@@ -122,7 +123,12 @@ const clientThemeCode = `
 `;
 
 export function AvoidFlashOfWrongTheme() {
-	const { themePreference } = useThemePreference();
-
-	return <script dangerouslySetInnerHTML={{ __html: clientThemeCode }} />;
+	return process.env.NODE_ENV === 'production' ? (
+		<script
+			nonce={nonce}
+			dangerouslySetInnerHTML={{ __html: clientThemeCode }}
+		/>
+	) : (
+		<script dangerouslySetInnerHTML={{ __html: clientThemeCode }} />
+	);
 }

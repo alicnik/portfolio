@@ -1,136 +1,136 @@
-import { uniqueId } from 'lodash';
+import { nanoid } from 'nanoid';
 import { Project } from '~/types';
 
 export const technologies = {
 	react: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'React',
 		url: 'https://github.com/facebook/react',
 	},
 	typeScript: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'TypeScript',
 		url: 'https://github.com/microsoft/typescript',
 	},
 	next: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'Next.js',
 		url: 'https://github.com/vercel/next.js',
 	},
 	reactQuery: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'React Query',
 		url: 'https://github.com/tannerlinsley/react-query',
 	},
-	java: { id: uniqueId(), name: 'Java', url: 'https://www.java.com/en/' },
+	java: { id: nanoid(), name: 'Java', url: 'https://www.java.com/en/' },
 	springBoot: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'Spring Boot',
 		url: 'https://spring.io/',
 	},
 	radixUI: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'Radix-UI',
 		url: 'https://github.com/radix-ui',
 	},
 	vanillaExtract: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'Vanilla Extract CSS',
 		url: 'https://github.com/seek-oss/vanilla-extract',
 	},
 	node: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'Node.js',
 		url: 'https://github.com/nodejs/node',
 	},
 	oclif: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'oclif',
 		url: 'https://github.com/oclif/oclif',
 	},
 	styledComponents: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'Styled Components',
 		url: 'https://github.com/styled-components/styled-components',
 	},
-	python: { id: uniqueId(), name: 'Python', url: 'https://www.python.org/' },
+	python: { id: nanoid(), name: 'Python', url: 'https://www.python.org/' },
 	flask: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'Flask',
 		url: 'https://flask.palletsprojects.com/en/2.0.x/',
 	},
 	postgres: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'PostgreSQL',
 		url: 'https://www.postgresql.org/',
 	},
 	materialUI: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'Material-UI',
 		url: 'https://github.com/mui-org/material-ui',
 	},
-	yup: { id: uniqueId(), name: 'Yup', url: 'https://github.com/jquense/yup' },
+	yup: { id: nanoid(), name: 'Yup', url: 'https://github.com/jquense/yup' },
 	reactHookForm: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'React Hook Form',
 		url: 'https://github.com/react-hook-form/react-hook-form',
 	},
 	remix: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'Remix',
 		url: 'https://github.com/remix-run/remix',
 	},
 	tailwind: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'Tailwind',
 		url: 'https://github.com/tailwindlabs/tailwindcss',
 	},
-	sass: { id: uniqueId(), name: 'Sass', url: 'https://github.com/sass/sass' },
+	sass: { id: nanoid(), name: 'Sass', url: 'https://github.com/sass/sass' },
 	express: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'Express',
 		url: 'https://github.com/expressjs/express',
 	},
 	mongoose: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'Mongoose',
 		url: 'https://github.com/Automattic/mongoose',
 	},
 	mongoDB: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'MongoDB',
 		url: 'https://github.com/mongodb/mongo',
 	},
 	cloudinary: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'Cloudinary',
 		url: 'https://cloudinary.com/',
 	},
-	mapbox: { id: uniqueId(), name: 'Mapbox', url: 'https://www.mapbox.com/' },
+	mapbox: { id: nanoid(), name: 'Mapbox', url: 'https://www.mapbox.com/' },
 	mocha: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'Mocha',
 		url: 'https://github.com/mochajs/mocha',
 	},
-	chai: { id: uniqueId(), name: 'Chai', url: 'https://github.com/chaijs/chai' },
+	chai: { id: nanoid(), name: 'Chai', url: 'https://github.com/chaijs/chai' },
 	reactDnd: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'react-dnd',
 		url: 'https://react-dnd.github.io/react-dnd/about',
 	},
-	bulma: { id: uniqueId(), name: 'Bulma', url: 'https://bulma.io/' },
+	bulma: { id: nanoid(), name: 'Bulma', url: 'https://bulma.io/' },
 	html: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'HTML',
 		url: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
 	},
 	css: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'CSS',
 		url: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
 	},
 	javascript: {
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'JavaScript',
 		url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
 	},
@@ -138,7 +138,7 @@ export const technologies = {
 
 export const projects: Project[] = [
 	{
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'Trello Clone',
 		slug: 'trello-clone',
 		summary:
@@ -165,7 +165,7 @@ export const projects: Project[] = [
 		],
 	},
 	{
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'WhiskyBored',
 		slug: 'whiskybored',
 		summary:
@@ -186,7 +186,7 @@ export const projects: Project[] = [
 		],
 	},
 	{
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'Portfolio Website',
 		slug: 'portfolio-website',
 		summary:
@@ -209,7 +209,7 @@ export const projects: Project[] = [
 		],
 	},
 	{
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'Installfest CLI',
 		slug: 'installfest-cli',
 		summary:
@@ -230,7 +230,7 @@ export const projects: Project[] = [
 		],
 	},
 	{
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'SentiRed',
 		slug: 'sentired',
 		summary:
@@ -256,7 +256,7 @@ export const projects: Project[] = [
 		],
 	},
 	{
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'Wilderness',
 		slug: 'wilderness',
 		summary:
@@ -284,7 +284,7 @@ export const projects: Project[] = [
 		],
 	},
 	{
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'Pokeapi',
 		slug: 'pokeapi',
 		summary:
@@ -306,7 +306,7 @@ export const projects: Project[] = [
 		],
 	},
 	{
-		id: uniqueId(),
+		id: nanoid(),
 		name: 'Minesweeper',
 		slug: 'minesweeper',
 		summary:
