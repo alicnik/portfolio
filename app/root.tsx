@@ -65,6 +65,10 @@ function Document({ children }: { children: React.ReactNode }) {
 					{children}
 				</main>
 
+				{/* // Disable ScrollRestoration to avoid CSP clash 
+        // TODO: Find a way to pass nonce to ScrollResoration script tag
+				<ScrollRestoration /> */}
+
 				<Scripts nonce={nonce} />
 				{process.env.NODE_ENV === 'development' && <LiveReload />}
 			</body>

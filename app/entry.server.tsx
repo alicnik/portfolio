@@ -20,7 +20,7 @@ export default function handleRequest(
 	responseHeaders.set('Content-Type', 'text/html');
 	responseHeaders.set(
 		'Content-Security-Policy',
-		`default-src 'none'; script-src 'self' 'nonce-${nonce}'; img-src 'self'; style-src 'self' 'unsafe-inline' http://fonts.googleapis.com; font-src https://fonts.gstatic.com;base-uri 'self'; form-action 'self'; connect-src 'self' ws://localhost:8002;`,
+		`default-src 'none'; script-src 'self' 'nonce-${nonce}' 'unsafe-inline'; img-src 'self'; style-src 'self' 'unsafe-inline' http://fonts.googleapis.com; font-src https://fonts.gstatic.com;base-uri 'self'; form-action 'self'; connect-src 'self' ws://localhost:8002;`,
 	);
 
 	return new Response('<!DOCTYPE html>' + markup, {
