@@ -2,7 +2,7 @@ import { useLoaderData } from 'remix';
 import { ProjectCard } from '~/components/common';
 import { projects as projectsData } from '~/data/projects';
 
-import type { LoaderFunction } from 'remix';
+import type { LoaderFunction, MetaFunction } from 'remix';
 import type { Project } from '~/types';
 
 type AllProjects = Project[];
@@ -15,6 +15,14 @@ export const loader: LoaderFunction = (): AllProjects => {
 	});
 
 	return projects;
+};
+
+export const meta: MetaFunction = () => {
+	return {
+		title: 'AN | Projects',
+		description:
+			'Here are some of my side projects. Like most devs, I love tinkering and have a number of works in progress. But these are the ones that got the most love.',
+	};
 };
 
 export default function ProjectIndexRoute() {

@@ -4,7 +4,7 @@ import { Button, ExternalLink, HomepageIllustration } from '~/components/ui';
 import { ProjectCard } from '~/components/common';
 import { projects as projectsData } from '~/data/projects';
 
-import type { LinksFunction, LoaderFunction } from 'remix';
+import type { LinksFunction, LoaderFunction, MetaFunction } from 'remix';
 import type { Project } from '~/types';
 
 type RecentProjects = Project[];
@@ -24,6 +24,14 @@ export const links: LinksFunction = () => {
 	}
 
 	return preloadLinks;
+};
+
+export const meta: MetaFunction = () => {
+	return {
+		title: 'Alex Nicholas | Front-End Developer',
+		description:
+			'Alex is a front-end developer working with React, TypeScript, Next.js, Remix, and any other tool he can get his hands on.',
+	};
 };
 
 export const loader: LoaderFunction = (): RecentProjects => {

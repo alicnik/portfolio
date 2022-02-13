@@ -1,8 +1,18 @@
-import { Link, LinksFunction } from 'remix';
+import { Link } from 'remix';
+
+import type { LinksFunction, MetaFunction } from 'remix';
 
 export const links: LinksFunction = () => [
 	{ rel: 'preload', as: 'image', href: '/images/profile-photo.webp' },
 ];
+
+export const meta: MetaFunction = () => {
+	return {
+		title: 'AN | About',
+		description:
+			"Hi, I'm Alex. I came to coding later in life than I would have liked, but I'm making up for lost time.",
+	};
+};
 
 export default function AboutRoute() {
 	return (

@@ -2,7 +2,7 @@ import { useLoaderData } from 'remix';
 import { DoubleQuotes } from '~/components/icons';
 import { testimonials as testimonialsData } from '~/data/testimonials';
 
-import type { LoaderFunction } from 'remix';
+import type { LoaderFunction, MetaFunction } from 'remix';
 import type { Testimonial } from '~/types';
 
 type AllTestimonials = Testimonial[];
@@ -12,6 +12,14 @@ export const loader: LoaderFunction = (): Testimonial[] => {
 		(a, b) => b.value.length - a.value.length,
 	);
 	return testimonials;
+};
+
+export const meta: MetaFunction = () => {
+	return {
+		title: 'AN | Testimonials',
+		description:
+			'Some of the nice things people have said about me from my time as a Teaching Assistant. No bribes were involved.',
+	};
 };
 
 export default function TestimonialsRoute() {

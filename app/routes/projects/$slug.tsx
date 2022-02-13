@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useLoaderData } from 'remix';
+import { MetaFunction, useLoaderData } from 'remix';
 import invariant from 'tiny-invariant';
 import { GitHubIcon, GlobeIcon } from '~/components/icons';
 import { ExternalLink, ExternalLinkProps } from '~/components/ui';
@@ -19,6 +19,13 @@ export const loader: LoaderFunction = ({ params }): SingleProject => {
 	if (!project) throw new Error('Could not find that project');
 
 	return project;
+};
+
+export const meta: MetaFunction = ({ data }) => {
+	return {
+		title: `AN | ${data.name}`,
+		description: data.summary,
+	};
 };
 
 export default function SingleProjectRoute() {

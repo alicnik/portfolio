@@ -1,14 +1,10 @@
-import {
-	ActionFunction,
-	Form,
-	redirect,
-	useActionData,
-	useTransition,
-} from 'remix';
+import { Form, redirect, useActionData, useTransition } from 'remix';
 import { Button, ExternalLink, Textarea, TextInput } from '~/components/ui';
 import invariant from 'tiny-invariant';
 import { LoadingIcon } from '~/components/icons';
 import { sendEmails } from '~/lib/sendgrid.server';
+
+import type { ActionFunction, MetaFunction } from 'remix';
 
 interface ActionDataValue {
 	error: string;
@@ -50,6 +46,14 @@ export const action: ActionFunction = async ({ request }) => {
 	}
 
 	return redirect('/thank-you');
+};
+
+export const meta: MetaFunction = () => {
+	return {
+		title: 'AN | Contact',
+		description:
+			'If you want to get in touch with me just send me a message using the form, or drop me an email.',
+	};
 };
 
 export default function ContactRoute() {

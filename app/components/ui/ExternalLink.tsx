@@ -24,6 +24,7 @@ export function ExternalLink({
 			)}
 			href={to}
 			target="_blank"
+			rel="noopener noreferrer"
 			{...props}
 		>
 			{children}
