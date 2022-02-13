@@ -29,6 +29,7 @@ export const links: LinksFunction = () => {
 export const meta: MetaFunction = () => {
 	return {
 		title: 'Alex Nicholas | Front-End Developer',
+		'og:title': 'Alex Nicholas | Front-End Developer',
 		description:
 			'Alex is a front-end developer working with React, TypeScript, Next.js, Remix, and any other tool he can get his hands on.',
 		'og:description':
