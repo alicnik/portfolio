@@ -12,7 +12,7 @@ type SingleProject = Project;
 
 export const loader: LoaderFunction = ({ params }): SingleProject => {
 	const projectSlug = params.slug;
-	invariant(projectSlug, 'Expeced params.slug');
+	invariant(projectSlug, 'Expected params.slug');
 
 	const project = projects.find((p) => p.slug === projectSlug);
 
