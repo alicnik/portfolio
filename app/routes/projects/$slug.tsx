@@ -29,7 +29,7 @@ export const meta: MetaFunction = ({ data }) => {
 		'og:title': `AN | Projects | ${data.name}`,
 		'og:url': `https://alexnicholas.dev/projects/${data.slug}/`,
 		'og:image': `https://alexnicholas.dev${
-			data.thumbnail ?? '/images/portfolio-sm.webp'
+			data.thumbnail ?? '/images/illustration.webp'
 		}`,
 	};
 };
