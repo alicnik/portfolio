@@ -19,6 +19,9 @@ export function ProjectCard({
 	responsive,
 	className,
 }: ProjectCardProps) {
+	const resolvedUrl =
+		name === 'Portfolio Website' || !url ? githubPrimary : url;
+
 	return (
 		<div
 			className={clsx(
@@ -46,28 +49,22 @@ export function ProjectCard({
 				)}
 				<p>{summary}</p>
 			</Link>
-			{name === 'Portfolio Website' || !url ? (
-				<ExternalLink to={githubPrimary} className="flex items-center gap-2">
-					<GitHubIcon label="GitHub repository link" />
-					<span className="underline underline-offset-2">
-						GitHub respository
-					</span>
+
+			<div className="flex items-center pr-2">
+				<ExternalLink
+					to={resolvedUrl}
+					className="underline underline-offset-2 mr-auto"
+				>
+					{resolvedUrl === githubPrimary
+						? 'GitHub repository'
+						: responsive
+						? 'Deployment (responsive)'
+						: 'Deployment (desktop only)'}
 				</ExternalLink>
-			) : (
-				<div className="flex items-center pr-2">
-					<ExternalLink
-						to={url}
-						className="underline underline-offset-2 mr-auto"
-					>
-						{responsive
-							? 'Deployment (responsive)'
-							: 'Deployment (desktop only)'}
-					</ExternalLink>
-					<ExternalLink to={githubPrimary}>
-						<GitHubIcon label="GitHub repository link" />
-					</ExternalLink>
-				</div>
-			)}
+				<ExternalLink to={githubPrimary}>
+					<GitHubIcon label="GitHub repository link" />
+				</ExternalLink>
+			</div>
 		</div>
 	);
 }
