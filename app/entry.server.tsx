@@ -1,8 +1,8 @@
-import { renderToString } from 'react-dom/server';
-import { RemixServer } from 'remix';
-import type { EntryContext } from 'remix';
+import type { EntryContext } from '@remix-run/node';
+import { RemixServer } from '@remix-run/react';
 import { customAlphabet } from 'nanoid';
 import { alphanumeric } from 'nanoid-dictionary';
+import { renderToString } from 'react-dom/server';
 
 const nanoid = customAlphabet(alphanumeric, 24);
 export const nonce = nanoid();

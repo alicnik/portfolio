@@ -1,4 +1,4 @@
-import { LoaderFunction } from 'remix';
+import type { LoaderFunction } from '@remix-run/node';
 
 export const loader: LoaderFunction = () => {
 	const robots = `User-agent: Googlebot

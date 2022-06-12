@@ -1,5 +1,5 @@
+import { Link } from '@remix-run/react';
 import clsx from 'clsx';
-import { Link } from 'remix';
 import { GitHubIcon } from '~/components/icons';
 import { ExternalLink } from '~/components/ui';
 

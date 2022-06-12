@@ -1,15 +1,4 @@
 import * as React from 'react';
-import {
-	Link,
-	Links,
-	LiveReload,
-	Meta,
-	Outlet,
-	Scripts,
-	ScrollRestoration,
-	useCatch,
-} from 'remix';
-import type { MetaFunction, LinksFunction } from 'remix';
 import customStyles from './styles/custom.css';
 import tailwindStyles from './styles/tailwind.css';
 import {
@@ -20,6 +9,19 @@ import {
 import { Navbar } from '~/components/common';
 import { Button } from './components/ui';
 import { nonce } from './entry.server';
+import {
+	Meta,
+	Links,
+	Scripts,
+	LiveReload,
+	Outlet,
+	useCatch,
+	Link,
+} from '@remix-run/react';
+import type {
+	LinksFunction,
+	MetaFunction,
+} from '@remix-run/react/routeModules';
 
 export const links: LinksFunction = () => {
 	return [

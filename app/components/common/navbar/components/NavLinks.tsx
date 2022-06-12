@@ -1,11 +1,11 @@
+import { Link } from '@remix-run/react';
 import * as React from 'react';
-import { Link } from 'remix';
 import {
-	HomeIcon,
 	AboutIcon,
-	ProjectsIcon,
 	BlogIcon,
 	ContactIcon,
+	HomeIcon,
+	ProjectsIcon,
 	TestimonialsIcon,
 } from '~/components/icons';
 
