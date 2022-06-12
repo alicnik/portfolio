@@ -13,7 +13,7 @@ interface NavLinksProps {
 	isMobile?: boolean;
 }
 
-export function NavLinks({ isMobile = false }) {
+export function NavLinks({ isMobile = false }: NavLinksProps) {
 	let pages = ['about', 'projects', 'testimonials', 'contact'];
 	if (isMobile) pages = ['home'].concat(pages);
 

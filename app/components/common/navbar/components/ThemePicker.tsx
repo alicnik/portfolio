@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { ThemePreference, useThemePreference } from '~/context';
+import type { ThemePreference } from '~/context';
+import { useThemePreference } from '~/context';
 import { Dropdown } from '~/components/radix';
-import { GlobeIcon, MoonIcon, SunIcon, LoadingIcon } from '~/components/icons';
+import { MoonIcon, SunIcon, LoadingIcon } from '~/components/icons';
 
 const themeOptions: ThemePreference[] = ['dark', 'light'];
 
@@ -26,7 +27,7 @@ export function ThemePicker() {
 		<Dropdown.Root>
 			<Dropdown.Trigger asChild>
 				<span
-					className="appearance-none cursor-pointer lg:scale-110"
+					className="appearance-none cursor-pointer lg:scale-110 p-[5px]"
 					tabIndex={0}
 				>
 					{themeIcon}
@@ -39,7 +40,7 @@ export function ThemePicker() {
 				{themeOptions.map((option) => (
 					<Dropdown.CheckItem
 						key={option}
-						className="capitalize cursor-pointer flex gap-3 items-center text-lg"
+						className="capitalize cursor-pointer flex gap-3 items-center text-lg pl-1"
 						checked={themePreference === option}
 						onCheckedChange={(checked) => {
 							if (checked) updateThemePreference(option);
