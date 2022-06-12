@@ -1,8 +1,8 @@
-import { useLoaderData } from 'remix';
+import { useLoaderData } from '@remix-run/react';
 import { DoubleQuotes } from '~/components/icons';
 import { testimonials as testimonialsData } from '~/data/testimonials';
 
-import type { LoaderFunction, MetaFunction } from 'remix';
+import type { LoaderFunction, MetaFunction } from '@remix-run/node';
 import type { Testimonial } from '~/types';
 
 type AllTestimonials = Testimonial[];

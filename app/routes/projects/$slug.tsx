@@ -1,11 +1,12 @@
+import type { LoaderFunction, MetaFunction } from '@remix-run/node';
+import { useLoaderData } from '@remix-run/react';
 import * as React from 'react';
-import { MetaFunction, useLoaderData } from 'remix';
 import invariant from 'tiny-invariant';
 import { GitHubIcon, GlobeIcon } from '~/components/icons';
-import { ExternalLink, ExternalLinkProps } from '~/components/ui';
+import type { ExternalLinkProps } from '~/components/ui';
+import { ExternalLink } from '~/components/ui';
 import { projects } from '~/data/projects';
 
-import type { LoaderFunction } from 'remix';
 import type { Project } from '~/types';
 
 type SingleProject = Project;

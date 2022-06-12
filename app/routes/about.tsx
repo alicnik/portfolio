@@ -1,6 +1,4 @@
-import { Link } from 'remix';
-
-import type { LinksFunction, MetaFunction } from 'remix';
+import type { LinksFunction, MetaFunction } from '@remix-run/node';
 
 export const links: LinksFunction = () => [
 	{ rel: 'preload', as: 'image', href: '/images/profile-photo.webp' },
@@ -34,7 +32,7 @@ export default function AboutRoute() {
 					</p>
 					<img
 						src="/images/profile-photo.webp"
-						alt="my profile photo"
+						alt="profile shot of Alex in a garden looking at the camera"
 						className="w-full mx-auto aspect-square rounded my-4 md:hidden shadow-md dark:shadow-gray-900"
 					/>
 					<p className="mb-2">I have two core beliefs:</p>
@@ -54,7 +52,7 @@ export default function AboutRoute() {
 				</div>
 				<img
 					src="/images/profile-photo.webp"
-					alt="my profile photo"
+					alt="profile shot of Alex in a garden looking at the camera"
 					className="w-full mx-auto aspect-square rounded mobile:hidden md:block max-w-sm shadow-md dark:shadow-gray-900"
 				/>
 			</section>

@@ -1,10 +1,10 @@
-import { Form, redirect, useActionData, useTransition } from 'remix';
-import { Button, ExternalLink, Textarea, TextInput } from '~/components/ui';
+import type { ActionFunction, MetaFunction } from '@remix-run/node';
+import { redirect } from '@remix-run/node';
+import { Form, useActionData, useTransition } from '@remix-run/react';
 import invariant from 'tiny-invariant';
 import { LoadingIcon } from '~/components/icons';
+import { Button, ExternalLink, Textarea, TextInput } from '~/components/ui';
 import { sendEmails } from '~/lib/sendgrid.server';
-
-import type { ActionFunction, MetaFunction } from 'remix';
 
 interface ActionDataValue {
 	error: string;

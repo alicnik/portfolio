@@ -1,10 +1,12 @@
-// import { Link, LinksFunction } from 'remix';
-import { Link, useLoaderData } from 'remix';
-import { Button, ExternalLink, HomepageIllustration } from '~/components/ui';
+import type {
+	LinksFunction,
+	LoaderFunction,
+	MetaFunction,
+} from '@remix-run/node';
+import { Link, useLoaderData } from '@remix-run/react';
 import { ProjectCard } from '~/components/common';
+import { Button, ExternalLink, HomepageIllustration } from '~/components/ui';
 import { projects as projectsData } from '~/data/projects';
-
-import type { LinksFunction, LoaderFunction, MetaFunction } from 'remix';
 import type { Project } from '~/types';
 
 type RecentProjects = Project[];

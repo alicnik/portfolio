@@ -1,5 +1,4 @@
-import fs from 'fs';
-import type { LoaderFunction } from 'remix';
+import type { LoaderFunction } from '@remix-run/node';
 import { projects } from '~/data/projects';
 
 const date = '2022-02-07T00:15:16+01:00';

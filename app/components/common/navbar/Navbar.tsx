@@ -1,5 +1,5 @@
+import { Link, useLocation } from '@remix-run/react';
 import * as React from 'react';
-import { Link, useLocation } from 'remix';
 import { ThemePicker, MobileMenu } from './components';
 import { NavLinks } from './components';
 

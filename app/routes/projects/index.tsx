@@ -1,8 +1,8 @@
-import { useLoaderData } from 'remix';
+import type { LoaderFunction, MetaFunction } from '@remix-run/node';
+import { useLoaderData } from '@remix-run/react';
 import { ProjectCard } from '~/components/common';
 import { projects as projectsData } from '~/data/projects';
 
-import type { LoaderFunction, MetaFunction } from 'remix';
 import type { Project } from '~/types';
 
 type AllProjects = Project[];
