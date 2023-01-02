@@ -25,5 +25,5 @@ export function useIsMounted() {
 		};
 	}, [themePreference]);
 
-	return isMounted.current;
+	return () => isMounted.current;
 }

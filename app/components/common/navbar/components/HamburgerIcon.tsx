@@ -17,7 +17,7 @@ export function HamburgerIcon({ open, setOpen }: HamburgerIconProps) {
 	const { hasPreferenceChanged, resetHasPreferenceChanged } =
 		useThemePreference();
 	const isMounted = useIsMounted();
-	const shouldHideAnimation = !isMounted || hasPreferenceChanged;
+	const shouldHideAnimation = !isMounted() || hasPreferenceChanged;
 
 	const handleClick = () => {
 		if (hasPreferenceChanged) {
