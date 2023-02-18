@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import { Project } from '~/types';
+import type { Project } from '~/types';
 
 export const technologies = {
 	react: {
@@ -175,7 +175,7 @@ export const projects: Project[] = [
 		published: true,
 		image: null,
 		thumbnail: null,
-		url: 'https://whiskybored.herokuapp.com',
+		url: 'https://whiskybored-production.up.railway.app',
 		githubPrimary: 'https://github.com/alicnik/whiskybored',
 		responsive: false,
 		projectDate: new Date(2021, 9),
