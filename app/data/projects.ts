@@ -265,7 +265,7 @@ export const projects: Project[] = [
 			'This was a group project with two others. The brief was to build a full-stack MERN web application and deploy to Heroku using an Express API to serve data from a MongoDB database, consuming the data on a front end built with React. This was to be combined with a public API to supplement the data presented on the front end. It required thoughtful wireframes/user stories to establish core MVP and it had to deliver a visually impressive design. In addition, automated testing on at least one RESTful resource on the back end was required. The project was built collaboratively using source control (GitHub) to resolve any conflicts.\nA full README can be found in the GitHub repository link below.',
 		image: '/images/wilderness.webp',
 		thumbnail: '/images/wilderness-sm.webp',
-		url: 'https://wilderapp.herokuapp.com/#/',
+		url: 'https://wilderapp-production.up.railway.app/#/',
 		githubPrimary: 'https://github.com/alicnik/wilderapp',
 		responsive: true,
 		published: true,
