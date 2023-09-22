@@ -83,6 +83,7 @@ export default function Index() {
 									: ''
 							}
 							{...project}
+							projectDate={new Date(project.projectDate)}
 						/>
 					))}
 				</div>

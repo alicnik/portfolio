@@ -1,5 +1,5 @@
 import { AccessibleIcon } from '~/components/radix';
-import { AccessibleIconProps } from '.';
+import type { AccessibleIconProps } from '.';
 import { HomeIcon as RadixHomeIcon } from '@radix-ui/react-icons';
 
 export function HomeIcon({

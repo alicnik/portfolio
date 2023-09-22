@@ -15,13 +15,9 @@ import {
 	Scripts,
 	LiveReload,
 	Outlet,
-	useCatch,
 	Link,
 } from '@remix-run/react';
-import type {
-	LinksFunction,
-	MetaFunction,
-} from '@remix-run/react/routeModules';
+import type { LinksFunction, MetaFunction } from '@remix-run/node';
 
 export const links: LinksFunction = () => {
 	return [
@@ -89,8 +85,6 @@ export default function App() {
 }
 
 export function CatchBoundary() {
-	const caught = useCatch();
-
 	return (
 		<ThemePreferenceProvider>
 			<Document>

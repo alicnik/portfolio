@@ -1,5 +1,5 @@
 import { AccessibleIcon } from '~/components/radix';
-import { AccessibleIconProps } from '.';
+import type { AccessibleIconProps } from '.';
 import { MoonIcon as RadixMoonIcon } from '@radix-ui/react-icons';
 
 export function MoonIcon({

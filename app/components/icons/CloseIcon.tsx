@@ -14,7 +14,7 @@
 // }
 
 import * as React from 'react';
-import { AccessibleIconProps } from '.';
+import type { AccessibleIconProps } from '.';
 import { AccessibleIcon } from '../radix';
 
 export const CloseIcon = React.forwardRef<SVGSVGElement, AccessibleIconProps>(
@@ -44,3 +44,4 @@ export const CloseIcon = React.forwardRef<SVGSVGElement, AccessibleIconProps>(
 		);
 	},
 );
+CloseIcon.displayName = 'CloseIcon';

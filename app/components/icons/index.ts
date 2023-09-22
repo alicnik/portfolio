@@ -1,4 +1,4 @@
-import { IconProps } from '@radix-ui/react-icons/dist/types';
+import type { IconProps } from '@radix-ui/react-icons/dist/types';
 
 export interface AccessibleIconProps extends IconProps {
 	label?: string;

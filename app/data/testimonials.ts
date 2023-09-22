@@ -63,19 +63,19 @@ export const testimonials = [
 	},
 ];
 
-const archive = [
-	'Very knowledgeable and great at explaining',
-	'Fab bloke, engaging personality',
-	'Alex totally gets the 0-to-hero journey for coders on this course so having his helping hand was invaluable. Brilliant TA.',
-	"Alex offered lots of support to myself and my colleagues on the course countless times. His enthusiasm and great sense of humour made learning fun and the course wouldn't have been the same without him!",
-	"Alex has such a broad range of knowledge so he's always ready to help when we have any problems. He gave detailed feedback on our homework tasks and is always friendly and approachable.",
-	"Alex's feedback in the homework reviews were always very helpful and encouraging (I appreciate the gifs/puns a lot). I think he is good at learning topics very quickly and explaining them in a simple way, and also I think I learnt quite a bit about debugging when watching him do it in the breakout rooms. Overall, his expertise and character added a lot to the course.",
-	"I can't imagine not having the knowledge, support and encouragement I had from Alex during the course. He was always so helpful to everyone on all matters and if there was ever a time that he didn't know the answer; you could be sure that he would go away to find the answer and explain it to you. He has a natural flair for offering support and does so in a way that he makes sure that we understood the concepts he was explaining to us whether in labs, during classes or to project groups.",
-	'Confident in solving problems and very approachable.',
-	'Alex really put into perspective of where I want to be technically, he always had a solution for bugs I had and was happy to sit through issues I had and help me debug.',
-	'Alex is light hearted and very funny, I really enjoyed the moments when he helped me to debug',
-	"Alex has been the main TA I have had during office hours and the level of support was really outstanding, even offering to do follow up sessions on topics I haven't fully grasped in class.",
-	'Alex is also very patient and excels at guiding you to the solution for your problem using questions rather than outright telling you.',
-	'Amazing. Best word to describe it. Always there and manages to always have time for you. The only problem is that he is only one. Best TA!',
-	'Excellent TA. Very dynamic and knowledgeable. Pretty generous with his approach to solving problems. Really dives into the problems with you. Really enjoy working with Alex',
-];
+// const archive = [
+// 	'Very knowledgeable and great at explaining',
+// 	'Fab bloke, engaging personality',
+// 	'Alex totally gets the 0-to-hero journey for coders on this course so having his helping hand was invaluable. Brilliant TA.',
+// 	"Alex offered lots of support to myself and my colleagues on the course countless times. His enthusiasm and great sense of humour made learning fun and the course wouldn't have been the same without him!",
+// 	"Alex has such a broad range of knowledge so he's always ready to help when we have any problems. He gave detailed feedback on our homework tasks and is always friendly and approachable.",
+// 	"Alex's feedback in the homework reviews were always very helpful and encouraging (I appreciate the gifs/puns a lot). I think he is good at learning topics very quickly and explaining them in a simple way, and also I think I learnt quite a bit about debugging when watching him do it in the breakout rooms. Overall, his expertise and character added a lot to the course.",
+// 	"I can't imagine not having the knowledge, support and encouragement I had from Alex during the course. He was always so helpful to everyone on all matters and if there was ever a time that he didn't know the answer; you could be sure that he would go away to find the answer and explain it to you. He has a natural flair for offering support and does so in a way that he makes sure that we understood the concepts he was explaining to us whether in labs, during classes or to project groups.",
+// 	'Confident in solving problems and very approachable.',
+// 	'Alex really put into perspective of where I want to be technically, he always had a solution for bugs I had and was happy to sit through issues I had and help me debug.',
+// 	'Alex is light hearted and very funny, I really enjoyed the moments when he helped me to debug',
+// 	"Alex has been the main TA I have had during office hours and the level of support was really outstanding, even offering to do follow up sessions on topics I haven't fully grasped in class.",
+// 	'Alex is also very patient and excels at guiding you to the solution for your problem using questions rather than outright telling you.',
+// 	'Amazing. Best word to describe it. Always there and manages to always have time for you. The only problem is that he is only one. Best TA!',
+// 	'Excellent TA. Very dynamic and knowledgeable. Pretty generous with his approach to solving problems. Really dives into the problems with you. Really enjoy working with Alex',
+// ];

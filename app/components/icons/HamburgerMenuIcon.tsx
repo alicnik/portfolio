@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AccessibleIconProps } from '.';
+import type { AccessibleIconProps } from '.';
 import { AccessibleIcon } from '../radix';
 
 export const HamburgerMenuIcon = React.forwardRef<
@@ -38,3 +38,4 @@ export const HamburgerMenuIcon = React.forwardRef<
 		);
 	},
 );
+HamburgerMenuIcon.displayName = 'HamburgerMenuIcon';

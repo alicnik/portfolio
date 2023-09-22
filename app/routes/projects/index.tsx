@@ -45,7 +45,11 @@ export default function ProjectIndexRoute() {
 			</p>
 			<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 place-items-center items-stretch">
 				{projects.map((project) => (
-					<ProjectCard key={project.name} {...project} />
+					<ProjectCard
+						key={project.name}
+						{...project}
+						projectDate={new Date(project.projectDate)}
+					/>
 				))}
 			</div>
 		</div>
