@@ -86,12 +86,9 @@ export default function AboutRoute() {
 					navigate with relative ease.
 				</p>
 				<p>
-					I recently accepted a role at Immediate Media, which was ranked #4 on
-					the Glassdoor Best Places to Work 2022 list. It was an interview
-					process where I came out of every round feeling better and better
-					about the company, so I was pleased as punch to receive an offer. I am
-					looking forward to growing and developing at Immediate Media for many
-					years to come.
+					I want to keep learning and to develop my skills in an environment
+					where my coding knowledge and abilities are constantly pushed to their
+					limits.
 				</p>
 				{/* <p className="mb-4">
 					At the moment, I'm looking for work, having just completed some
