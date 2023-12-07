@@ -175,7 +175,7 @@ export const projects: Project[] = [
 		published: true,
 		image: null,
 		thumbnail: null,
-		url: 'https://whiskybored-production.up.railway.app',
+		url: 'https://whiskybored.fly.dev/',
 		githubPrimary: 'https://github.com/alicnik/whiskybored',
 		responsive: false,
 		projectDate: new Date(2021, 9),
