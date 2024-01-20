@@ -134,9 +134,44 @@ export const technologies = {
 		name: 'JavaScript',
 		url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
 	},
+	shadcnui: {
+		id: nanoid(),
+		name: 'shadcn/ui',
+		url: 'https://github.com/shadcn-ui/ui',
+	},
+	planetscale: {
+		id: nanoid(),
+		name: 'PlanetScale',
+		url: 'https://github.com/planetscale',
+	},
 };
 
 export const projects: Project[] = [
+	{
+		id: nanoid(),
+		name: 'Shuttle',
+		slug: 'shuttle',
+		summary:
+			'A temporary email service with API endpoints to facilitate automated testing.',
+		description:
+			'After frustrations with Putsbox server timeouts impacting our automated tests, I decided to build an alternative using the Sendgrid Inbound Parse Webhook. It started as an API built upon Netlify serverless functions and then evolved into a web app with a UI built using Remix.',
+		image: '/images/shuttle.webp',
+		thumbnail: '/images/shuttle-sm.png',
+		url: 'https://shuttle.email',
+		githubPrimary: 'https://github.com/alicnik/shuttle',
+		responsive: true,
+		published: true,
+		projectDate: new Date(2023, 8),
+		technologies: [
+			technologies.react,
+			technologies.remix,
+			technologies.shadcnui,
+			technologies.radixUI,
+			technologies.typeScript,
+			technologies.tailwind,
+			technologies.planetscale,
+		],
+	},
 	{
 		id: nanoid(),
 		name: 'Trello Clone',
