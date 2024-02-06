@@ -45,9 +45,11 @@ export default function AboutRoute() {
 						</li>
 					</ol>
 					<p className="mb-12">
-						So far, that's held true. Well, with the current state of
-						technology, at least&mdash;I haven't yet been able to build a
-						burrito printer.
+						So far, that's held true (though possible does not always mean
+						practicable). My fortuitous cocktail of optimism, thirst for
+						knowledge, stubborn grit, curiosity, and willingness to "dive in"
+						have served me well and I am now comfortable tackling most front-end
+						problems that come my way.
 					</p>
 				</div>
 				<img
@@ -66,15 +68,17 @@ export default function AboutRoute() {
 				<p className="mb-4">
 					I studied law, which was great for my problem-solving side, but did
 					nothing for my creativity. Fortunately, I realised this quite early on
-					and moved into less constrained workplaces in leisure and hospitality.
+					and moved into less constrained workplaces in luxury leisure and
+					hospitality.
 				</p>
 				<p className="mb-12">
 					Computers have always seemed to like me, or perhaps I'm lucky with
 					them, but they often seem to do what I want them to do. And I like
 					them. Because of this, every job I've been in has ended up having a
-					heavy tech element. I wrote my first bit of code in 2019, a Python
-					script that interacted with the Apple News and HubSpot APIs, and
-					realised that this was something I should be doing full-time.
+					heavy tech element. I wrote my first bit of code in 2019&mdash;a
+					Python script that interacted with the Apple News and HubSpot
+					APIs&mdash;and applied for a coding bootcamp shortly after, resolved
+					to turn coding into a career.
 				</p>
 			</section>
 			<section>

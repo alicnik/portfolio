@@ -39,12 +39,12 @@ export const testimonials = [
 	{
 		id: uniqueId(),
 		value:
-			'Alex was an amazing TA who helped me and my team more than I could keep count of. His genuine enthusiasm is infectious, and he was so friendly I never hesitated messaging him for advice or technical help',
+			'Alex was an amazing TA who helped me and my team more times than I could keep count of. His genuine enthusiasm is infectious, and he was so friendly I never hesitated messaging him for advice or technical help',
 	},
 	{
 		id: uniqueId(),
 		value:
-			"Alex was amazing. Great feedback on homework's. Was always there when needed. He explained complex problems in an understandable way and when he taught lessons they were really engaging and easy to understand.",
+			'Alex was amazing. Great feedback on homeworks. Was always there when needed. He explained complex problems in an understandable way and when he taught lessons they were really engaging and easy to understand.',
 	},
 	{
 		id: uniqueId(),

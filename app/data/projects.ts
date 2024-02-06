@@ -144,6 +144,21 @@ export const technologies = {
 		name: 'PlanetScale',
 		url: 'https://github.com/planetscale',
 	},
+	prisma: {
+		id: nanoid(),
+		name: 'Prisma',
+		url: 'https://github.com/prisma/prisma',
+	},
+	vitest: {
+		id: nanoid(),
+		name: 'Vitest',
+		url: 'https://github.com/vitest-dev/vitest',
+	},
+	reactTestingLibrary: {
+		id: nanoid(),
+		name: 'React Testing Library',
+		url: 'https://github.com/testing-library/react-testing-library',
+	},
 };
 
 export const projects: Project[] = [
@@ -170,6 +185,8 @@ export const projects: Project[] = [
 			technologies.typeScript,
 			technologies.tailwind,
 			technologies.planetscale,
+			technologies.reactTestingLibrary,
+			technologies.vitest,
 		],
 	},
 	{
@@ -201,27 +218,6 @@ export const projects: Project[] = [
 	},
 	{
 		id: nanoid(),
-		name: 'WhiskyBored',
-		slug: 'whiskybored',
-		summary:
-			'An eight-hour hackathon to build a RESTful API for educational purposes using Java and SpringBoot.',
-		description:
-			'On the General Assembly bootcamp, there are two APIs used for learning purposes; Cheesebored and Winebored. Since I was practising Spring Boot, I set myself the challenge of building a similar API using Java/Spring Boot during business hours. I was successful in building 95% of the product in eight hours but ran into a few bugs on deployment.',
-		published: true,
-		image: null,
-		thumbnail: null,
-		url: 'https://whiskybored.fly.dev/',
-		githubPrimary: 'https://github.com/alicnik/whiskybored',
-		responsive: false,
-		projectDate: new Date(2021, 9),
-		technologies: [
-			technologies.java,
-			technologies.springBoot,
-			technologies.bulma,
-		],
-	},
-	{
-		id: nanoid(),
 		name: 'Portfolio Website',
 		slug: 'portfolio-website',
 		summary:
@@ -241,6 +237,51 @@ export const projects: Project[] = [
 			technologies.remix,
 			technologies.tailwind,
 			technologies.radixUI,
+		],
+	},
+	{
+		id: nanoid(),
+		name: 'Final Space',
+		slug: 'final-space',
+		summary:
+			'A quick exploration of Remix, Prisma, Vitest and React Testing Library. Chookity.',
+		description:
+			'A bit of light-hearted fun based on a series that was cancelled too soon. A good opportunity to dive into testing a little deeper.',
+		image: '/images/final-space.png',
+		thumbnail: '/images/final-space.png',
+		url: 'https://final-space.fly.dev/',
+		githubPrimary: 'https://github.com/alicnik/final-space',
+		responsive: true,
+		published: true,
+		projectDate: new Date(2022, 7),
+		technologies: [
+			technologies.react,
+			technologies.remix,
+			technologies.tailwind,
+			technologies.prisma,
+			technologies.reactTestingLibrary,
+			technologies.vitest,
+		],
+	},
+	{
+		id: nanoid(),
+		name: 'WhiskyBored',
+		slug: 'whiskybored',
+		summary:
+			'An eight-hour hackathon to build a RESTful API for educational purposes using Java and SpringBoot.',
+		description:
+			'On the General Assembly bootcamp, there are two APIs used for learning purposes; Cheesebored and Winebored. Since I was practising Spring Boot, I set myself the challenge of building a similar API using Java/Spring Boot during business hours. I was successful in building 95% of the product in eight hours but ran into a few bugs on deployment.',
+		published: true,
+		image: null,
+		thumbnail: null,
+		url: 'https://whiskybored.fly.dev/',
+		githubPrimary: 'https://github.com/alicnik/whiskybored',
+		responsive: false,
+		projectDate: new Date(2021, 9),
+		technologies: [
+			technologies.java,
+			technologies.springBoot,
+			technologies.bulma,
 		],
 	},
 	{
