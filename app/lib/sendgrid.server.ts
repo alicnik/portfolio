@@ -25,12 +25,8 @@ export async function sendEmails({
 	message,
 	alertRecipient = 'al.nicholas@gmail.com',
 }: SendEmailsArgs) {
-	try {
-		await sendAlertEmail({ name, email, message, alertRecipient });
-		await sendConfirmationEmail({ name, email });
-	} catch (err) {
-		console.error(err);
-	}
+	await sendAlertEmail({ name, email, message, alertRecipient });
+	await sendConfirmationEmail({ name, email });
 }
 
 /**
