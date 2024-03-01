@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/remix';
 import customStyles from './styles/custom.css';
 import tailwindStyles from './styles/main.css';
 import {
@@ -66,6 +67,7 @@ function Document({ children }: { children: React.ReactNode }) {
 				<ScrollRestoration /> */}
 
 				<Scripts nonce={nonce} />
+				<SpeedInsights />
 				{process.env.NODE_ENV === 'development' && <LiveReload />}
 			</body>
 		</html>
