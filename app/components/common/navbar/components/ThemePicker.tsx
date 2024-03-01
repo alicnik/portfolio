@@ -26,10 +26,7 @@ export function ThemePicker() {
 	return (
 		<Dropdown.Root>
 			<Dropdown.Trigger asChild>
-				<span
-					className="appearance-none cursor-pointer lg:scale-110 p-[5px]"
-					tabIndex={0}
-				>
+				<span className="appearance-none cursor-pointer lg:scale-110 p-[5px]">
 					{themeIcon}
 				</span>
 			</Dropdown.Trigger>

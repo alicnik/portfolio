@@ -2,10 +2,10 @@ import type { MetaFunction } from '@remix-run/node';
 import { Link } from '@remix-run/react';
 import { Button } from '~/components/ui';
 
-export const meta: MetaFunction = () => ({
-	robots: 'noindex',
-	title: 'AN | Thank you!',
-});
+export const meta: MetaFunction = () => [
+	{ title: 'AN | Thank you!' },
+	{ name: 'robots', content: 'noindex' },
+];
 
 export default function ThankYouRoute() {
 	return (

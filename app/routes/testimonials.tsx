@@ -10,18 +10,25 @@ export const loader = async () => {
 	return testimonials.sort((a, b) => b.value.length - a.value.length);
 };
 
-export const meta: MetaFunction = () => {
-	return {
-		title: 'AN | Testimonials',
-		description:
+export const meta: MetaFunction = () => [
+	{ title: 'AN | Testimonials' },
+	{
+		name: 'description',
+		content:
 			'Some of the nice things people have said about me from my time as a Teaching Assistant. No bribes were involved.',
-		'og:description':
+	},
+	{
+		property: 'og:description',
+		content:
 			'Some of the nice things people have said about me from my time as a Teaching Assistant. No bribes were involved.',
-		'og:title': 'Alex Nicholas | Testimonials',
-		'og:url': 'https://alexnicholas.dev/testimonials/',
-		'og:image': 'https://alexnicholas.dev/images/illustration.webp',
-	};
-};
+	},
+	{ property: 'og:title', content: 'Alex Nicholas | Testimonials' },
+	{ property: 'og:url', content: 'https://alexnicholas.dev/testimonials/' },
+	{
+		property: 'og:image',
+		content: 'https://alexnicholas.dev/images/illustration.webp',
+	},
+];
 
 export default function TestimonialsRoute() {
 	const testimonials = useLoaderData<typeof loader>();

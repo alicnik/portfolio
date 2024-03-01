@@ -1,4 +1,4 @@
-import type { LoaderArgs, MetaFunction } from '@remix-run/node';
+import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import * as React from 'react';
 import invariant from 'tiny-invariant';
@@ -7,7 +7,7 @@ import type { ExternalLinkProps } from '~/components/ui';
 import { ExternalLink } from '~/components/ui';
 import { db } from '~/lib/db.server';
 
-export const loader = async ({ params }: LoaderArgs) => {
+export const loader = async ({ params }: LoaderFunctionArgs) => {
 	const { slug } = params;
 	invariant(slug, 'Expected params.slug');
 
@@ -21,18 +21,22 @@ export const loader = async ({ params }: LoaderArgs) => {
 	return project;
 };
 
-export const meta: MetaFunction = ({ data }) => {
-	return {
-		title: `AN | ${data.name}`,
-		description: data.summary,
-		'og:description': data.summary,
-		'og:title': `AN | Projects | ${data.name}`,
-		'og:url': `https://alexnicholas.dev/projects/${data.slug}/`,
-		'og:image': `https://alexnicholas.dev${
-			data.thumbnail ?? '/images/illustration.webp'
+export const meta: MetaFunction<typeof loader> = ({ data }) => [
+	{ title: `AN | ${data?.name}` },
+	{ name: 'description', content: data?.summary },
+	{ property: 'og:description', content: data?.summary },
+	{ property: 'og:title', content: `AN | Projects | ${data?.name}` },
+	{
+		property: 'og:url',
+		content: `https://alexnicholas.dev/projects/${data?.slug}/`,
+	},
+	{
+		property: 'og:image',
+		content: `https://alexnicholas.dev${
+			data?.thumbnail ?? '/images/illustration.webp'
 		}`,
-	};
-};
+	},
+];
 
 export default function SingleProjectRoute() {
 	const project = useLoaderData<typeof loader>();
