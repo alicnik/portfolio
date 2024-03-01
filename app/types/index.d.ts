@@ -6,7 +6,7 @@ export type Project = {
 	description: string;
 	image?: string | null;
 	thumbnail?: string | null;
-	url?: string | null;
+	url: string | null;
 	githubPrimary: string;
 	githubSecondary?: string | null;
 	technologies: Technology[];

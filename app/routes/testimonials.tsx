@@ -1,17 +1,13 @@
 import { useLoaderData } from '@remix-run/react';
 import { DoubleQuotes } from '~/components/icons';
-import { testimonials as testimonialsData } from '~/data/testimonials';
+import { db } from '~/lib/db.server';
+import type { MetaFunction } from '@remix-run/node';
 
-import type { LoaderFunction, MetaFunction } from '@remix-run/node';
-import type { Testimonial } from '~/types';
-
-type AllTestimonials = Testimonial[];
-
-export const loader: LoaderFunction = (): Testimonial[] => {
-	const testimonials = testimonialsData.sort(
-		(a, b) => b.value.length - a.value.length,
-	);
-	return testimonials;
+export const loader = async () => {
+	const testimonials = await db.testimonial.findMany({
+		select: { value: true },
+	});
+	return testimonials.sort((a, b) => b.value.length - a.value.length);
 };
 
 export const meta: MetaFunction = () => {
@@ -28,7 +24,7 @@ export const meta: MetaFunction = () => {
 };
 
 export default function TestimonialsRoute() {
-	const testimonials = useLoaderData<AllTestimonials>();
+	const testimonials = useLoaderData<typeof loader>();
 
 	return (
 		<div className="container mx-auto">

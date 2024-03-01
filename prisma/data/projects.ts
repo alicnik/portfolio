@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid';
 import type { Project } from '~/types';
 
-export const technologies = {
+const technologies = {
 	react: {
 		id: nanoid(),
 		name: 'React',

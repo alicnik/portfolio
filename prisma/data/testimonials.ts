@@ -1,63 +1,49 @@
-import { uniqueId } from 'lodash';
-
 export const testimonials = [
 	{
-		id: uniqueId(),
 		value:
 			"Alex's knowledge and industry experience was really helpful and his positive attitude too",
 	},
 	{
-		id: uniqueId(),
 		value:
 			'Alex helps further explain points in a digestible manner, always learn something from him.',
 	},
 	{
-		id: uniqueId(),
 		value:
 			'Really great TA- amazing at bug fixes, clearly has worked in industry and knows A LOT. Nothing to improve!',
 	},
 	{
-		id: uniqueId(),
 		value:
 			'Very confident and knowledgable. Can quickly catch onto a problem and offer help or guidance. Really easy going and encouraging',
 	},
 	{
-		id: uniqueId(),
 		value:
 			'Really clever, enthusiastic and motivated. Always tries to solve even the weirdest problem with engagement. Also can be quite entertaining.',
 	},
 	{
-		id: uniqueId(),
 		value:
 			'For one homework I really struggled with, Alex provided extraordinarily good feedback and information I could tell put a lot of effort to put together.',
 	},
 	{
-		id: uniqueId(),
 		value:
 			'Alex is so easy to approach with questions and problems and is great at working through, love the level of detail in the homework feedback which is really useful.',
 	},
 	{
-		id: uniqueId(),
 		value:
 			'Alex was an amazing TA who helped me and my team more times than I could keep count of. His genuine enthusiasm is infectious, and he was so friendly I never hesitated messaging him for advice or technical help',
 	},
 	{
-		id: uniqueId(),
 		value:
 			'Alex was amazing. Great feedback on homeworks. Was always there when needed. He explained complex problems in an understandable way and when he taught lessons they were really engaging and easy to understand.',
 	},
 	{
-		id: uniqueId(),
 		value:
 			"Oh where to begin! Alex is always always always there to help and thanks to him now I get excited by error messages as well. Debugging is fun!? He's never shy of suggestions and in hindsight it was great to not have him just give us the answers and guide us through so we'd discover them on our own.",
 	},
 	{
-		id: uniqueId(),
 		value:
 			"What I really enjoyed with Alex is that he made himself available to help, understood the problems I had, and always articulated solutions to accommodate my objectives. He's knowledgeable, generous with his time and his help. I think he went above and beyond what I expected from a TA and his assistance has definitely helped me progress and learn new things.",
 	},
 	{
-		id: uniqueId(),
 		value:
 			"Honestly, words can't describe how grateful I am to have Alex as a TA on this cohort. He's helped me get to the level of understanding I am at due to the way he helps me to figure out the answer and really understand. He makes sure it's in a way that I can work it out for myself and I have had many penny-drop moments where things have made sense thanks to his prompts. He always makes the time to help and will go out of his way to find the answer for you if he's not 100% sure. It was a bit of a battle at times with other students to get his help! Amazing TA!",
 	},

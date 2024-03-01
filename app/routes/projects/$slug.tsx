@@ -1,23 +1,22 @@
-import type { LoaderFunction, MetaFunction } from '@remix-run/node';
+import type { LoaderArgs, MetaFunction } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import * as React from 'react';
 import invariant from 'tiny-invariant';
 import { GitHubIcon, GlobeIcon } from '~/components/icons';
 import type { ExternalLinkProps } from '~/components/ui';
 import { ExternalLink } from '~/components/ui';
-import { projects } from '~/data/projects';
+import { db } from '~/lib/db.server';
 
-import type { Project } from '~/types';
+export const loader = async ({ params }: LoaderArgs) => {
+	const { slug } = params;
+	invariant(slug, 'Expected params.slug');
 
-type SingleProject = Project;
+	const project = await db.project.findUnique({
+		where: { slug },
+		include: { technologies: true },
+	});
 
-export const loader: LoaderFunction = ({ params }): SingleProject => {
-	const projectSlug = params.slug;
-	invariant(projectSlug, 'Expected params.slug');
-
-	const project = projects.find((p) => p.slug === projectSlug);
-
-	if (!project) throw new Error('Could not find that project');
+	if (!project) throw new Error(`Could not find project with slug "${slug}"`);
 
 	return project;
 };
@@ -36,7 +35,7 @@ export const meta: MetaFunction = ({ data }) => {
 };
 
 export default function SingleProjectRoute() {
-	const project = useLoaderData<SingleProject>();
+	const project = useLoaderData<typeof loader>();
 
 	return (
 		<article className="container mx-auto">

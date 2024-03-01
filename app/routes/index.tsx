@@ -1,29 +1,20 @@
-import type {
-	LinksFunction,
-	LoaderFunction,
-	MetaFunction,
-} from '@remix-run/node';
+import type { LinksFunction, MetaFunction } from '@remix-run/node';
 import { Link, useLoaderData } from '@remix-run/react';
 import { ProjectCard } from '~/components/common';
 import { Button, ExternalLink, HomepageIllustration } from '~/components/ui';
-import { projects as projectsData } from '~/data/projects';
-import type { Project } from '~/types';
-
-type RecentProjects = Project[];
+import { db } from '~/lib/db.server';
 
 export const links: LinksFunction = () => {
 	// Preload images for projects that appear above the fold to minimise loading time
-	const preloadLinks = [];
-	const projectImages = projectsData.slice(0, 3).map((p) => p.thumbnail);
-
-	for (const image of projectImages) {
-		if (!image) continue;
-		preloadLinks.push({
-			rel: 'preload',
-			as: 'image',
-			href: image,
-		});
-	}
+	const preloadLinks = [
+		'/images/shuttle-sm.png',
+		'/images/trello-sm.png',
+		'/images/portfolio-sm.webp',
+	].map((href) => ({
+		rel: 'preload',
+		as: 'image',
+		href,
+	}));
 
 	return preloadLinks;
 };
@@ -41,13 +32,16 @@ export const meta: MetaFunction = () => {
 	};
 };
 
-export const loader: LoaderFunction = (): RecentProjects => {
-	const recentProjects = projectsData.slice(0, 3);
+export const loader = async () => {
+	const recentProjects = await db.project.findMany({
+		include: { technologies: true },
+		take: 3,
+	});
 	return recentProjects;
 };
 
 export default function Index() {
-	const recentProjects = useLoaderData<RecentProjects>();
+	const recentProjects = useLoaderData<typeof loader>();
 
 	return (
 		<div className="w-full">

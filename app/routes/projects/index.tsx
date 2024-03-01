@@ -1,17 +1,16 @@
-import type { LoaderFunction, MetaFunction } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import { ProjectCard } from '~/components/common';
-import { projects as projectsData } from '~/data/projects';
+import type { MetaFunction } from '@remix-run/node';
+import { db } from '~/lib/db.server';
 
-import type { Project } from '~/types';
-
-type AllProjects = Project[];
-
-export const loader: LoaderFunction = (): AllProjects => {
-	const projects = projectsData.sort((a, b) => {
-		if (a.projectDate < b.projectDate) return 1;
-		if (a.projectDate > b.projectDate) return -1;
-		return 0;
+export const loader = async () => {
+	const projects = await db.project.findMany({
+		include: {
+			technologies: true,
+		},
+		orderBy: {
+			projectDate: 'desc',
+		},
 	});
 
 	return projects;
@@ -31,7 +30,7 @@ export const meta: MetaFunction = () => {
 };
 
 export default function ProjectIndexRoute() {
-	const projects = useLoaderData<AllProjects>();
+	const projects = useLoaderData<typeof loader>();
 
 	return (
 		<div className="container mx-auto">
