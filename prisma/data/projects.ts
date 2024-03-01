@@ -1,7 +1,7 @@
+import { Prisma } from '@prisma/client';
 import { nanoid } from 'nanoid';
-import type { Project } from '~/types';
 
-export const technologies = {
+const technologies = {
 	react: {
 		id: nanoid(),
 		name: 'React',
@@ -161,7 +161,11 @@ export const technologies = {
 	},
 };
 
-export const projects: Project[] = [
+type ProjectSeed = Omit<Prisma.ProjectCreateInput, 'technologies'> & {
+	technologies: Prisma.TechnologyCreateInput[];
+};
+
+export const projects: ProjectSeed[] = [
 	{
 		id: nanoid(),
 		name: 'Shuttle',
@@ -177,6 +181,7 @@ export const projects: Project[] = [
 		responsive: true,
 		published: true,
 		projectDate: new Date(2023, 8),
+		showOnHomePage: true,
 		technologies: [
 			technologies.react,
 			technologies.remix,
@@ -205,6 +210,7 @@ export const projects: Project[] = [
 		responsive: false,
 		published: true,
 		projectDate: new Date(2022, 0),
+		showOnHomePage: true,
 		technologies: [
 			technologies.react,
 			technologies.typeScript,
@@ -231,6 +237,7 @@ export const projects: Project[] = [
 		githubPrimary: 'https://github.com/alicnik/portfolio',
 		responsive: true,
 		projectDate: new Date(2021, 11),
+		showOnHomePage: true,
 		technologies: [
 			technologies.react,
 			technologies.typeScript,
@@ -254,6 +261,7 @@ export const projects: Project[] = [
 		responsive: true,
 		published: true,
 		projectDate: new Date(2022, 7),
+		showOnHomePage: false,
 		technologies: [
 			technologies.react,
 			technologies.remix,
@@ -278,6 +286,7 @@ export const projects: Project[] = [
 		githubPrimary: 'https://github.com/alicnik/whiskybored',
 		responsive: false,
 		projectDate: new Date(2021, 9),
+		showOnHomePage: false,
 		technologies: [
 			technologies.java,
 			technologies.springBoot,
@@ -299,6 +308,7 @@ export const projects: Project[] = [
 		responsive: false,
 		published: true,
 		projectDate: new Date(2021, 5),
+		showOnHomePage: false,
 		technologies: [
 			technologies.typeScript,
 			technologies.node,
@@ -320,6 +330,7 @@ export const projects: Project[] = [
 		responsive: true,
 		published: true,
 		projectDate: new Date(2020, 6),
+		showOnHomePage: false,
 		technologies: [
 			technologies.react,
 			technologies.styledComponents,
@@ -346,6 +357,7 @@ export const projects: Project[] = [
 		responsive: true,
 		published: true,
 		projectDate: new Date(2020, 7),
+		showOnHomePage: false,
 		technologies: [
 			technologies.react,
 			technologies.node,
@@ -374,6 +386,7 @@ export const projects: Project[] = [
 		projectDate: new Date(2020, 6),
 		responsive: false,
 		published: true,
+		showOnHomePage: false,
 		technologies: [
 			technologies.react,
 			technologies.sass,
@@ -396,6 +409,7 @@ export const projects: Project[] = [
 		projectDate: new Date(2020, 5),
 		responsive: true,
 		published: true,
+		showOnHomePage: false,
 		technologies: [
 			technologies.html,
 			technologies.css,

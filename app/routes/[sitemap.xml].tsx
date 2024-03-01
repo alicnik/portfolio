@@ -1,13 +1,10 @@
 import type { LoaderFunction } from '@remix-run/node';
-import { projects } from '~/data/projects';
+import { db } from '~/lib/db.server';
 
 const date = '2022-02-07T00:15:16+01:00';
 
-export const loader: LoaderFunction = () => {
-	// handle "GET" request
-	// separating xml content from Response to keep clean code.
-	// const routes = fs.readdirSync('app/routes');
-	// console.log(routes);
+export const loader: LoaderFunction = async () => {
+	const projects = await db.project.findMany({ select: { slug: true } });
 	const content = `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>

@@ -1,5 +1,5 @@
-import { kebabCase, lowerCase } from 'lodash';
 import * as React from 'react';
+import _ from 'lodash';
 
 interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	label: string;
@@ -9,7 +9,7 @@ interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 export function TextInput({
 	label,
 	type = 'text',
-	errorMessage = `Please enter a valid ${lowerCase(label)}`,
+	errorMessage = `Please enter a valid ${_.lowerCase(label)}`,
 	pattern,
 	required,
 	...props
@@ -18,13 +18,13 @@ export function TextInput({
 
 	return (
 		<div className="flex flex-col gap-1 mb-1">
-			<label htmlFor={kebabCase(label)} className="font-bold">
+			<label htmlFor={_.kebabCase(label)} className="font-bold">
 				{label}
 			</label>
 			<input
 				type={type}
-				id={kebabCase(label)}
-				onError={() => setIsError(true)}
+				id={_.kebabCase(label)}
+				onErrorCapture={() => setIsError(true)}
 				pattern={pattern}
 				required={required}
 				onBlur={(e) => {

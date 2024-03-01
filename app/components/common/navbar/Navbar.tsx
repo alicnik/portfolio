@@ -1,6 +1,6 @@
 import { Link, useLocation } from '@remix-run/react';
 import * as React from 'react';
-import { ThemePicker, MobileMenu , NavLinks } from './components';
+import { ThemePicker, MobileMenu, NavLinks } from './components';
 
 export function Navbar() {
 	const location = useLocation();

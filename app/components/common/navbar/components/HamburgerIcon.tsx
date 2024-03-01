@@ -29,7 +29,7 @@ export function HamburgerIcon({ open, setOpen }: HamburgerIconProps) {
 	// TODO: Click outside sets open to false (avoids middle line disappearing trick (hopefully))
 
 	return (
-		<div
+		<button
 			className="flex flex-col justify-center items-center gap-2 rounded-full cursor-pointer md:hidden scale-75 z-10 transition-transform duration-200"
 			onClick={handleClick}
 		>
@@ -54,6 +54,6 @@ export function HamburgerIcon({ open, setOpen }: HamburgerIconProps) {
 						: 'motion-safe:animate-hamburger-bottom-close',
 				)}
 			/>
-		</div>
+		</button>
 	);
 }

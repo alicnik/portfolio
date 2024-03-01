@@ -5,16 +5,18 @@ export const links: LinksFunction = () => [
 ];
 
 export const meta: MetaFunction = () => {
-	return {
-		title: 'AN | About',
-		description:
-			"Hi, I'm Alex. I came to coding later in life than I would have liked, but I'm making up for lost time.",
-		'og:description':
-			"Hi, I'm Alex. I came to coding later in life than I would have liked, but I'm making up for lost time.",
-		'og:title': 'Alex Nicholas | About Me',
-		'og:url': 'https://alexnicholas.dev/about/',
-		'og:image': 'https://alexnicholas.dev/images/profile-photo.webp',
-	};
+	return [
+		{
+			title: 'AN | About',
+			description:
+				"Hi, I'm Alex. I came to coding later in life than I would have liked, but I'm making up for lost time.",
+			'og:description':
+				"Hi, I'm Alex. I came to coding later in life than I would have liked, but I'm making up for lost time.",
+			'og:title': 'Alex Nicholas | About Me',
+			'og:url': 'https://alexnicholas.dev/about/',
+			'og:image': 'https://alexnicholas.dev/images/profile-photo.webp',
+		},
+	];
 };
 
 export default function AboutRoute() {
@@ -24,9 +26,9 @@ export default function AboutRoute() {
 				<div>
 					<h1 className="text-3xl font-display mb-6 md:text-4xl">Who am I?</h1>
 					<p className="mb-4">
-						Hi, I'm <span className="font-graphic text-lg">Alex</span>. I came
-						to coding later in life than I would have liked, but I'm making up
-						for lost time. This is me in a garden
+						Hi, I&apos;m <span className="font-graphic text-lg">Alex</span>. I
+						came to coding later in life than I would have liked, but I&apos;m
+						making up for lost time. This is me in a garden
 						<span className="md:hidden">:</span>
 						<span className="mobile:hidden"> &#8594;</span>
 					</p>
@@ -41,15 +43,16 @@ export default function AboutRoute() {
 							That anything you want to do in software engineering is possible;
 						</li>
 						<li>
-							That a computer won't beat me if I work hard enough at a problem.
+							That a computer won&apos;t beat me if I work hard enough at a
+							problem.
 						</li>
 					</ol>
 					<p className="mb-12">
-						So far, that's held true (though possible does not always mean
+						So far, that&apos;s held true (though possible does not always mean
 						practicable). My fortuitous cocktail of optimism, thirst for
-						knowledge, stubborn grit, curiosity, and willingness to "dive in"
-						have served me well and I am now comfortable tackling most front-end
-						problems that come my way.
+						knowledge, stubborn grit, curiosity, and willingness to &quot;dive
+						in&quot; have served me well and I am now comfortable tackling most
+						front-end problems that come my way.
 					</p>
 				</div>
 				<img
@@ -62,8 +65,8 @@ export default function AboutRoute() {
 				<h2 className="text-3xl font-display mb-6">Where did I come from?</h2>
 				<p className="mb-4">
 					Geographically speaking, I was brought up in Kent but then my family
-					moved to France, and later Spain, so there's been a heavy European
-					influence. I like a siesta and have an addiction to gazpacho.
+					moved to France, and later Spain, so there&apos;s been a heavy
+					European influence. I like a siesta and have an addiction to gazpacho.
 				</p>
 				<p className="mb-4">
 					I studied law, which was great for my problem-solving side, but did
@@ -72,13 +75,13 @@ export default function AboutRoute() {
 					hospitality.
 				</p>
 				<p className="mb-12">
-					Computers have always seemed to like me, or perhaps I'm lucky with
-					them, but they often seem to do what I want them to do. And I like
-					them. Because of this, every job I've been in has ended up having a
-					heavy tech element. I wrote my first bit of code in 2019&mdash;a
-					Python script that interacted with the Apple News and HubSpot
-					APIs&mdash;and applied for a coding bootcamp shortly after, resolved
-					to turn coding into a career.
+					Computers have always seemed to like me, or perhaps I&apos;m lucky
+					with them, but they often seem to do what I want them to do. And I
+					like them. Because of this, every job I&apos;ve been in has ended up
+					having a heavy tech element. I wrote my first bit of code in
+					2019&mdash;a Python script that interacted with the Apple News and
+					HubSpot APIs&mdash;and applied for a coding bootcamp shortly after,
+					resolved to turn coding into a career.
 				</p>
 			</section>
 			<section>

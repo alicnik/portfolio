@@ -1,42 +1,45 @@
-import type { LoaderFunction, MetaFunction } from '@remix-run/node';
+import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import * as React from 'react';
 import invariant from 'tiny-invariant';
 import { GitHubIcon, GlobeIcon } from '~/components/icons';
 import type { ExternalLinkProps } from '~/components/ui';
 import { ExternalLink } from '~/components/ui';
-import { projects } from '~/data/projects';
+import { db } from '~/lib/db.server';
 
-import type { Project } from '~/types';
+export const loader = async ({ params }: LoaderFunctionArgs) => {
+	const { slug } = params;
+	invariant(slug, 'Expected params.slug');
 
-type SingleProject = Project;
+	const project = await db.project.findUnique({
+		where: { slug },
+		include: { technologies: true },
+	});
 
-export const loader: LoaderFunction = ({ params }): SingleProject => {
-	const projectSlug = params.slug;
-	invariant(projectSlug, 'Expected params.slug');
-
-	const project = projects.find((p) => p.slug === projectSlug);
-
-	if (!project) throw new Error('Could not find that project');
+	if (!project) throw new Error(`Could not find project with slug "${slug}"`);
 
 	return project;
 };
 
-export const meta: MetaFunction = ({ data }) => {
-	return {
-		title: `AN | ${data.name}`,
-		description: data.summary,
-		'og:description': data.summary,
-		'og:title': `AN | Projects | ${data.name}`,
-		'og:url': `https://alexnicholas.dev/projects/${data.slug}/`,
-		'og:image': `https://alexnicholas.dev${
-			data.thumbnail ?? '/images/illustration.webp'
+export const meta: MetaFunction<typeof loader> = ({ data }) => [
+	{ title: `AN | ${data?.name}` },
+	{ name: 'description', content: data?.summary },
+	{ property: 'og:description', content: data?.summary },
+	{ property: 'og:title', content: `AN | Projects | ${data?.name}` },
+	{
+		property: 'og:url',
+		content: `https://alexnicholas.dev/projects/${data?.slug}/`,
+	},
+	{
+		property: 'og:image',
+		content: `https://alexnicholas.dev${
+			data?.thumbnail ?? '/images/illustration.webp'
 		}`,
-	};
-};
+	},
+];
 
 export default function SingleProjectRoute() {
-	const project = useLoaderData<SingleProject>();
+	const project = useLoaderData<typeof loader>();
 
 	return (
 		<article className="container mx-auto">

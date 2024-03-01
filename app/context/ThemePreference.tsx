@@ -17,9 +17,7 @@ interface ThemePreferenceContextValue {
 const ThemePreferenceContext =
 	React.createContext<ThemePreferenceContextValue | null>(null);
 
-export function ThemePreferenceProvider({
-	children,
-}: React.PropsWithChildren<{}>) {
+export function ThemePreferenceProvider({ children }: React.PropsWithChildren) {
 	// All props to Kent C. Dodds for inspiration for much of this code
 	// https://github.com/kentcdodds/kentcdodds.com/blob/main/app/utils/theme-provider.tsx
 

@@ -1,53 +1,56 @@
-import type {
-	LinksFunction,
-	LoaderFunction,
-	MetaFunction,
-} from '@remix-run/node';
+import type { LinksFunction, MetaFunction } from '@remix-run/node';
 import { Link, useLoaderData } from '@remix-run/react';
 import { ProjectCard } from '~/components/common';
 import { Button, ExternalLink, HomepageIllustration } from '~/components/ui';
-import { projects as projectsData } from '~/data/projects';
-import type { Project } from '~/types';
-
-type RecentProjects = Project[];
+import { db } from '~/lib/db.server';
 
 export const links: LinksFunction = () => {
 	// Preload images for projects that appear above the fold to minimise loading time
-	const preloadLinks = [];
-	const projectImages = projectsData.slice(0, 3).map((p) => p.thumbnail);
-
-	for (const image of projectImages) {
-		if (!image) continue;
-		preloadLinks.push({
-			rel: 'preload',
-			as: 'image',
-			href: image,
-		});
-	}
+	const preloadLinks = [
+		'/images/shuttle-sm.png',
+		'/images/trello-sm.png',
+		'/images/portfolio-sm.webp',
+	].map((href) => ({
+		rel: 'preload',
+		as: 'image',
+		href,
+	}));
 
 	return preloadLinks;
 };
 
-export const meta: MetaFunction = () => {
-	return {
-		title: 'Alex Nicholas | Front-End Developer',
-		'og:title': 'Alex Nicholas | Front-End Developer',
-		description:
+export const meta: MetaFunction = () => [
+	{ title: 'Alex Nicholas | Front-End Developer' },
+	{ property: 'og:title', content: 'Alex Nicholas | Front-End Developer' },
+	{
+		name: 'description',
+		content:
 			'Alex is a front-end developer working with React, TypeScript, Next.js, Remix, and any other tool he can get his hands on.',
-		'og:description':
+	},
+	{
+		property: 'og:description',
+		content:
 			'Alex is a front-end developer working with React, TypeScript, Next.js, Remix, and any other tool he can get his hands on.',
-		'og:url': 'https://alexnicholas.dev/',
-		'og:image': 'https://alexnicholas.dev/images/illustration.webp',
-	};
-};
+	},
+	{ property: 'og:url', content: 'https://alexnicholas.dev/' },
+	{
+		property: 'og:image',
+		content: 'https://alexnicholas.dev/images/illustration.webp',
+	},
+];
 
-export const loader: LoaderFunction = (): RecentProjects => {
-	const recentProjects = projectsData.slice(0, 3);
+export const loader = async () => {
+	const recentProjects = await db.project.findMany({
+		where: { showOnHomePage: true },
+		include: { technologies: true },
+		orderBy: { projectDate: 'desc' },
+		take: 3,
+	});
 	return recentProjects;
 };
 
 export default function Index() {
-	const recentProjects = useLoaderData<RecentProjects>();
+	const recentProjects = useLoaderData<typeof loader>();
 
 	return (
 		<div className="w-full">

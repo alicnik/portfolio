@@ -1,6 +1,6 @@
 import type { ActionFunction, MetaFunction } from '@remix-run/node';
 import { redirect } from '@remix-run/node';
-import { Form, useActionData, useTransition } from '@remix-run/react';
+import { Form, useActionData, useNavigation } from '@remix-run/react';
 import invariant from 'tiny-invariant';
 import { LoadingIcon } from '~/components/icons';
 import { Button, ExternalLink, Textarea, TextInput } from '~/components/ui';
@@ -48,22 +48,29 @@ export const action: ActionFunction = async ({ request }) => {
 	return redirect('/thank-you');
 };
 
-export const meta: MetaFunction = () => {
-	return {
-		title: 'AN | Contact',
-		description:
+export const meta: MetaFunction = () => [
+	{ title: 'AN | Contact' },
+	{
+		name: 'description',
+		content:
 			'If you want to get in touch with me just send me a message using the form, or drop me an email.',
-		'og:description':
+	},
+	{
+		property: 'og:description',
+		content:
 			'If you want to get in touch with me just send me a message using the form, or drop me an email.',
-		'og:title': 'Alex Nicholas | Contact me',
-		'og:url': 'https://alexnicholas.dev/contact/',
-		'og:image': 'https://alexnicholas.dev/images/illustration.webp',
-	};
-};
+	},
+	{ property: 'og:title', content: 'Alex Nicholas | Contact me' },
+	{ property: 'og:url', content: 'https://alexnicholas.dev/contact/' },
+	{
+		property: 'og:image',
+		content: 'https://alexnicholas.dev/images/illustration.webp',
+	},
+];
 
 export default function ContactRoute() {
 	const actionData = useActionData<ActionDataValue>();
-	const transition = useTransition();
+	const navigation = useNavigation();
 
 	return (
 		<section className="mx-auto md:grid md:grid-cols-2 gap-8 lg:gap-20">
@@ -82,7 +89,8 @@ export default function ContactRoute() {
 						name="email"
 						autoComplete="email"
 						defaultValue={actionData?.email}
-						pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+						type="email"
+						pattern=".+@.+\.[a-z]{2,4}"
 						required
 					/>
 					<Textarea
@@ -92,7 +100,8 @@ export default function ContactRoute() {
 						required
 					/>
 					{/* Honeypot for spam prevention. autoComplete="false" originally used
-          but, amazingly enough, "nope" seemed to work where "false" didn't. This is why I code. */}
+          but, amazingly enough, "nope" works where "false" doesn't. This is why I code. */}
+					{/* eslint-disable-next-line jsx-a11y/autocomplete-valid */}
 					<input
 						type="tel"
 						style={{ position: 'absolute', left: -9999, top: -9999 }}
@@ -108,7 +117,7 @@ export default function ContactRoute() {
 						className="my-10 w-28 h-12"
 						defaultPadding={false}
 					>
-						{transition.submission ? (
+						{navigation.state === 'submitting' ? (
 							<LoadingIcon className="mx-auto" />
 						) : (
 							'Submit'

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import customStyles from './styles/custom.css';
-import tailwindStyles from './styles/tailwind.css';
+import tailwindStyles from './styles/main.css';
 import {
 	AvoidFlashOfWrongTheme,
 	ThemePreferenceProvider,
@@ -36,14 +36,12 @@ export const links: LinksFunction = () => {
 	];
 };
 
-export const meta: MetaFunction = () => {
-	return {
-		title: 'Alex Nicholas | Front-End Developer',
-		'og:site_name': 'Alex Nicholas Portfolio',
-		'og:type': 'website',
-		'twitter:card': 'summary',
-	};
-};
+export const meta: MetaFunction = () => [
+	{ title: 'Alex Nicholas | Front-End Developer' },
+	{ property: 'og:site_name', content: 'Alex Nicholas Portfolio' },
+	{ property: 'og:type', content: 'website' },
+	{ property: 'twitter:card', content: 'summary' },
+];
 
 function Document({ children }: { children: React.ReactNode }) {
 	const { themePreference } = useThemePreference();
@@ -89,7 +87,9 @@ export function CatchBoundary() {
 		<ThemePreferenceProvider>
 			<Document>
 				<div>
-					<h1 className="text-2xl">This is not the page you're looking for</h1>
+					<h1 className="text-2xl">
+						This is not the page you&apos;re looking for
+					</h1>
 					<Link to="/">
 						<Button variant="outlined" className="my-6">
 							Move along
