@@ -89,7 +89,8 @@ export default function ContactRoute() {
 						name="email"
 						autoComplete="email"
 						defaultValue={actionData?.email}
-						pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+						type="email"
+						pattern=".+@.+\.[a-z]{2,4}"
 						required
 					/>
 					<Textarea
@@ -99,14 +100,15 @@ export default function ContactRoute() {
 						required
 					/>
 					{/* Honeypot for spam prevention. autoComplete="false" originally used
-          but, amazingly enough, "nope" seemed to work where "false" didn't. This is why I code. */}
+          but, amazingly enough, "nope" works where "false" doesn't. This is why I code. */}
+					{/* eslint-disable-next-line jsx-a11y/autocomplete-valid */}
 					<input
 						type="tel"
 						style={{ position: 'absolute', left: -9999, top: -9999 }}
 						name="phone-number"
 						id="phone-number"
 						tabIndex={-1}
-						autoComplete="false"
+						autoComplete="nope"
 						aria-hidden="true"
 					/>
 					<Button
