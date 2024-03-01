@@ -22,6 +22,9 @@ module.exports = {
 
 	// Base config
 	extends: ['eslint:recommended'],
+	rules: {
+		'no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
+	},
 
 	overrides: [
 		// React
