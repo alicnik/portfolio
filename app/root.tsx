@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { SpeedInsights } from '@vercel/speed-insights/remix';
+import { Analytics } from '@vercel/analytics/react';
 import customStyles from './styles/custom.css';
 import tailwindStyles from './styles/main.css';
 import {
@@ -68,6 +69,7 @@ function Document({ children }: { children: React.ReactNode }) {
 
 				<Scripts nonce={nonce} />
 				<SpeedInsights />
+				<Analytics />
 				{process.env.NODE_ENV === 'development' && <LiveReload />}
 			</body>
 		</html>
