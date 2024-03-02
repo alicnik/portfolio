@@ -6,6 +6,7 @@ import type { MetaFunction } from '@remix-run/node';
 export const loader = async () => {
 	const testimonials = await db.testimonial.findMany({
 		select: { value: true },
+		where: { published: true },
 	});
 	return testimonials.sort((a, b) => b.value.length - a.value.length);
 };

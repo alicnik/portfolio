@@ -42,7 +42,15 @@ export const meta: MetaFunction = () => [
 export const loader = async () => {
 	const recentProjects = await db.project.findMany({
 		where: { showOnHomePage: true },
-		include: { technologies: true },
+		select: {
+			name: true,
+			summary: true,
+			slug: true,
+			url: true,
+			githubPrimary: true,
+			thumbnail: true,
+			responsive: true,
+		},
 		orderBy: { projectDate: 'desc' },
 		take: 3,
 	});
@@ -86,7 +94,6 @@ export default function Index() {
 									: ''
 							}
 							{...project}
-							projectDate={new Date(project.projectDate)}
 						/>
 					))}
 				</div>

@@ -1,11 +1,20 @@
+import { Project } from '@prisma/client';
 import { Link } from '@remix-run/react';
 import clsx from 'clsx';
 import { GitHubIcon } from '~/components/icons';
 import { ExternalLink } from '~/components/ui';
 
-import type { Project } from '~/types';
-
-interface ProjectCardProps extends Project {
+interface ProjectCardProps
+	extends Pick<
+		Project,
+		| 'name'
+		| 'summary'
+		| 'slug'
+		| 'url'
+		| 'githubPrimary'
+		| 'thumbnail'
+		| 'responsive'
+	> {
 	className?: string;
 }
 

@@ -17,6 +17,7 @@ import dictionary from 'nanoid-dictionary';
 const ABORT_DELAY = 5_000;
 const nanoid = customAlphabet(dictionary.alphanumeric, 24);
 export const nonce = nanoid();
+const securityPolicy = `default-src 'none'; script-src 'self' https://va.vercel-scripts.com/ 'nonce-${nonce}' 'unsafe-inline'; img-src 'self'; style-src 'self' 'unsafe-inline' http://fonts.googleapis.com; font-src https://fonts.gstatic.com;base-uri 'self'; form-action 'self'; connect-src 'self' ws://localhost:8002;`;
 
 export default function handleRequest(
 	request: Request,
@@ -64,10 +65,7 @@ function handleBotRequest(
 					const stream = createReadableStreamFromReadable(body);
 
 					responseHeaders.set('Content-Type', 'text/html');
-					responseHeaders.set(
-						'Content-Security-Policy',
-						`default-src 'none'; script-src 'self' 'nonce-${nonce}' 'unsafe-inline'; img-src 'self'; style-src 'self' 'unsafe-inline' http://fonts.googleapis.com; font-src https://fonts.gstatic.com;base-uri 'self'; form-action 'self'; connect-src 'self' ws://localhost:8002;`,
-					);
+					responseHeaders.set('Content-Security-Policy', securityPolicy);
 
 					resolve(
 						new Response(stream, {
@@ -118,10 +116,7 @@ function handleBrowserRequest(
 					const stream = createReadableStreamFromReadable(body);
 
 					responseHeaders.set('Content-Type', 'text/html');
-					responseHeaders.set(
-						'Content-Security-Policy',
-						`default-src 'none'; script-src 'self' 'nonce-${nonce}' 'unsafe-inline'; img-src 'self'; style-src 'self' 'unsafe-inline' http://fonts.googleapis.com; font-src https://fonts.gstatic.com;base-uri 'self'; form-action 'self'; connect-src 'self' ws://localhost:8002;`,
-					);
+					responseHeaders.set('Content-Security-Policy', securityPolicy);
 
 					resolve(
 						new Response(stream, {

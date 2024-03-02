@@ -5,12 +5,16 @@ import { db } from '~/lib/db.server';
 
 export const loader = async () => {
 	const projects = await db.project.findMany({
-		include: {
-			technologies: true,
+		select: {
+			name: true,
+			summary: true,
+			slug: true,
+			url: true,
+			githubPrimary: true,
+			thumbnail: true,
+			responsive: true,
 		},
-		orderBy: {
-			projectDate: 'desc',
-		},
+		orderBy: { projectDate: 'desc' },
 	});
 
 	return projects;
@@ -51,11 +55,7 @@ export default function ProjectIndexRoute() {
 			</p>
 			<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 place-items-center items-stretch">
 				{projects.map((project) => (
-					<ProjectCard
-						key={project.name}
-						{...project}
-						projectDate={new Date(project.projectDate)}
-					/>
+					<ProjectCard key={project.name} {...project} />
 				))}
 			</div>
 		</div>
