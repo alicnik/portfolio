@@ -8,6 +8,7 @@ async function seed() {
 		db.project.deleteMany(),
 		db.technology.deleteMany(),
 		db.testimonial.deleteMany(),
+		db.user.deleteMany(),
 	]);
 
 	for (const project of projects) {
@@ -31,6 +32,13 @@ async function seed() {
 			}),
 		),
 	);
+
+	await db.user.create({
+		data: {
+			email: process.env.EMAIL,
+			name: 'Alex Nicholas',
+		},
+	});
 }
 
 seed()

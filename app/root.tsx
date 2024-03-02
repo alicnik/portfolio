@@ -8,7 +8,6 @@ import {
 	ThemePreferenceProvider,
 	useThemePreference,
 } from '~/context';
-import { Navbar } from '~/components/common';
 import { Button } from './components/ui';
 import { nonce } from './entry.server';
 import {
@@ -20,6 +19,7 @@ import {
 	Link,
 } from '@remix-run/react';
 import type { LinksFunction, MetaFunction } from '@remix-run/node';
+import clsx from 'clsx';
 
 export const links: LinksFunction = () => {
 	return [
@@ -49,7 +49,10 @@ function Document({ children }: { children: React.ReactNode }) {
 	const { themePreference } = useThemePreference();
 
 	return (
-		<html lang="en" className={themePreference === 'dark' ? 'dark' : ''}>
+		<html
+			lang="en"
+			className={clsx('h-full', themePreference === 'dark' && 'dark')}
+		>
 			<head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -57,16 +60,11 @@ function Document({ children }: { children: React.ReactNode }) {
 				<AvoidFlashOfWrongTheme />
 				<Links />
 			</head>
-			<body className="font-sans leading-relaxed bg-gray-50 text-gray-900 dark:text-gray-100 dark:bg-gray-800">
-				<Navbar />
-				<main className="px-6 pt-32 max-w-6xl pb-8 container mx-auto">
-					{children}
-				</main>
-
+			<body className="font-sans h-full leading-relaxed bg-gray-50 text-gray-900 dark:text-gray-100 dark:bg-gray-800">
+				{children}
 				{/* // Disable ScrollRestoration to avoid CSP clash 
         // TODO: Find a way to pass nonce to ScrollResoration script tag
 				<ScrollRestoration /> */}
-
 				<Scripts nonce={nonce} />
 				<SpeedInsights />
 				<Analytics />
