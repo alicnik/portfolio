@@ -1,14 +1,15 @@
 import { useLoaderData } from '@remix-run/react';
 import { DoubleQuotes } from '~/components/icons';
 import { db } from '~/lib/db.server';
-import type { MetaFunction } from '@remix-run/node';
+import { json, type MetaFunction } from '@remix-run/node';
 
 export const loader = async () => {
 	const testimonials = await db.testimonial.findMany({
 		select: { value: true },
 		where: { published: true },
 	});
-	return testimonials.sort((a, b) => b.value.length - a.value.length);
+	const sorted = testimonials.sort((a, b) => b.value.length - a.value.length);
+	return json({ testimonials: sorted });
 };
 
 export const meta: MetaFunction = () => [
@@ -32,7 +33,7 @@ export const meta: MetaFunction = () => [
 ];
 
 export default function TestimonialsRoute() {
-	const testimonials = useLoaderData<typeof loader>();
+	const { testimonials } = useLoaderData<typeof loader>();
 
 	return (
 		<div className="container mx-auto">

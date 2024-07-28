@@ -1,4 +1,4 @@
-import { LoaderFunctionArgs } from '@remix-run/node';
+import { json, type LoaderFunctionArgs } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import invariant from 'tiny-invariant';
 import { db } from '~/lib/db.server';
@@ -12,7 +12,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 		include: { technologies: true },
 	});
 
-	return { project };
+	return json({ project });
 };
 
 export default function AdminProjectRoute() {

@@ -1,4 +1,5 @@
 import { useLoaderData } from '@remix-run/react';
+import { json } from '@remix-run/node';
 import { DataTable } from '~/components/admin';
 import { db } from '~/lib/db.server';
 import { columns } from './columns';
@@ -8,7 +9,7 @@ export const loader = async () => {
 		orderBy: { projectDate: 'desc' },
 	});
 
-	return { projects };
+	return json({ projects });
 };
 
 export default function AdminProjectsIndexRoute() {

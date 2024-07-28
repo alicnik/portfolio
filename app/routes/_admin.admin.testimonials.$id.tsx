@@ -1,4 +1,4 @@
-import { LoaderFunctionArgs } from '@remix-run/node';
+import { json, type LoaderFunctionArgs } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import invariant from 'tiny-invariant';
 import { db } from '~/lib/db.server';
@@ -11,7 +11,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 		where: { id },
 	});
 
-	return { testimonial };
+	return json({ testimonial });
 };
 
 export default function AdminTestimonialRoute() {

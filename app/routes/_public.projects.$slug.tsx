@@ -1,4 +1,8 @@
-import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
+import {
+	json,
+	type LoaderFunctionArgs,
+	type MetaFunction,
+} from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import * as React from 'react';
 import invariant from 'tiny-invariant';
@@ -18,28 +22,28 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 
 	if (!project) throw new Error(`Could not find project with slug "${slug}"`);
 
-	return project;
+	return json({ project });
 };
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => [
-	{ title: `AN | ${data?.name}` },
-	{ name: 'description', content: data?.summary },
-	{ property: 'og:description', content: data?.summary },
-	{ property: 'og:title', content: `AN | Projects | ${data?.name}` },
+	{ title: `AN | ${data?.project.name}` },
+	{ name: 'description', content: data?.project.summary },
+	{ property: 'og:description', content: data?.project.summary },
+	{ property: 'og:title', content: `AN | Projects | ${data?.project.name}` },
 	{
 		property: 'og:url',
-		content: `https://alexnicholas.dev/projects/${data?.slug}/`,
+		content: `https://alexnicholas.dev/projects/${data?.project.slug}/`,
 	},
 	{
 		property: 'og:image',
 		content: `https://alexnicholas.dev${
-			data?.thumbnail ?? '/images/illustration.webp'
+			data?.project.thumbnail ?? '/images/illustration.webp'
 		}`,
 	},
 ];
 
 export default function SingleProjectRoute() {
-	const project = useLoaderData<typeof loader>();
+	const { project } = useLoaderData<typeof loader>();
 
 	return (
 		<article className="container mx-auto">

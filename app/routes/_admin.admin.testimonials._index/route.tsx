@@ -1,4 +1,5 @@
 import { useLoaderData } from '@remix-run/react';
+import { json } from '@remix-run/node';
 import { DataTable } from '~/components/admin';
 import { db } from '~/lib/db.server';
 import { columns } from './columns';
@@ -6,7 +7,7 @@ import { columns } from './columns';
 export const loader = async () => {
 	const testimonials = await db.testimonial.findMany();
 
-	return { testimonials };
+	return json({ testimonials });
 };
 
 export default function AdminTestimonialsIndexRoute() {

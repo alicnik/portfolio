@@ -1,6 +1,6 @@
 import { useLoaderData } from '@remix-run/react';
 import { ProjectCard } from '~/components/common';
-import type { MetaFunction } from '@remix-run/node';
+import { json, type MetaFunction } from '@remix-run/node';
 import { db } from '~/lib/db.server';
 
 export const loader = async () => {
@@ -17,7 +17,7 @@ export const loader = async () => {
 		orderBy: { projectDate: 'desc' },
 	});
 
-	return projects;
+	return json({ projects });
 };
 
 export const meta: MetaFunction = () => [
@@ -41,7 +41,7 @@ export const meta: MetaFunction = () => [
 ];
 
 export default function ProjectIndexRoute() {
-	const projects = useLoaderData<typeof loader>();
+	const { projects } = useLoaderData<typeof loader>();
 
 	return (
 		<div className="container mx-auto">

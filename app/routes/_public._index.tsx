@@ -1,4 +1,4 @@
-import type { LinksFunction, MetaFunction } from '@remix-run/node';
+import { json, type LinksFunction, type MetaFunction } from '@remix-run/node';
 import { Link, useLoaderData } from '@remix-run/react';
 import { ProjectCard } from '~/components/common';
 import { Button, ExternalLink, HomepageIllustration } from '~/components/ui';
@@ -54,11 +54,12 @@ export const loader = async () => {
 		orderBy: { projectDate: 'desc' },
 		take: 3,
 	});
-	return recentProjects;
+
+	return json({ recentProjects });
 };
 
 export default function Index() {
-	const recentProjects = useLoaderData<typeof loader>();
+	const { recentProjects } = useLoaderData<typeof loader>();
 
 	return (
 		<div className="w-full">
