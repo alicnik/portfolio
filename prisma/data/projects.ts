@@ -159,6 +159,16 @@ const technologies = {
 		name: 'React Testing Library',
 		url: 'https://github.com/testing-library/react-testing-library',
 	},
+	bun: {
+		id: nanoid(),
+		name: 'Bun',
+		url: 'https://bun.sh/',
+	},
+	zod: {
+		id: nanoid(),
+		name: 'Zod',
+		url: 'https://zod.dev/',
+	},
 };
 
 type ProjectSeed = Omit<Prisma.ProjectCreateInput, 'technologies'> & {
@@ -166,6 +176,32 @@ type ProjectSeed = Omit<Prisma.ProjectCreateInput, 'technologies'> & {
 };
 
 export const projects: ProjectSeed[] = [
+	{
+		id: nanoid(),
+		name: 'HMRC Exchange Rate Calculator',
+		slug: 'hmrc-exchange-rate-calculator',
+		summary:
+			'An app to take the pain out of converting currencies per HMRC data.',
+		description:
+			"While doing end-of-year accounts, the manual drudgery of looking up each month's exchange rate in HRMC's dataset became too much. To save my sanity, I created a little web app to reduce the friction, which also gave me a nice opportunity to play with Next.js server actions. And Bun!",
+		url: 'https://hmrc-exchange-rates.vercel.app/',
+		image: '/images/hmrc-exchange-rate-calculator.webp',
+		thumbnail: '/images/hmrc-exchange-rate-calculator.webp',
+		githubPrimary: 'https://github.com/alicnik/hmrc-exchange-rates',
+		responsive: true,
+		published: true,
+		projectDate: new Date(2024, 6),
+		showOnHomePage: false,
+		technologies: [
+			technologies.bun,
+			technologies.react,
+			technologies.typeScript,
+			technologies.next,
+			technologies.tailwind,
+			technologies.zod,
+			technologies.radixUI,
+		],
+	},
 	{
 		id: nanoid(),
 		name: 'Shuttle',
@@ -254,8 +290,8 @@ export const projects: ProjectSeed[] = [
 			'A quick exploration of Remix, Prisma, Vitest and React Testing Library. Chookity.',
 		description:
 			'A bit of light-hearted fun based on a series that was cancelled too soon. A good opportunity to dive into testing a little deeper.',
-		image: '/images/final-space.png',
-		thumbnail: '/images/final-space.png',
+		image: '/images/final-space.webp',
+		thumbnail: '/images/final-space.webp',
 		url: 'https://final-space.fly.dev/',
 		githubPrimary: 'https://github.com/alicnik/final-space',
 		responsive: true,
