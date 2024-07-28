@@ -178,7 +178,7 @@ type ProjectSeed = Omit<Prisma.ProjectCreateInput, 'technologies'> & {
 export const projects: ProjectSeed[] = [
 	{
 		id: nanoid(),
-		name: 'HMRC Exchange Rate Calculator',
+		name: 'HMRC Calculator',
 		slug: 'hmrc-exchange-rate-calculator',
 		summary:
 			'An app to take the pain out of converting currencies per HMRC data.',
