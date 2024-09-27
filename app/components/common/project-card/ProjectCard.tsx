@@ -23,7 +23,7 @@ export function ProjectCard({
 		name === 'Portfolio Website' || !url ? githubPrimary : url;
 
 	return (
-		<div
+		<article
 			className={clsx(
 				'flex flex-col px-6 py-8 my-6 border rounded border-gray-300 dark:border-gray-600 max-w-[350px]',
 				className,
@@ -65,6 +65,6 @@ export function ProjectCard({
 					<GitHubIcon label="GitHub repository link" />
 				</ExternalLink>
 			</div>
-		</div>
+		</article>
 	);
 }
