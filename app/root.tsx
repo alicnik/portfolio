@@ -27,7 +27,7 @@ export const links: LinksFunction = () => {
 		{ rel: 'stylesheet', href: tailwindStyles },
 		{
 			rel: 'stylesheet',
-			href: 'https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Merriweather&family=Raleway:ital,wght@0,400;1,300&display=swap',
+			href: 'https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Merriweather&family=Raleway:ital,wght@0,400;1,300&display=swap&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz%20%21%22%23%24%25%26%27',
 		},
 		{ rel: 'preconnect', href: 'https://fonts.googleapis.com' },
 		{
