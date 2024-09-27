@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'IM Fell English';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=Ktk1ALSLW8zDe0rthJysWrnLsAz3EqmfVY5yoOTAKcavksCu06LuHd1252797qoeKZcK2c9qkv6rTbqCNJ-4vctBuSA-Uy7rp2mj_VJPzbiyrlHEEsyfCVE_nSjAPtLjFE4&skey=afb75104e969187e&v=v14) format('woff2');
+}
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=u-440qyriQwlOrhSvowK_l5OfixLV-fN6NnIH16iJr9WoaT1PIWw9FHSMrvvRKj47x7qr2qgWilEXC2hcKeGNeGTIiXhLEE6vz2ne3q-jut0lBBI3xx65sLGpiMOeag&skey=379c1eccf863c625&v=v30) format('woff2');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4TbMPrEVJz9d84iFQANkpCQu-7inRke4qi03K1GiWMmvZqijRn1yn3VcyiqioS08orox6y238vbATaOtQWfSS2IxIzLiuFiLqDI6OwBoela3&skey=bf44ee29381a37b0&v=v34) format('woff2');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaooCKNLY3JQUb4e-HQgVipiY47bqlQEG6qCM5UiqgXs-tZKatRH90mXde1DSgoys6oLg_5S-PyvTGS6GvT2nQSWQ3ITD8plqJrjQ4OQ5meA&skey=30a27f2564731c64&v=v34) format('woff2');
+}

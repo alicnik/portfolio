@@ -3,6 +3,7 @@ import { SpeedInsights } from '@vercel/speed-insights/remix';
 import { Analytics } from '@vercel/analytics/react';
 import customStyles from './styles/custom.css';
 import tailwindStyles from './styles/main.css';
+import fontStyles from './styles/fonts.css';
 import {
 	AvoidFlashOfWrongTheme,
 	ThemePreferenceProvider,
@@ -25,10 +26,7 @@ export const links: LinksFunction = () => {
 	return [
 		{ rel: 'stylesheet', href: customStyles },
 		{ rel: 'stylesheet', href: tailwindStyles },
-		{
-			rel: 'stylesheet',
-			href: 'https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Merriweather&family=Raleway:ital,wght@0,400;1,300&display=swap&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz%20%21%22%23%24%25%26%27',
-		},
+		{ rel: 'stylesheet', href: fontStyles },
 		{ rel: 'preconnect', href: 'https://fonts.googleapis.com' },
 		{
 			rel: 'preconnect',
