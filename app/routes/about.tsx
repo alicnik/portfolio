@@ -97,29 +97,6 @@ export default function AboutRoute() {
 					where my coding knowledge and abilities are constantly pushed to their
 					limits.
 				</p>
-				{/* <p className="mb-4">
-					At the moment, I'm looking for work, having just completed some
-					contract work with General Assembly as a Teaching Assistant. I loved
-					it but it wasn't pushing me.
-				</p>
-				<p className="mb-4">
-					There's a cogent argument to be had that I'm slightly eccentric. I
-					like to think it's endearing. The dream is to work somewhere similarly
-					offbeat. The sort of place with an office dog (this is negotiable).
-				</p>
-				<p className="mb-4">
-					Most significantly, I want to work somewhere kind and diverse.
-					Somewhere that focuses on employee engagement and well-being. I dive
-					into my work with both feet so it's important that I'm somewhere
-					positive.
-				</p>
-				<p>
-					That's a lot of wants, but if it sounds like your company then please{' '}
-					<Link to="/contact" className="underline underline-offset-2">
-						contact me
-					</Link>
-					!
-				</p> */}
 			</section>
 		</article>
 	);
