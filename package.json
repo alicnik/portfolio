@@ -7,7 +7,7 @@
 	"scripts": {
 		"build": "remix build",
 		"dev": "remix dev --manual",
-		"lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
+		"lint": "eslint .",
 		"start": "remix-serve ./build/index.js",
 		"typecheck": "tsc",
 		"prettify": "prettier . --fix",
@@ -40,6 +40,8 @@
 		"tiny-invariant": "^1.3.3"
 	},
 	"devDependencies": {
+		"@eslint/compat": "^1.2.8",
+		"@eslint/js": "^9.24.0",
 		"@remix-run/dev": "^2.16.5",
 		"@remix-run/v1-route-convention": "^0.1.4",
 		"@types/lodash": "^4.17.16",
@@ -47,18 +49,20 @@
 		"@types/node": "^20.17.30",
 		"@types/react": "^18.3.20",
 		"@types/react-dom": "^18.3.6",
-		"@typescript-eslint/eslint-plugin": "^6.21.0",
-		"@typescript-eslint/parser": "^6.21.0",
-		"eslint": "^8.57.1",
-		"eslint-import-resolver-typescript": "^3.10.0",
+		"@typescript-eslint/eslint-plugin": "^8.29.1",
+		"@typescript-eslint/parser": "^8.29.1",
+		"eslint": "^9.24.0",
+		"eslint-import-resolver-typescript": "^4.3.2",
 		"eslint-plugin-import": "^2.31.0",
 		"eslint-plugin-jsx-a11y": "^6.10.2",
 		"eslint-plugin-react": "^7.37.5",
-		"eslint-plugin-react-hooks": "^4.6.2",
+		"eslint-plugin-react-hooks": "^5.2.0",
+		"globals": "^16.0.0",
 		"prisma": "^5.22.0",
 		"tailwindcss": "^3.4.17",
 		"tsx": "^4.19.3",
-		"typescript": "^5.8.3"
+		"typescript": "^5.8.3",
+		"typescript-eslint": "^8.29.1"
 	},
 	"prisma": {
 		"seed": "tsx prisma/seed.ts"
