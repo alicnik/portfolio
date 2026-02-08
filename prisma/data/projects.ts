@@ -314,20 +314,16 @@ export const projects: ProjectSeed[] = [
 		summary:
 			'An eight-hour hackathon to build a RESTful API for educational purposes using Java and SpringBoot.',
 		description:
-			'On the General Assembly bootcamp, there are two APIs used for learning purposes; Cheesebored and Winebored. Since I was practising Spring Boot, I set myself the challenge of building a similar API using Java/Spring Boot during business hours. I was successful in building 95% of the product in eight hours but ran into a few bugs on deployment.',
+			'On the General Assembly bootcamp, there are two APIs used for learning purposes; Cheesebored and Winebored. Since I was practising Spring Boot, I set myself the challenge of building a similar API using Java/Spring Boot during business hours. I was successful in building 95% of the product in eight hours but ran into a few bugs on deployment. Try hitting https://whiskybored.onrender.com/whiskies.',
 		published: true,
 		image: null,
 		thumbnail: null,
-		url: 'https://whiskybored.fly.dev/',
+		url: 'https://whiskybored.onrender.com',
 		githubPrimary: 'https://github.com/alicnik/whiskybored',
 		responsive: false,
 		projectDate: new Date(2021, 9),
 		showOnHomePage: false,
-		technologies: [
-			technologies.java,
-			technologies.springBoot,
-			technologies.bulma,
-		],
+		technologies: [technologies.java, technologies.springBoot],
 	},
 	{
 		id: nanoid(),
